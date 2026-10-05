@@ -258,5 +258,241 @@
       "commentsLabel": "Cuéntanos sobre tu espacio o medidas aproximadas",
       "submitButtonText": "Enviar solicitud por WhatsApp"
     }
-  }
+  },
+  "whyUs": {
+    "kicker": "¿POR QUÉ ELEGIRNOS?",
+    "title": "Arquitectura, precisión y compromiso en cada entrega",
+    "description": "Fusionamos diseño contemporáneo con procesos de ingeniería para ofrecer soluciones duraderas sin intermediarios.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Fabricación Propia sin Intermediarios",
+        "description": "Taller y equipo técnico especializado propio. Control total de calidad en cada ensamble, acabado y tiempo de entrega."
+      },
+      {
+        "number": "02",
+        "title": "Materiales Nobles y Certificados",
+        "description": "Maderas seleccionadas, herrajes europeos con garantía de por vida, piedras naturales y blindajes con máxima certificación."
+      },
+      {
+        "number": "03",
+        "title": "Garantía Escrita de hasta 10 Años",
+        "description": "Respaldo real en estructura y acabados. Tu inversión está protegida con servicio postventa y mantenimiento."
+      },
+      {
+        "number": "04",
+        "title": "Asesoría y Render 3D Previo",
+        "description": "Visualizas el resultado exacto en tu espacio antes de fabricar, evitando errores, sobrecostos o sorpresas."
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": "prod-cocinas",
+      "slug": "cocinas",
+      "title": "Cocinas a Medida",
+      "shortDescription": "Diseño arquitectónico, materiales nobles y herrajes europeos de cierre silencioso.",
+      "tagline": "El corazón de tu hogar diseñado para habitar y perdurar",
+      "image": "/images/kitchen-hero.jpg",
+      "published": true,
+      "order": 1,
+      "whatsappMessage": "Hola Filippo, me interesa cotizar una cocina a medida. ¿Podemos hablar de mi espacio?",
+      "features": [
+        "Herrajes austríacos Blum con garantía de por vida",
+        "Mesones en mármol travertino, cuarzo y sinterizados",
+        "Diseño 3D fotorrealista antes de fabricar",
+        "Instalación limpia llave en mano con equipo propio"
+      ],
+      "gallery": [
+        "/images/kitchen-hero.jpg",
+        "/images/project-aliso.jpg",
+        "/images/project-castano.jpg",
+        "/images/project-carrara.jpg"
+      ],
+      "options": [
+        { "name": "Minimalismo Cálido", "description": "Frentes lisos en roble, tiradores ocultos y mesón monolítico." },
+        { "name": "Madera & Piedra", "description": "Contrastes de nogal canaletto con superficies ultracompactas." },
+        { "name": "Isla Central Social", "description": "Isla de gran formato como punto de encuentro gastronómico." }
+      ],
+      "faqs": [
+        {
+          "question": "¿Cuánto demora el diseño y fabricación de una cocina?",
+          "answer": "Entre 4 y 6 semanas desde la aprobación del diseño 3D hasta la entrega instalada."
+        },
+        {
+          "question": "¿Hacen visita a domicilio para tomar medidas?",
+          "answer": "Sí, realizamos toma de medidas en sitio y asesoría personalizada."
+        }
+      ],
+      "seoTitle": "Cocinas a Medida de Alta Gama | Filippo",
+      "seoDescription": "Diseño y fabricación de cocinas contemporáneas con materiales nobles y herrajes europeos."
+    },
+    {
+      "id": "prod-puertas-blindadas",
+      "slug": "puertas-blindadas",
+      "title": "Puertas Blindadas",
+      "shortDescription": "Máxima seguridad certificada con diseño arquitectónico y acabados de lujo.",
+      "tagline": "Protege lo que más valoras sin renunciar a la elegancia arquitectónica",
+      "image": "/images/project-aliso.jpg",
+      "published": true,
+      "order": 2,
+      "whatsappMessage": "Hola Filippo, quiero cotizar una puerta blindada de seguridad para mi hogar/oficina.",
+      "features": [
+        "Estructura interna en acero balístico de alta resistencia",
+        "Cerraduras multipunto de seguridad italiana o biométrica",
+        "Enchapes exteriores en maderas nobles, laca o metal",
+        "Aislamiento termoacústico de alto rendimiento"
+      ],
+      "gallery": [
+        "/images/project-aliso.jpg",
+        "/images/project-castano.jpg",
+        "/images/project-nogal.jpg"
+      ],
+      "options": [
+        { "name": "Nivel III Residencial", "description": "Protección ante impacto de armas cortas y forzamiento con palanca." },
+        { "name": "Nivel IV / V Alta Seguridad", "description": "Resistencia a ataques de alto calibre y herramientas mecánicas pesadas." },
+        { "name": "Integración Biométrica", "description": "Apertura mediante huella, reconocimiento facial o clave digital." }
+      ],
+      "faqs": [
+        {
+          "question": "¿Se puede personalizar el acabado de la puerta?",
+          "answer": "Sí, el acabado exterior se adapta exactamente al estilo arquitectónico de tu fachada o entrada."
+        },
+        {
+          "question": "¿Incluye marco reforzado?",
+          "answer": "Sí, instalamos marco perimetral en acero anclado a muro macizo."
+        }
+      ],
+      "seoTitle": "Puertas Blindadas de Seguridad de Autor | Filippo",
+      "seoDescription": "Puertas de seguridad blindadas con cerraduras multipunto y acabados en maderas nobles."
+    },
+    {
+      "id": "prod-remodelacion",
+      "slug": "remodelacion-arquitectonica",
+      "title": "Remodelación Arquitectónica",
+      "shortDescription": "Transformación integral de espacios con dirección técnica de obra y acabados premium.",
+      "tagline": "Renovación total de ambientes residenciales con control riguroso de tiempos",
+      "image": "/images/project-lino.jpg",
+      "published": true,
+      "order": 3,
+      "whatsappMessage": "Hola Filippo, me interesa cotizar la remodelación integral de mi espacio.",
+      "features": [
+        "Dirección arquitectónica y supervisión continua de obra",
+        "Coordinación de demoliciones, redes, pisos e iluminación",
+        "Presupuestos transparentes sin costos ocultos",
+        "Entrega limpia y cumplimiento estricto de cronograma"
+      ],
+      "gallery": [
+        "/images/project-lino.jpg",
+        "/images/project-nogal.jpg",
+        "/images/project-olivo.jpg"
+      ],
+      "options": [
+        { "name": "Remodelación Integral", "description": "Intervención de áreas sociales, cocinas y baños completos." },
+        { "name": "Actualización de Áreas Clave", "description": "Renovación estética focalizada con alto impacto visual." }
+      ],
+      "subcategories": [
+        {
+          "title": "Remodelación de Baños",
+          "image": "/images/bathroom-remodel.jpg",
+          "description": "Acabados en piedra natural, nichos iluminados y griferías empotradas.",
+          "whatsappMessage": "Hola Filippo, me interesa cotizar la remodelación de mi baño."
+        },
+        {
+          "title": "Remodelación de Cocinas",
+          "image": "/images/kitchen-hero.jpg",
+          "description": "Apertura de muros hacia el área social y muebles a medida.",
+          "whatsappMessage": "Hola Filippo, me interesa cotizar la remodelación de mi cocina."
+        },
+        {
+          "title": "Patios & Terrazas",
+          "image": "/images/patio-terrace.jpg",
+          "description": "Decks en madera noble, pérgolas arquitectónicas y zonas BBQ.",
+          "whatsappMessage": "Hola Filippo, me interesa cotizar la remodelación de mi patio/terraza."
+        },
+        {
+          "title": "Remodelación Integral",
+          "image": "/images/project-lino.jpg",
+          "description": "Dirección integral de obra y rediseño espacial completo.",
+          "whatsappMessage": "Hola Filippo, quiero cotizar la remodelación integral de mi vivienda."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "¿Cómo se gestionan los tiempos de obra?",
+          "answer": "Definimos un cronograma semanal por contrato con hitos de avance claros."
+        }
+      ],
+      "seoTitle": "Remodelación Arquitectónica Residencial | Filippo",
+      "seoDescription": "Remodelaciones integrales de alta gama con dirección técnica y acabados impecables."
+    },
+    {
+      "id": "prod-carpinteria",
+      "slug": "carpinteria-arquitectonica",
+      "title": "Carpintería Arquitectónica",
+      "shortDescription": "Puertas de paso, paneles alistonados, vestieres y muebles fijos de autor.",
+      "tagline": "Detalles en madera que unifican el diseño de toda tu residencia",
+      "image": "/images/project-castano.jpg",
+      "published": true,
+      "order": 4,
+      "whatsappMessage": "Hola Filippo, me gustaría cotizar carpintería arquitectónica a medida.",
+      "features": [
+        "Puertas piso-techo con bisagras invisibles",
+        "Panelados alistonados y muros revestidos en madera",
+        "Walk-in closets y vestieres optimizados",
+        "Ensambles precisos con acabado mate al tacto natural"
+      ],
+      "gallery": [
+        "/images/project-castano.jpg",
+        "/images/project-aliso.jpg",
+        "/images/project-olivo.jpg"
+      ],
+      "options": [
+        { "name": "Puertas de Paso de Autor", "description": "Sistemas pivotantes y enrasados a muro." },
+        { "name": "Vestieres & Closets", "description": "Iluminación integrada LED 2700K y herrajes premium." },
+        { "name": "Panelados Acústicos y Decorativos", "description": "Revestimientos cálidos en roble y nogal." }
+      ],
+      "faqs": [
+        {
+          "question": "¿Qué tipo de maderas utilizan?",
+          "answer": "Chapillas naturales de roble, nogal, cedro y laqueados poliuretánicos ultramate."
+        }
+      ],
+      "seoTitle": "Carpintería Arquitectónica a Medida | Filippo",
+      "seoDescription": "Mobiliario fijo, vestieres, paneles alistonados y puertas de paso contemporáneas."
+    },
+    {
+      "id": "prod-renders",
+      "slug": "renders-arquitectonicos",
+      "title": "Renders & Modelado 3D",
+      "shortDescription": "Visualización fotorrealista para arquitectos, constructoras y clientes residenciales.",
+      "tagline": "Experimenta y valida tu proyecto antes de colocar el primer ladrillo",
+      "image": "/images/project-carrara.jpg",
+      "published": true,
+      "order": 5,
+      "whatsappMessage": "Hola Filippo, quiero consultar el servicio de renders y modelado 3D.",
+      "features": [
+        "Renders fotorrealistas de alta resolución 4K",
+        "Estudios de iluminación natural y artificial precisa",
+        "Muestras de materiales y texturas reales en escena",
+        "Entrega ágil para presentaciones y aprobaciones de diseño"
+      ],
+      "gallery": [
+        "/images/project-carrara.jpg",
+        "/images/project-lino.jpg"
+      ],
+      "options": [
+        { "name": "Renders de Interiores", "description": "Perspectivas inmersivas de cocinas, salas y alcobas." },
+        { "name": "Renders de Fachadas y Exteriores", "description": "Integración con paisajismo y entorno lumínico." }
+      ],
+      "faqs": [
+        {
+          "question": "¿Qué necesito enviar para cotizar los renders?",
+          "answer": "Plano en PDF o DWG, o boceto con las medidas básicas y referencias de acabados."
+        }
+      ],
+      "seoTitle": "Renders y Modelado 3D Arquitectónico | Filippo",
+      "seoDescription": "Servicio de renderizado hiperrealista 3D para proyectos residenciales y comerciales."
+    }
+  ]
 }

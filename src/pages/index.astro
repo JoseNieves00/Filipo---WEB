@@ -24,9 +24,10 @@ import Footer from '../components/navigation/Footer.astro';
 
 // Secciones modulares de la landing page
 import Hero from '../components/sections/Hero.astro';
+import ProductCatalog from '../components/sections/ProductCatalog.astro';
+import WhyUs from '../components/sections/WhyUs.astro';
 import Services from '../components/sections/Services.astro';
 import Gallery from '../components/sections/Gallery.astro';
-import Process from '../components/sections/Process.astro';
 import Testimonials from '../components/sections/Testimonials.astro';
 import Faq from '../components/sections/Faq.astro';
 import ContactForm from '../components/sections/ContactForm.astro';
@@ -50,22 +51,25 @@ import siteContent from '../data/siteContent.json';
     <!-- 1. Hero: Titular claro, propuesta de valor y primer botón a WhatsApp -->
     <Hero />
 
-    <!-- 2. Servicios: 4 pilares de diseño arquitectónico y fabricación -->
-    <Services />
+    <!-- 2. Catálogo de productos: Tarjetas con beneficio, enlace dedicado y botón de cotizar -->
+    <ProductCatalog />
 
-    <!-- 3. Galería de proyectos: Cocinas realizadas con filtros y consulta WhatsApp -->
+    <!-- 3. Por qué elegirnos: Ventajas clave y fabricación sin intermediarios -->
+    <WhyUs />
+
+    <!-- 4. Galería de proyectos: Casos reales ejecutados -->
     <Gallery />
 
-    <!-- 4. Proceso de trabajo: De la idea a la cocina instalada en 4 pasos -->
-    <Process />
+    <!-- 5. Qué hacemos: Enfoque integral y selección material -->
+    <Services />
 
-    <!-- 5. Testimonios: Prueba social con reseñas reales de clientes -->
+    <!-- 6. Testimonios: Prueba social con reseñas reales de clientes -->
     <Testimonials />
 
-    <!-- 6. Preguntas frecuentes: Acordeón para resolver objeciones de compra -->
+    <!-- 7. Preguntas frecuentes: Acordeón para resolver objeciones de compra -->
     <Faq />
 
-    <!-- 7. Contacto: Formulario interactivo con conversor directo a WhatsApp -->
+    <!-- 8. Contacto: Formulario interactivo con conversor directo a WhatsApp -->
     <ContactForm />
   </main>
 

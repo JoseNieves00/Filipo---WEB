@@ -1,0 +1,66 @@
+---
+/**
+ * ==============================================================================
+ * FILIPPO | SECCIÓN: WhyUs.astro
+ * ------------------------------------------------------------------------------
+ * PROPÓSITO:
+ * Sección "Por qué elegirnos / Ventajas clave". Sustituye el antiguo bloque de
+ * procesos por una propuesta de valor enfocada en generar confianza y cerrar ventas:
+ * fabricación directa sin intermediarios, materiales nobles y garantía real.
+ *
+ * RELACIÓN:
+ * Consume `whyUs` de `src/data/siteContent.json`. Se renderiza en `src/pages/index.astro`.
+ * ==============================================================================
+ */
+
+import siteContent from '../../data/siteContent.json';
+import SectionHeader from '../common/SectionHeader.astro';
+
+const { whyUs } = siteContent;
+---
+
+<section id="por-que-elegirnos" class="py-20 md:py-28 bg-filippo-white border-t border-filippo-stone/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <SectionHeader
+      kicker={whyUs.kicker}
+      title={whyUs.title}
+      description={whyUs.description}
+      align="center"
+    />
+
+    <!-- Cuadrícula de 4 ventajas competitivas -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {whyUs.items.map((item) => (
+        <div class="bg-filippo-linen/40 rounded-2xl p-8 border border-filippo-stone/60 hover:border-filippo-oak/60 transition-all duration-300 flex flex-col justify-between group hover:shadow-card">
+          
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-serif text-3xl font-bold text-filippo-oak">
+                {item.number}
+              </span>
+              <span class="w-2.5 h-2.5 rounded-full bg-filippo-stone/60 group-hover:bg-filippo-oak transition-colors"></span>
+            </div>
+
+            <h3 class="text-xl font-serif font-bold text-filippo-charcoal mb-3 group-hover:text-filippo-oak transition-colors">
+              {item.title}
+            </h3>
+
+            <p class="text-sm text-filippo-muted leading-relaxed font-light">
+              {item.description}
+            </p>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-filippo-stone/40 flex items-center gap-2 text-xs text-filippo-charcoal/80 font-medium">
+            <svg class="w-4 h-4 text-filippo-oak shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Compromiso Filippo</span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
