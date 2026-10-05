@@ -35,7 +35,7 @@
     "heroImageAlt": "Cocina contemporánea Filippo con isla en travertino y carpintería de roble natural",
     "stats": [
       { "value": "150+", "label": "Cocinas instaladas" },
-      { "value": "10 años", "label": "Garantía europea" },
+      { "value": "10 años", "label": "Garantía" },
       { "value": "100%", "label": "Diseño a medida" }
     ]
   },
@@ -78,19 +78,10 @@
     "kicker": "PORTAFOLIO DE AUTOR",
     "title": "Proyectos realizados con carácter atemporal",
     "description": "Explora algunas de las cocinas que hemos diseñado e instalado para clientes que aprecian la sobriedad, la calidez y el detalle.",
-    "categories": [
-      { "id": "all", "label": "Todos los estilos" },
-      { "id": "minimalista", "label": "Minimalismo Cálido" },
-      { "id": "madera-piedra", "label": "Madera & Piedra" },
-      { "id": "isla-central", "label": "Isla Central" },
-      { "id": "abierta", "label": "Abierta al Salón" }
-    ],
     "projects": [
       {
         "id": "casa-aliso",
         "title": "Residencia Aliso",
-        "category": "minimalista",
-        "categoryLabel": "Minimalismo Cálido",
         "image": "/images/project-aliso.jpg",
         "imageAlt": "Cocina minimalista cálida con gabinetes lisos y luz indirecta",
         "description": "Cocina lineal con isla monolítica en travertino y carpintería sin tiradores en roble europeo blanqueado.",
@@ -100,8 +91,6 @@
       {
         "id": "villa-castano",
         "title": "Villa Castaño",
-        "category": "madera-piedra",
-        "categoryLabel": "Madera & Piedra",
         "image": "/images/project-castano.jpg",
         "imageAlt": "Cocina con encimera de cuarzo y muebles en nogal oscuro",
         "description": "Fusión de texturas ricas: nogal canaletto con mesones en superficie sinterizada efecto calacatta y grifería en latón bruñido.",
@@ -111,8 +100,6 @@
       {
         "id": "loft-nogal",
         "title": "Ático Nogal",
-        "category": "isla-central",
-        "categoryLabel": "Isla Central",
         "image": "/images/project-nogal.jpg",
         "imageAlt": "Isla central en granito negro satinado con barra en madera cálida",
         "description": "Una imponente isla de 3.8 metros como eje social de la vivienda, con placa de inducción empotrada y campana integrada a ras de techo.",
@@ -122,8 +109,6 @@
       {
         "id": "residencia-lino",
         "title": "Casa Lino",
-        "category": "abierta",
-        "categoryLabel": "Abierta al Salón",
         "image": "/images/project-lino.jpg",
         "imageAlt": "Cocina abierta integrada al comedor con detalles en madera clara",
         "description": "Transición fluida hacia el salón comedor. Columnas de electrodomésticos ocultas tras puertas escamoteables de apertura total.",
@@ -133,8 +118,6 @@
       {
         "id": "penthouse-carrara",
         "title": "Penthouse Carrara",
-        "category": "minimalista",
-        "categoryLabel": "Minimalismo Cálido",
         "image": "/images/project-carrara.jpg",
         "imageAlt": "Cocina moderna con frentes lacados blanco hueso y mesón continuo",
         "description": "Paleta serena y luminosa con acabados lacados ultramate antihuelectas y repisas flotantes con iluminación LED cálida 2700K.",
@@ -144,8 +127,6 @@
       {
         "id": "finca-olivo",
         "title": "Finca El Olivo",
-        "category": "madera-piedra",
-        "categoryLabel": "Madera & Piedra",
         "image": "/images/project-olivo.jpg",
         "imageAlt": "Cocina de campo moderna con detalles en microcemento y madera rústica cepillada",
         "description": "Interpretación contemporánea de la cocina campestre: madera maciza tratada al aceite vegetal y mesón de cuarcita rústica.",

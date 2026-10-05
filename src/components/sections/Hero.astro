@@ -22,6 +22,17 @@ import { getWhatsAppUrl } from '../../utils/whatsapp';
 import Button from '../common/Button.astro';
 
 const heroWaUrl = getWhatsAppUrl(siteContent.whatsapp.defaultMessages.hero);
+
+// ==============================================================================
+// // EDITAR: Métricas y cifras destacadas de confianza en el Hero.
+// Puedes cambiar directamente aquí los números o etiquetas en código según lo requieras.
+// Por ejemplo: 'Garantía', 'Garantía de por vida', '10 años', etc.
+// ==============================================================================
+const heroStats = siteContent.hero?.stats || [
+  { value: "150+", label: "Cocinas instaladas" },
+  { value: "10 años", label: "Garantía" }, // EDITAR: Modifica la etiqueta de garantía aquí
+  { value: "100%", label: "Diseño a medida" }
+];
 ---
 
 <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-filippo-linen">
@@ -80,9 +91,9 @@ const heroWaUrl = getWhatsAppUrl(siteContent.whatsapp.defaultMessages.hero);
           </Button>
         </div>
 
-        <!-- Cifras destacadas / Social Proof métrico -->
+        <!-- Cifras destacadas / Social Proof métrico (EDITAR en heroStats arriba) -->
         <div class="grid grid-cols-3 gap-4 pt-6 border-t border-filippo-stone/60 max-w-lg mx-auto lg:mx-0">
-          {siteContent.hero.stats.map((stat) => (
+          {heroStats.map((stat) => (
             <div>
               <p class="font-serif text-2xl sm:text-3xl font-bold text-filippo-charcoal">
                 {stat.value}
@@ -111,18 +122,7 @@ const heroWaUrl = getWhatsAppUrl(siteContent.whatsapp.defaultMessages.hero);
             <div class="absolute inset-0 bg-gradient-to-t from-filippo-charcoal/40 via-transparent to-transparent opacity-60"></div>
           </div>
 
-          <!-- Tarjeta flotante de prueba social integrada -->
-          <div class="absolute -bottom-6 -left-4 sm:-left-6 bg-filippo-white/95 backdrop-blur-md p-4 rounded-xl shadow-lg border border-filippo-stone/80 max-w-[260px]">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-filippo-linen flex items-center justify-center text-filippo-oak font-serif font-bold text-lg border border-filippo-stone">
-                F
-              </div>
-              <div>
-                <p class="text-xs font-semibold text-filippo-charcoal">Showroom Abierto</p>
-                <p class="text-[11px] text-filippo-muted">Asesoría de diseño sin costo</p>
-              </div>
-            </div>
-          </div>
+          
 
         </div>
       </div>

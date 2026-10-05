@@ -323,22 +323,6 @@ if (!sessionCookie || sessionCookie.value !== 'filippo_studio_secret_token_sessi
 
           <div>
             <label class="block text-xs uppercase tracking-wider font-semibold text-filippo-charcoal mb-2">
-              Estilo / Categoría *
-            </label>
-            <select
-              id="new-proj-category"
-              required
-              class="w-full px-4 py-3 rounded-xl bg-filippo-linen/50 border border-filippo-stone/80 text-sm"
-            >
-              <option value="minimalista">Minimalismo Cálido</option>
-              <option value="madera-piedra">Madera & Piedra</option>
-              <option value="isla-central">Isla Central</option>
-              <option value="abierta">Abierta al Salón</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-xs uppercase tracking-wider font-semibold text-filippo-charcoal mb-2">
               Ubicación *
             </label>
             <input
@@ -416,7 +400,6 @@ if (!sessionCookie || sessionCookie.value !== 'filippo_studio_secret_token_sessi
                 <img src={p.image} alt={p.title} class="w-full h-40 object-cover" />
                 <div class="p-4">
                   <h4 class="font-serif font-bold text-base text-filippo-charcoal">{p.title}</h4>
-                  <span class="inline-block text-[10px] uppercase font-semibold text-filippo-oak mt-0.5">{p.categoryLabel}</span>
                   <p class="text-xs text-filippo-muted mt-2 line-clamp-2">{p.description}</p>
                 </div>
               </div>
@@ -682,15 +665,9 @@ if (!sessionCookie || sessionCookie.value !== 'filippo_studio_secret_token_sessi
           }
 
           // 2. Crear objeto del proyecto
-          const categorySelect = document.getElementById('new-proj-category');
-          const categoryId = categorySelect.value;
-          const categoryLabel = categorySelect.options[categorySelect.selectedIndex].text;
-
           const newProject = {
             id: 'proj-' + Date.now(),
             title: document.getElementById('new-proj-title').value.trim(),
-            category: categoryId,
-            categoryLabel: categoryLabel,
             image: uploadData.url,
             imageAlt: `Cocina Filippo modelo ${document.getElementById('new-proj-title').value.trim()}`,
             description: document.getElementById('new-proj-desc').value.trim() || 'Proyecto de cocina a medida diseñado e instalado por Filippo.',
