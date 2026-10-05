@@ -73,9 +73,7 @@ const relatedProducts = products
       <!-- Centro: Logotipo centrado (conservando position: relative según indicación) -->
       <div class=" left-1/2 -translate-x-1/2 flex flex-col items-center z-0 pointer-events-none">
         <a href="/" class="inline-flex flex-col items-center group focus:outline-none pointer-events-auto" aria-label="Ir al inicio de Filippo">
-          {siteContent.brand.logoUrl ? (
-            <img src={siteContent.brand.logoUrl} alt={siteContent.brand.name} class="h-7 w-auto object-contain" />
-          ) : (
+         (
             <div class="flex flex-col items-center leading-none">
               <span class="font-serif text-xl tracking-[0.2em] text-filippo-charcoal uppercase font-bold group-hover:text-filippo-oak transition-colors">
                 {siteContent.brand.name}

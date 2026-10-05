@@ -11,17 +11,17 @@
     "schedule": "Lunes a Viernes: 9:00 AM - 6:00 PM | Sábados con cita previa",
     "social": {
       "instagram": "https://instagram.com/filippococinas",
-      "pinterest": "https://pinterest.com/filippococinas",
-      "houzz": "https://houzz.com"
+      "facebook": "https://facebook.com/filippococinas",
+      "tiktok": "https://tiktok.com/@filippococinas"
     }
   },
   "whatsapp": {
     "number": "573004567890",
     "defaultMessages": {
-      "general": "Hola Filippo, me interesa conocer más sobre sus servicios de diseño de cocinas.",
-      "hero": "Hola Filippo, me gustaría agendar una asesoría para diseñar mi nueva cocina.",
+      "general": "Hola Filippo, me interesa conocer más sobre sus servicios de diseño de interiores.",
+      "hero": "Hola Filippo, me gustaría agendar una asesoría para diseñar mi nueva proyecto",
       "projectInquiry": "Hola Filippo, vi el proyecto '{projectName}' en su web y quisiera consultar si podemos hacer algo similar para mi espacio.",
-      "floatingButton": "Hola Filippo, tengo algunas preguntas sobre el diseño de mi cocina y quisiera hablar con un asesor.",
+      "floatingButton": "Hola Filippo, tengo algunas preguntas y quisiera hablar con un asesor.",
       "formTemplate": "Hola Filippo, mi nombre es {name}. Mi proyecto es una {projectType} en {city}. Comentarios adicionales: {comments}."
     }
   },
