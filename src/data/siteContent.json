@@ -30,12 +30,12 @@
     "subheadline": "Unimos arquitectura depurada, materiales nobles y fabricación de precisión para crear cocinas contemporáneas donde la funcionalidad se convierte en arte cotidiano.",
     "ctaText": "Conversar por WhatsApp",
     "ctaSecondaryText": "Explorar proyectos",
-    "badgeText": "Fabricación propia con 10 años de garantía estructural",
+    "badgeText": "Fabricación propia con diseño duradero",
     "heroImage": "/images/kitchen-hero.jpg",
     "heroImageAlt": "Cocina contemporánea Filippo con isla en travertino y carpintería de roble natural",
     "stats": [
       { "value": "150+", "label": "Cocinas instaladas" },
-      { "value": "10 años", "label": "Garantía" },
+      { "value": "10 años", "label": "Experiencia en diseño" },
       { "value": "100%", "label": "Diseño a medida" }
     ]
   },
@@ -75,7 +75,7 @@
     ]
   },
   "gallery": {
-    "kicker": "PORTAFOLIO DE AUTOR",
+    "kicker": "PORTAFOLIO DE PROYECTOS",
     "title": "Proyectos realizados con carácter atemporal",
     "description": "Explora algunas de las cocinas que hemos diseñado e instalado para clientes que aprecian la sobriedad, la calidez y el detalle.",
     "projects": [
@@ -292,6 +292,7 @@
       "slug": "cocinas",
       "title": "Cocinas a Medida",
       "shortDescription": "Diseño arquitectónico, materiales nobles y herrajes europeos de cierre silencioso.",
+      "badgeText": "diseño exclusivo y a medida",
       "tagline": "El corazón de tu hogar diseñado para habitar y perdurar",
       "image": "/images/kitchen-hero.jpg",
       "published": true,
@@ -332,6 +333,7 @@
       "slug": "puertas-blindadas",
       "title": "Puertas Blindadas",
       "shortDescription": "Máxima seguridad certificada con diseño arquitectónico y acabados de lujo.",
+      "badgeText": "diseño exclusivo y a medida",
       "tagline": "Protege lo que más valoras sin renunciar a la elegancia arquitectónica",
       "image": "/images/project-aliso.jpg",
       "published": true,
@@ -371,6 +373,7 @@
       "slug": "remodelacion-arquitectonica",
       "title": "Remodelación Arquitectónica",
       "shortDescription": "Transformación integral de espacios con dirección técnica de obra y acabados premium.",
+      "badgeText": "diseño exclusivo y a medida",
       "tagline": "Renovación total de ambientes residenciales con control riguroso de tiempos",
       "image": "/images/project-lino.jpg",
       "published": true,
@@ -423,7 +426,7 @@
           "answer": "Definimos un cronograma semanal por contrato con hitos de avance claros."
         }
       ],
-      "seoTitle": "Remodelación Arquitectónica Residencial | Filippo",
+      "seoTitle": "Remodelación Arquitectónica Residencial",
       "seoDescription": "Remodelaciones integrales de alta gama con dirección técnica y acabados impecables."
     },
     {
@@ -431,6 +434,7 @@
       "slug": "carpinteria-arquitectonica",
       "title": "Carpintería Arquitectónica",
       "shortDescription": "Puertas de paso, paneles alistonados, vestieres y muebles fijos de autor.",
+      "badgeText": "diseño exclusivo y a medida",
       "tagline": "Detalles en madera que unifican el diseño de toda tu residencia",
       "image": "/images/project-castano.jpg",
       "published": true,
@@ -466,6 +470,7 @@
       "slug": "renders-arquitectonicos",
       "title": "Renders & Modelado 3D",
       "shortDescription": "Visualización fotorrealista para arquitectos, constructoras y clientes residenciales.",
+      "badgeText": "diseño exclusivo y a medida",
       "tagline": "Experimenta y valida tu proyecto antes de colocar el primer ladrillo",
       "image": "/images/project-carrara.jpg",
       "published": true,
