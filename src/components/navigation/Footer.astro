@@ -29,9 +29,7 @@ const currentYear = new Date().getFullYear();
         <span class="font-serif text-3xl tracking-widest text-white uppercase font-bold block">
           {siteContent.brand.name}
         </span>
-        <span class="text-[10px] tracking-[0.25em] text-filippo-oak uppercase font-medium block -mt-2">
-          STUDIO DE COCINAS
-        </span>
+
         <p class="text-sm text-filippo-stone/70 leading-relaxed font-light pt-2">
           {siteContent.brand.description}
         </p>
@@ -43,12 +41,12 @@ const currentYear = new Date().getFullYear();
           Navegación
         </h4>
         <ul class="space-y-2.5 text-sm text-filippo-stone/80">
-          <li><a href="#productos" class="hover:text-white transition-colors">Productos</a></li>
-          <li><a href="#por-que-elegirnos" class="hover:text-white transition-colors">Por qué elegirnos</a></li>
-          <li><a href="#galeria" class="hover:text-white transition-colors">Proyectos Realizados</a></li>
-          <li><a href="#testimonios" class="hover:text-white transition-colors">Testimonios</a></li>
-          <li><a href="#faq" class="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
-          <li><a href="#contacto" class="hover:text-white transition-colors">Agendar Cita</a></li>
+          <li><a href="/#productos" class="hover:text-white transition-colors">Productos</a></li>
+          <li><a href="/#por-que-elegirnos" class="hover:text-white transition-colors">Por qué elegirnos</a></li>
+          <li><a href="/#galeria" class="hover:text-white transition-colors">Proyectos Realizados</a></li>
+          <li><a href="/#testimonios" class="hover:text-white transition-colors">Testimonios</a></li>
+          <li><a href="/#faq" class="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
+          <li><a href="/#contacto" class="hover:text-white transition-colors">Agendar Cita</a></li>
         </ul>
       </div>
 
@@ -115,24 +113,13 @@ const currentYear = new Date().getFullYear();
 
     </div>
 
-    <!-- Barra inferior: Copyright y acceso al panel de administración -->
+    <!-- Barra inferior: Copyright -->
     <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-filippo-stone/60 gap-4">
       <p>
         © {currentYear} {siteContent.brand.legalName}. Todos los derechos reservados.
       </p>
       <div class="flex items-center gap-6">
-        <span>Diseñado para habitar.</span>
-        <!-- Enlace discreto al panel CMS para que el cliente lo tenga siempre accesible -->
-        <a
-          href="/admin"
-          class="text-filippo-stone/40 hover:text-filippo-oak transition-colors flex items-center gap-1"
-          title="Panel de administración de contenidos"
-        >
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-          </svg>
-          <span>Acceso Privado</span>
-        </a>
+
       </div>
     </div>
   </div>

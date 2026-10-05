@@ -20,15 +20,10 @@
 
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import node from '@astrojs/node';
 
-// EDITAR: Si se despliega en Vercel, Netlify o Cloudflare, se puede cambiar el adaptador aquí.
-// EXTENDER: Aquí se pueden agregar integraciones como @astrojs/sitemap o analytics.
+// EDITAR: Sitio 100% estático, ultra rápido y listo para desplegar en Vercel, Netlify o GitHub Pages.
 export default defineConfig({
-  output: 'server', // Habilita SSR para el panel de control y API endpoints
-  adapter: node({
-    mode: 'standalone'
-  }),
+  output: 'static',
   integrations: [
     tailwind({
       applyBaseStyles: false // Controlamos los estilos base desde src/styles/global.css

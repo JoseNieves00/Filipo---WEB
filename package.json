@@ -10,7 +10,6 @@
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
   },
   "dependencies": {
-    "@astrojs/node": "^9.0.0",
     "@astrojs/tailwind": "^5.1.4",
     "astro": "^5.0.0",
     "tailwindcss": "^3.4.17"

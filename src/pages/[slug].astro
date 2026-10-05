@@ -18,22 +18,25 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/navigation/Footer.astro';
 import LightboxModal from '../components/widgets/LightboxModal.astro';
+import WhatsAppFloat from '../components/widgets/WhatsAppFloat.astro';
 import SectionHeader from '../components/common/SectionHeader.astro';
 import Button from '../components/common/Button.astro';
 import siteContent from '../data/siteContent.json';
 import { getWhatsAppUrl } from '../utils/whatsapp';
 
-// Obtener el slug de la URL
-const { slug } = Astro.params;
-
-// Buscar el producto correspondiente
-const products = siteContent.products || [];
-const product = products.find((p) => p.slug === slug && p.published);
-
-// Redirigir si no existe
-if (!product) {
-  return Astro.redirect('/');
+// Generar rutas estáticas para cada producto publicado
+export async function getStaticPaths() {
+  const products = siteContent.products || [];
+  return products
+    .filter((product) => product.published)
+    .map((product) => ({
+      params: { slug: product.slug },
+      props: { product },
+    }));
 }
+
+const { product } = Astro.props;
+const products = siteContent.products || [];
 
 // Enlace de WhatsApp principal con mensaje personalizado del producto
 const productWaUrl = getWhatsAppUrl(
@@ -51,62 +54,102 @@ const relatedProducts = products
   description={product.seoDescription || product.shortDescription}
   ogImage={product.image}
 >
-  <!-- Cabecera mínima: navegación directa sin distracciones -->
+  <!-- Cabecera: flex justify-between + mayor padding horizontal para alejar de esquinas -->
   <header class="sticky top-0 z-40 w-full glass-header border-b border-filippo-charcoal/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <a href="/" class="text-xs uppercase tracking-wider font-semibold text-filippo-muted hover:text-filippo-charcoal flex items-center gap-1.5 transition-colors">
+    <div class=" px-8 sm:px-12 lg:px-20 h-20 relative flex items-center justify-between">
+
+      <!-- Izquierda: Navegación / Migas de pan -->
+      <div class="flex items-center gap-2 min-w-0 z-10">
+        <a href="/" class="text-xs uppercase tracking-wider font-semibold text-filippo-muted hover:text-filippo-charcoal flex items-center gap-1.5 transition-colors shrink-0">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
-          <span>Inicio</span>
+          <span class="hidden sm:inline">Inicio</span>
         </a>
-        <span class="text-filippo-stone/80">/</span>
-        <span class="text-xs font-semibold text-filippo-charcoal">{product.title}</span>
+        <span class="text-filippo-stone/80 text-xs hidden sm:inline shrink-0">/</span>
+        <span class="text-xs font-semibold text-filippo-charcoal max-w-[80px] sm:max-w-[160px] md:max-w-[260px] truncate">{product.title}</span>
       </div>
 
-      <!-- Botón de cotizar en la barra superior -->
-      <a
-        href={productWaUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full transition-all shadow-sm"
-      >
-        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-        </svg>
-        <span>Cotizar</span>
-      </a>
+      <!-- Centro: Logotipo centrado (conservando position: relative según indicación) -->
+      <div class=" left-1/2 -translate-x-1/2 flex flex-col items-center z-0 pointer-events-none">
+        <a href="/" class="inline-flex flex-col items-center group focus:outline-none pointer-events-auto" aria-label="Ir al inicio de Filippo">
+          {siteContent.brand.logoUrl ? (
+            <img src={siteContent.brand.logoUrl} alt={siteContent.brand.name} class="h-7 w-auto object-contain" />
+          ) : (
+            <div class="flex flex-col items-center leading-none">
+              <span class="font-serif text-xl tracking-[0.2em] text-filippo-charcoal uppercase font-bold group-hover:text-filippo-oak transition-colors">
+                {siteContent.brand.name}
+              </span>
+            </div>
+          )}
+        </a>
+      </div>
+
+      <!-- Derecha: Botón cotizar al extremo derecho exacto del contenedor -->
+      <div class="z-10 shrink-0">
+        <a
+          href={productWaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-full transition-all shadow-sm"
+        >
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+          </svg>
+          <span>Cotizar</span>
+        </a>
+      </div>
+
     </div>
   </header>
 
   <main class="pb-24 md:pb-0">
-    <!-- 1. HERO VISUAL DE IMPACTO -->
-    <section class="relative pt-10 pb-16 md:pt-16 md:pb-24 bg-filippo-linen overflow-hidden">
+    <!-- 1. HERO ENFOCADO EN VENTAS (SPLIT LAYOUT) -->
+    <section class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden bg-filippo-linen/30">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
-          <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
-            <span class="inline-block text-xs font-semibold uppercase tracking-widest-caps text-filippo-oak">
-              LÍNEA DE DISEÑO & AUTOR
-            </span>
+          <!-- Columna Izquierda: Copy de Ventas y CTA -->
+          <div class="space-y-8 text-center lg:text-left z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-filippo-charcoal/5 border border-filippo-charcoal/10">
+              <span class="w-2 h-2 rounded-full bg-filippo-oak animate-pulse"></span>
+              <span class="text-xs font-semibold uppercase tracking-widest text-filippo-charcoal">
+                DISEÑO EXCLUSIVO Y A MEDIDA
+              </span>
+            </div>
 
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-filippo-charcoal tracking-tight leading-[1.12]">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-filippo-charcoal tracking-tight leading-[1.1]">
               {product.title}
             </h1>
 
-            <p class="text-lg text-filippo-muted leading-relaxed font-light max-w-xl mx-auto lg:mx-0">
+            <p class="text-lg md:text-xl text-filippo-charcoal/80 leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
               {product.tagline || product.shortDescription}
             </p>
 
+            <!-- Lista de beneficios rápidos (Social Proof / Trust) -->
+            <ul class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start text-sm font-medium text-filippo-charcoal/90 mt-4">
+              <li class="flex items-center justify-center lg:justify-start gap-2">
+                <svg class="w-5 h-5 text-filippo-oak" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Asesoría personalizada
+              </li>
+              <li class="flex items-center justify-center lg:justify-start gap-2">
+                <svg class="w-5 h-5 text-filippo-oak" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Materiales Premium
+              </li>
+              <li class="flex items-center justify-center lg:justify-start gap-2">
+                <svg class="w-5 h-5 text-filippo-oak" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Instalación experta
+              </li>
+            </ul>
+
             <!-- Botón de cotizar destacado en Hero -->
-            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Button
                 href={productWaUrl}
                 variant="wa"
                 size="lg"
                 isExternal={true}
-                className="w-full sm:w-auto shadow-md"
+                className="w-full sm:w-auto shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
               >
                 <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
                   <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
@@ -114,30 +157,25 @@ const relatedProducts = products
                 <span>Cotizar por WhatsApp</span>
               </Button>
             </div>
-            <p class="text-xs text-filippo-muted">
-              ✓ Fabricación a medida · Respuesta rápida · Asesoría personalizada
-            </p>
           </div>
 
-          <!-- Fotografía insignia -->
-          <div class="lg:col-span-6">
-            <div class="rounded-2xl overflow-hidden shadow-card aspect-[4/3] bg-filippo-cream">
-              <img
-                src={product.image}
-                alt={product.title}
-                class="w-full h-full object-cover"
-                loading="eager"
-              />
-            </div>
+          <!-- Columna Derecha: Imagen Visual de Alto Impacto -->
+          <div class="relative lg:h-[600px] w-full z-10 group">
+            <div class="absolute inset-0 bg-filippo-charcoal/5 transform translate-x-4 translate-y-4 -z-10 transition-transform group-hover:translate-x-6 group-hover:translate-y-6"></div>
+            <img
+              src={product.image}
+              alt={product.title}
+              class="w-full h-full object-cover object-center shadow-lg transition-transform duration-700 group-hover:scale-[1.02]"
+              loading="eager"
+            />
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- 2. SUBCATEGORÍAS VISUALES (ESPECIAL PARA REMODELACIÓN Y PRODUCTOS CON MÚLTIPLES ÁREAS) -->
     {product.subcategories && product.subcategories.length > 0 && (
-      <section class="py-16 md:py-24 bg-filippo-white border-t border-filippo-stone/40">
+      <section class="py-20 md:py-28 bg-filippo-white border-t border-filippo-stone/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             kicker="ÁREAS DE ESPECIALIDAD"
@@ -152,37 +190,41 @@ const relatedProducts = products
                 sub.whatsappMessage || `Hola Filippo, me interesa cotizar ${sub.title}.`
               );
               return (
-                <div class="bg-filippo-linen/40 rounded-2xl overflow-hidden border border-filippo-stone/70 shadow-soft hover:shadow-card transition-all duration-300 flex flex-col justify-between group">
+                <article class="bg-filippo-linen/40 rounded-2xl overflow-hidden border border-filippo-stone/70 shadow-soft hover:shadow-card transition-all duration-500 group flex flex-col justify-between">
                   <div>
-                    <div class="aspect-[4/3] overflow-hidden bg-filippo-cream relative">
+                    <div class="block relative aspect-[4/3] overflow-hidden bg-filippo-cream">
                       <img
                         src={sub.image}
                         alt={sub.title}
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                         loading="lazy"
                       />
+                      <div class="absolute inset-0 bg-gradient-to-t from-filippo-charcoal/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
                     </div>
-                    <div class="p-5">
-                      <h3 class="font-serif font-bold text-lg text-filippo-charcoal mb-2 group-hover:text-filippo-oak transition-colors">
+                    <div class="p-6">
+                      <h3 class="text-xl font-serif font-bold text-filippo-charcoal group-hover:text-filippo-oak transition-colors mb-2">
                         {sub.title}
                       </h3>
-                      <p class="text-xs text-filippo-muted leading-relaxed font-light">
+                      <p class="text-sm text-filippo-muted font-light leading-relaxed mb-2">
                         {sub.description}
                       </p>
                     </div>
                   </div>
 
-                  <div class="p-5 pt-0">
+                  <div class="p-6 pt-0">
                     <a
                       href={subWaUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="w-full inline-flex items-center justify-center gap-1.5 bg-whatsapp hover:bg-whatsapp-dark text-white text-xs font-semibold py-2.5 px-3 rounded-xl transition-all shadow-sm"
+                      class="w-full inline-flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-wider py-2.5 px-3 rounded-xl bg-whatsapp hover:bg-whatsapp-dark text-white transition-all shadow-sm text-center"
                     >
-                      <span>Cotizar {sub.title}</span>
+                      <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
+                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                      </svg>
+                      <span>Cotizar</span>
                     </a>
                   </div>
-                </div>
+                </article>
               );
             })}
           </div>
@@ -192,7 +234,7 @@ const relatedProducts = products
 
     <!-- 3. GALERÍA VISUAL DE GRAN FORMATO -->
     {product.gallery && product.gallery.length > 0 && (
-      <section class="py-16 md:py-24 bg-filippo-linen border-t border-filippo-stone/40">
+      <section class="py-20 md:py-28 bg-filippo-linen border-t border-filippo-stone/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             kicker="PORTAFOLIO FOTOGRÁFICO"
@@ -246,7 +288,7 @@ const relatedProducts = products
 
     <!-- 4. ACABADOS / MODELOS VISUALES -->
     {product.options && product.options.length > 0 && (
-      <section class="py-16 md:py-24 bg-filippo-white border-t border-filippo-stone/40">
+      <section class="py-20 md:py-28 bg-filippo-white border-t border-filippo-stone/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             kicker="ACABADOS Y CONFIGURACIONES"
@@ -270,7 +312,7 @@ const relatedProducts = products
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold py-2.5 px-4 rounded-xl border border-filippo-charcoal/30 text-filippo-charcoal hover:bg-filippo-charcoal hover:text-white transition-all text-center"
-                >
+                >        
                   Consultar {opt.name}
                 </a>
               </div>
@@ -282,26 +324,51 @@ const relatedProducts = products
 
     <!-- 5. PREGUNTAS FRECUENTES BREVES -->
     {product.faqs && product.faqs.length > 0 && (
-      <section class="py-16 md:py-20 bg-filippo-cream/40 border-t border-filippo-stone/40">
+      <section class="py-20 md:py-28 bg-filippo-white border-t border-filippo-stone/40">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             kicker="PREGUNTAS HABITUALES"
-            title={`Dudas frecuentes`}
+            title={`Dudas frecuentes sobre ${product.title}`}
+            description="Resolvemos tus preguntas sobre personalización, acabados y tiempos de entrega."
             align="center"
           />
 
           <div class="space-y-4">
             {product.faqs.map((faqItem) => (
-              <details class="group bg-filippo-white border border-filippo-stone/70 rounded-xl p-5">
-                <summary class="font-serif font-bold text-base text-filippo-charcoal cursor-pointer list-none flex items-center justify-between gap-4">
-                  <span>{faqItem.question}</span>
-                  <span class="text-filippo-oak group-open:rotate-180 transition-transform">↓</span>
+              <details class="group border border-filippo-stone/70 rounded-xl overflow-hidden bg-filippo-linen/30 transition-all duration-200">
+                <summary class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer list-none focus:outline-none focus:bg-filippo-linen/60">
+                  <span class="font-serif font-semibold text-base sm:text-lg text-filippo-charcoal">
+                    {faqItem.question}
+                  </span>
+                  <span class="text-filippo-oak shrink-0 group-open:rotate-180 transition-transform duration-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
                 </summary>
-                <p class="text-xs sm:text-sm text-filippo-muted font-light leading-relaxed pt-3 border-t border-filippo-stone/30 mt-3">
-                  {faqItem.answer}
-                </p>
+                <div class="px-6 pb-6 pt-1 text-sm sm:text-base text-filippo-muted leading-relaxed font-light border-t border-filippo-stone/30">
+                  <p>{faqItem.answer}</p>
+                </div>
               </details>
             ))}
+          </div>
+
+          <!-- Llamada complementaria a WhatsApp -->
+          <div class="mt-12 text-center bg-filippo-cream/60 p-6 rounded-2xl border border-filippo-stone/60">
+            <p class="text-sm text-filippo-charcoal font-medium mb-3">
+              ¿Tienes una pregunta específica sobre tu espacio o diseño?
+            </p>
+            <a
+              href={productWaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-filippo-oak hover:text-filippo-oak-dark transition-colors"
+            >
+              <span>Consultar directamente a un diseñador por WhatsApp</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -309,7 +376,7 @@ const relatedProducts = products
 
     <!-- 6. OTRAS LÍNEAS RELACIONADAS -->
     {relatedProducts.length > 0 && (
-      <section class="py-16 md:py-24 bg-filippo-linen border-t border-filippo-stone/40">
+      <section class="py-20 md:py-28 bg-filippo-linen border-t border-filippo-stone/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             kicker="EXPLORA MÁS"
@@ -317,30 +384,66 @@ const relatedProducts = products
             align="center"
           />
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {relatedProducts.map((rel) => (
-              <a
-                href={`/${rel.slug}`}
-                class="bg-filippo-white rounded-2xl overflow-hidden border border-filippo-stone/70 hover:shadow-card transition-all duration-300 group block"
-              >
-                <div class="aspect-[4/3] bg-filippo-cream overflow-hidden">
-                  <img
-                    src={rel.image}
-                    alt={rel.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="p-5">
-                  <h3 class="font-serif font-bold text-base text-filippo-charcoal group-hover:text-filippo-oak transition-colors mb-1">
-                    {rel.title}
-                  </h3>
-                  <span class="inline-block text-xs font-semibold text-filippo-oak mt-2">
-                    Ver proyectos →
-                  </span>
-                </div>
-              </a>
-            ))}
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {relatedProducts.map((rel) => {
+              const relWaUrl = getWhatsAppUrl(
+                rel.whatsappMessage || `Hola Filippo, me interesa cotizar ${rel.title}.`
+              );
+              return (
+                <article class="bg-filippo-linen/40 rounded-2xl overflow-hidden border border-filippo-stone/70 shadow-soft hover:shadow-card transition-all duration-500 group flex flex-col justify-between">
+                  <div>
+                    <a href={`/${rel.slug}`} class="block relative aspect-[4/3] overflow-hidden bg-filippo-cream">
+                      <img
+                        src={rel.image}
+                        alt={rel.title}
+                        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                        loading="lazy"
+                      />
+                      <div class="absolute inset-0 bg-gradient-to-t from-filippo-charcoal/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
+                    </a>
+                    <div class="p-6">
+                      <h3 class="text-xl font-serif font-bold text-filippo-charcoal group-hover:text-filippo-oak transition-colors mb-2">
+                        <a href={`/${rel.slug}`}>
+                          {rel.title}
+                        </a>
+                      </h3>
+                      <p class="text-sm text-filippo-muted font-light leading-relaxed mb-6">
+                        {rel.shortDescription}
+                      </p>
+                      {rel.features && rel.features.length > 0 && (
+                        <ul class="space-y-1.5 pt-3 border-t border-filippo-stone/40 mb-2">
+                          {rel.features.slice(0, 2).map((feat) => (
+                            <li class="flex items-center gap-2 text-xs text-filippo-charcoal/80 font-medium">
+                              <span class="w-1.5 h-1.5 rounded-full bg-filippo-oak shrink-0"></span>
+                              <span class="line-clamp-1">{feat}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </div>
+                  <div class="p-6 pt-0 grid grid-cols-2 gap-3">
+                    <a
+                      href={`/${rel.slug}`}
+                      class="inline-flex items-center justify-center text-xs font-semibold uppercase tracking-wider py-2.5 px-3 rounded-xl border border-filippo-charcoal/30 text-filippo-charcoal hover:bg-filippo-charcoal hover:text-white transition-all text-center"
+                    >
+                      Ver más
+                    </a>
+                    <a
+                      href={relWaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-wider py-2.5 px-3 rounded-xl bg-whatsapp hover:bg-whatsapp-dark text-white transition-all shadow-sm text-center"
+                    >
+                      <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
+                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                      </svg>
+                      <span>Cotizar</span>
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -367,5 +470,6 @@ const relatedProducts = products
   </div>
 
   <Footer />
+  <WhatsAppFloat />
   <LightboxModal />
 </Layout>
