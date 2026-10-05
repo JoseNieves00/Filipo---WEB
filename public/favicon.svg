@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#1C1B19"/>
+  <!-- Letra F geométrica refinada en tono roble cálido -->
+  <path d="M22 18 H44 V24 H28 V30 H40 V36 H28 V46 H22 Z" fill="#B88E65"/>
+  <circle cx="44" cy="44" r="3" fill="#E8E2D8"/>
+</svg>

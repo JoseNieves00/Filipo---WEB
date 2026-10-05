@@ -1,0 +1,236 @@
+---
+/**
+ * ==============================================================================
+ * FILIPPO COCINAS | SECCIÓN: ContactForm.astro
+ * ------------------------------------------------------------------------------
+ * PROPÓSITO:
+ * Módulo de conversión y captura de leads. Contiene un formulario breve que
+ * estructura los datos del cliente (nombre, tipo de cocina, ciudad y detalles)
+ * y genera automáticamente el mensaje prellenado para WhatsApp, abriendo
+ * la conversación en un solo clic.
+ *
+ * RELACIÓN:
+ * Consume `src/data/siteContent.json` y la utilidad `src/utils/whatsapp.ts`.
+ * Se monta en `src/pages/index.astro`.
+ * ==============================================================================
+ */
+
+import siteContent from '../../data/siteContent.json';
+import { getWhatsAppUrl } from '../../utils/whatsapp';
+import SectionHeader from '../common/SectionHeader.astro';
+
+const { contact, brand, whatsapp } = siteContent;
+const directWaUrl = getWhatsAppUrl(whatsapp.defaultMessages.general);
+---
+
+<section id="contacto" class="py-20 md:py-28 bg-filippo-linen border-t border-filippo-stone/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <SectionHeader
+      kicker={contact.kicker}
+      title={contact.title}
+      description={contact.description}
+      align="center"
+    />
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Formulario de conversión a WhatsApp (Columna izquierda 7 cols) -->
+      <div class="lg:col-span-7 bg-filippo-white p-8 sm:p-10 rounded-2xl border border-filippo-stone/70 shadow-soft">
+        <h3 class="text-2xl font-serif font-bold text-filippo-charcoal mb-2">
+          Agenda tu asesoría personalizada
+        </h3>
+        <p class="text-sm text-filippo-muted mb-8 font-light">
+          Llena estos breves datos y se abrirá WhatsApp con tu mensaje listo para enviar:
+        </p>
+
+        <form id="whatsapp-lead-form" class="space-y-6">
+          
+          <!-- Campo 1: Nombre completo -->
+          <div>
+            <label for="lead-name" class="block text-xs uppercase tracking-wider font-semibold text-filippo-charcoal mb-2">
+              {contact.form.nameLabel} *
+            </label>
+            <input
+              type="text"
+              id="lead-name"
+              name="name"
+              required
+              placeholder="Ej. Carolina Gómez"
+              class="w-full px-4 py-3 rounded-xl bg-filippo-linen/50 border border-filippo-stone/80 text-filippo-charcoal placeholder-filippo-muted/60 text-sm focus:outline-none focus:border-filippo-charcoal focus:bg-white transition-all"
+            />
+          </div>
+
+          <!-- Campo 2: Tipo de proyecto -->
+          <div>
+            <label for="lead-project-type" class="block text-xs uppercase tracking-wider font-semibold text-filippo-charcoal mb-2">
+              {contact.form.projectTypeLabel} *
+            </label>
+            <select
+              id="lead-project-type"
+              name="projectType"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-filippo-linen/50 border border-filippo-stone/80 text-filippo-charcoal text-sm focus:outline-none focus:border-filippo-charcoal focus:bg-white transition-all"
+            >
+              {contact.form.projectTypes.map((type) => (
+                <option value={type}>{type}</option>
+              ))}
+            </select>
+          </div>
+
+          <!-- Campo 3: Ciudad o Sector -->
+          <div>
+            <label for="lead-city" class="block text-xs uppercase tracking-wider font-semibold text-filippo-charcoal mb-2">
+              {contact.form.cityLabel} *
+            </label>
+            <input
+              type="text"
+              id="lead-city"
+              name="city"
+              required
+              placeholder="Ej. Bogotá - Rosales"
+              class="w-full px-4 py-3 rounded-xl bg-filippo-linen/50 border border-filippo-stone/80 text-filippo-charcoal placeholder-filippo-muted/60 text-sm focus:outline-none focus:border-filippo-charcoal focus:bg-white transition-all"
+            />
+          </div>
+
+          <!-- Campo 4: Comentarios o dimensiones -->
+          <div>
+            <label for="lead-comments" class="block text-xs uppercase tracking-wider font-semibold text-filippo-charcoal mb-2">
+              {contact.form.commentsLabel}
+            </label>
+            <textarea
+              id="lead-comments"
+              name="comments"
+              rows="3"
+              placeholder="Ej. Busco una cocina con isla de aproximadamente 3 metros en roble y travertino..."
+              class="w-full px-4 py-3 rounded-xl bg-filippo-linen/50 border border-filippo-stone/80 text-filippo-charcoal placeholder-filippo-muted/60 text-sm focus:outline-none focus:border-filippo-charcoal focus:bg-white transition-all resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Botón de envío que abre WhatsApp -->
+          <div>
+            <button
+              type="submit"
+              class="w-full inline-flex items-center justify-center gap-3 bg-whatsapp hover:bg-whatsapp-dark text-white font-semibold py-4 px-6 rounded-full shadow-md hover:shadow-floating transition-all duration-300 text-sm uppercase tracking-wider"
+            >
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+              </svg>
+              <span>{contact.form.submitButtonText}</span>
+            </button>
+            <p class="text-[11px] text-center text-filippo-muted mt-3">
+              Sin compromisos · Respuesta promedio en menos de 15 minutos en horario hábil
+            </p>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Información directa de showroom y contacto (Columna derecha 5 cols) -->
+      <div class="lg:col-span-5 space-y-8">
+        
+        <div class="bg-filippo-white p-8 rounded-2xl border border-filippo-stone/70 shadow-soft">
+          <h4 class="font-serif text-xl font-bold text-filippo-charcoal mb-4">
+            Showroom & Taller de Autor
+          </h4>
+          <p class="text-sm text-filippo-muted leading-relaxed font-light mb-6">
+            Te invitamos a tocar las muestras de materiales, experimentar los mecanismos de herrajes en vivo y reunirnos con un arquitecto especialista.
+          </p>
+
+          <div class="space-y-4 text-sm text-filippo-charcoal">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-filippo-linen flex items-center justify-center text-filippo-oak shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold">{brand.address}</p>
+                <p class="text-xs text-filippo-muted">{brand.city}</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-filippo-linen flex items-center justify-center text-filippo-oak shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold">{brand.phoneDisplay}</p>
+                <p class="text-xs text-filippo-muted">{brand.email}</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-filippo-linen flex items-center justify-center text-filippo-oak shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold">Horario de Atención</p>
+                <p class="text-xs text-filippo-muted leading-relaxed">{brand.schedule}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta de contacto directo sin formulario -->
+        <div class="bg-filippo-cream/60 p-6 rounded-2xl border border-filippo-stone/70">
+          <p class="text-xs font-semibold uppercase tracking-wider text-filippo-oak mb-2">
+            ¿Prefieres escribir directamente?
+          </p>
+          <p class="text-sm text-filippo-charcoal/80 mb-4 font-light">
+            Puedes hacer clic aquí y chatear de inmediato sin diligenciar el formulario:
+          </p>
+          <a
+            href={directWaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm font-semibold text-whatsapp hover:text-whatsapp-dark transition-colors"
+          >
+            <span>Iniciar chat directo en WhatsApp</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Interceptor del formulario para construir el mensaje de WhatsApp dinámico
+  const leadForm = document.getElementById('whatsapp-lead-form') as HTMLFormElement;
+
+  if (leadForm) {
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = (document.getElementById('lead-name') as HTMLInputElement).value;
+      const projectType = (document.getElementById('lead-project-type') as HTMLSelectElement).value;
+      const city = (document.getElementById('lead-city') as HTMLInputElement).value;
+      const comments = (document.getElementById('lead-comments') as HTMLTextAreaElement).value;
+
+      // Mensaje estructurado claro y profesional
+      const message = `Hola Filippo, mi nombre es ${name}.\n` +
+        `Me interesa diseñar una cocina: ${projectType}.\n` +
+        `Ubicación: ${city}.\n` +
+        (comments.trim() ? `Detalles: "${comments.trim()}"\n` : '') +
+        `¿Podemos coordinar una llamada o visita técnica?`;
+
+      // Obtener el número configurado dinámicamente o por defecto
+      const phone = '573004567890';
+      const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+      // Abrir WhatsApp en una nueva pestaña
+      window.open(waUrl, '_blank');
+    });
+  }
+</script>

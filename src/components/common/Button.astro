@@ -1,0 +1,84 @@
+---
+/**
+ * ==============================================================================
+ * FILIPPO COCINAS | COMPONENTE REUTILIZABLE: Button.astro
+ * ------------------------------------------------------------------------------
+ * PROPÓSITO:
+ * Botón de acción consistente y accesible. Soporta tanto enlaces (<a>) como
+ * botones nativos (<button>), con variantes visuales de marca y WhatsApp.
+ *
+ * RELACIÓN:
+ * Utilizado a lo largo de toda la landing (Hero, Navbar, Galería, Formulario).
+ *
+ * VARIANTES:
+ * - 'wa': Estilo verde institucional WhatsApp de alta conversión.
+ * - 'primary': Estilo carbón arquitectónico sobrio.
+ * - 'secondary': Estilo roble cálido / madera de autor.
+ * - 'outline': Borde sutil travertino con texto sobrio.
+ * ==============================================================================
+ */
+
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'wa' | 'outline' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  isExternal?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  className?: string;
+  id?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  isExternal = false,
+  type = 'button',
+  className = '',
+  id
+} = Astro.props;
+
+// Clases base compartidas
+const baseClasses = "inline-flex items-center justify-center font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group";
+
+// Variantes de tamaño
+const sizeClasses = {
+  sm: "text-xs px-4 py-2 rounded-full gap-2 tracking-wide",
+  md: "text-sm px-6 py-3 rounded-full gap-2.5 tracking-wide",
+  lg: "text-base px-8 py-4 rounded-full gap-3 tracking-wide shadow-md"
+};
+
+// Variantes visuales
+const variantClasses = {
+  // WhatsApp: Alta visibilidad y familiaridad para cierre de ventas
+  wa: "bg-whatsapp hover:bg-whatsapp-dark text-white shadow-soft hover:shadow-floating focus:ring-whatsapp font-semibold",
+  // Primario: Carbón arquitectónico refinado
+  primary: "bg-filippo-charcoal hover:bg-filippo-dark text-white focus:ring-filippo-charcoal shadow-soft hover:shadow-md",
+  // Secundario: Roble cálido
+  secondary: "bg-filippo-oak hover:bg-filippo-oak-dark text-white focus:ring-filippo-oak",
+  // Borde sutil: Travertino / Línea limpia
+  outline: "border border-filippo-charcoal/20 hover:border-filippo-charcoal text-filippo-charcoal hover:bg-filippo-charcoal/5 focus:ring-filippo-charcoal",
+  // Fantasma: Sin fondo ni borde
+  ghost: "text-filippo-charcoal hover:text-filippo-oak hover:bg-filippo-cream/60 focus:ring-filippo-oak"
+};
+
+const finalClasses = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      class={finalClasses}
+      id={id}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class={finalClasses} id={id}>
+      <slot />
+    </button>
+  )
+}

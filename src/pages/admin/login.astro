@@ -1,0 +1,150 @@
+---
+/**
+ * ==============================================================================
+ * FILIPPO COCINAS | ACCESO CMS: src/pages/admin/login.astro
+ * ------------------------------------------------------------------------------
+ * PROPÓSITO:
+ * Pantalla de inicio de sesión protegida para el cliente. Permite acceder al
+ * panel de gestión de contenidos mediante usuario y contraseña seguros.
+ * ==============================================================================
+ */
+
+import '../../styles/global.css';
+
+// Si ya tiene sesión activa, redirigir automáticamente al dashboard
+const sessionCookie = Astro.cookies.get('filippo_admin_session');
+if (sessionCookie && sessionCookie.value === 'filippo_studio_secret_token_session') {
+  return Astro.redirect('/admin');
+}
+---
+
+<!doctype html>
+<html lang="es" class="h-full bg-filippo-linen">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Acceso Administrador | Filippo Cocinas</title>
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body class="min-h-full flex items-center justify-center p-4">
+    <div class="w-full max-w-md bg-filippo-white rounded-3xl p-8 sm:p-10 border border-filippo-stone/80 shadow-card">
+      
+      <!-- Encabezado con monograma Filippo -->
+      <div class="text-center mb-8">
+        <div class="w-14 h-14 rounded-2xl bg-filippo-charcoal text-filippo-oak font-serif text-2xl font-bold flex items-center justify-center mx-auto mb-4 shadow-sm">
+          F
+        </div>
+        <h1 class="font-serif text-2xl font-bold text-filippo-charcoal">
+          Panel de Contenidos
+        </h1>
+        <p class="text-xs uppercase tracking-widest text-filippo-muted mt-1 font-semibold">
+          Filippo Cocinas & Mobiliario
+        </p>
+      </div>
+
+      <!-- Alerta de error -->
+      <div id="login-error" class="hidden mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700">
+        Credenciales incorrectas. Por favor verifica usuario y contraseña.
+      </div>
+
+      <!-- Formulario de acceso -->
+      <form id="admin-login-form" class="space-y-5">
+        <div>
+          <label for="username" class="block text-xs uppercase tracking-wider font-semibold text-filippo-charcoal mb-2">
+            Usuario
+          </label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            autocomplete="username"
+            placeholder="admin"
+            class="w-full px-4 py-3 rounded-xl bg-filippo-linen/40 border border-filippo-stone/80 text-filippo-charcoal text-sm focus:outline-none focus:border-filippo-charcoal focus:bg-white transition-all"
+          />
+        </div>
+
+        <div>
+          <label for="password" class="block text-xs uppercase tracking-wider font-semibold text-filippo-charcoal mb-2">
+            Contraseña
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            autocomplete="current-password"
+            placeholder="••••••••"
+            class="w-full px-4 py-3 rounded-xl bg-filippo-linen/40 border border-filippo-stone/80 text-filippo-charcoal text-sm focus:outline-none focus:border-filippo-charcoal focus:bg-white transition-all"
+          />
+        </div>
+
+        <button
+          type="submit"
+          id="login-btn"
+          class="w-full bg-filippo-charcoal hover:bg-filippo-dark text-white font-medium py-3.5 px-6 rounded-full text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg mt-2"
+        >
+          Iniciar Sesión
+        </button>
+      </form>
+
+      <!-- Nota de credenciales de desarrollo -->
+      <div class="mt-8 pt-6 border-t border-filippo-stone/40 text-center">
+        <p class="text-[11px] text-filippo-muted">
+          Credenciales iniciales: <strong class="text-filippo-charcoal">admin</strong> / <strong class="text-filippo-charcoal">filippo2024</strong>
+        </p>
+        <a href="/" class="inline-block mt-3 text-xs text-filippo-oak hover:underline">
+          ← Volver a la página principal
+        </a>
+      </div>
+
+    </div>
+
+    <script>
+      const form = document.getElementById('admin-login-form') as HTMLFormElement;
+      const errorBox = document.getElementById('login-error');
+      const submitBtn = document.getElementById('login-btn') as HTMLButtonElement;
+
+      if (form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          errorBox?.classList.add('hidden');
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Verificando...';
+
+          const username = (document.getElementById('username') as HTMLInputElement).value;
+          const password = (document.getElementById('password') as HTMLInputElement).value;
+
+          try {
+            const res = await fetch('/api/admin/auth', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ username, password })
+            });
+
+            const data = await res.json();
+
+            if (res.ok && data.success) {
+              window.location.href = '/admin';
+            } else {
+              if (errorBox) {
+                errorBox.textContent = data.message || 'Error al autenticar';
+                errorBox.classList.remove('hidden');
+              }
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Iniciar Sesión';
+            }
+          } catch (err) {
+            if (errorBox) {
+              errorBox.textContent = 'Error de conexión con el servidor';
+              errorBox.classList.remove('hidden');
+            }
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Iniciar Sesión';
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

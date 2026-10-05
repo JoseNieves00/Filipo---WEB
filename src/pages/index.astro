@@ -1,0 +1,80 @@
+---
+/**
+ * ==============================================================================
+ * FILIPPO COCINAS | PÁGINA PRINCIPAL: src/pages/index.astro
+ * ------------------------------------------------------------------------------
+ * PROPÓSITO:
+ * Ensamblador de la landing page one-page. Orquesta todas las secciones modulares
+ * en un flujo continuo de scroll con menú de anclas y captura a WhatsApp.
+ *
+ * MODULARIDAD Y EXTENSIÓN:
+ * // EXTENDER: Cada sección es un componente 100% independiente. Para cambiar el
+ * // orden de las secciones, simplemente reordena las etiquetas abajo. Para
+ * // deshabilitar una sección (ej. Testimonios), basta con comentarla.
+ *
+ * RELACIÓN:
+ * Importa los componentes de `src/components/sections/` y la configuración de
+ * `src/data/siteContent.json`.
+ * ==============================================================================
+ */
+
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/navigation/Navbar.astro';
+import Footer from '../components/navigation/Footer.astro';
+
+// Secciones modulares de la landing page
+import Hero from '../components/sections/Hero.astro';
+import Services from '../components/sections/Services.astro';
+import Gallery from '../components/sections/Gallery.astro';
+import Process from '../components/sections/Process.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import Faq from '../components/sections/Faq.astro';
+import ContactForm from '../components/sections/ContactForm.astro';
+
+// Widgets flotantes y modales interactivos
+import WhatsAppFloat from '../components/widgets/WhatsAppFloat.astro';
+import LightboxModal from '../components/widgets/LightboxModal.astro';
+
+import siteContent from '../data/siteContent.json';
+---
+
+<Layout
+  title={`${siteContent.brand.name} | ${siteContent.brand.tagline}`}
+  description={siteContent.brand.description}
+  ogImage="/images/kitchen-hero.jpg"
+>
+  <!-- Barra de navegación fija con menú de anclas -->
+  <Navbar />
+
+  <main>
+    <!-- 1. Hero: Titular claro, propuesta de valor y primer botón a WhatsApp -->
+    <Hero />
+
+    <!-- 2. Servicios: 4 pilares de diseño arquitectónico y fabricación -->
+    <Services />
+
+    <!-- 3. Galería de proyectos: Cocinas realizadas con filtros y consulta WhatsApp -->
+    <Gallery />
+
+    <!-- 4. Proceso de trabajo: De la idea a la cocina instalada en 4 pasos -->
+    <Process />
+
+    <!-- 5. Testimonios: Prueba social con reseñas reales de clientes -->
+    <Testimonials />
+
+    <!-- 6. Preguntas frecuentes: Acordeón para resolver objeciones de compra -->
+    <Faq />
+
+    <!-- 7. Contacto: Formulario interactivo con conversor directo a WhatsApp -->
+    <ContactForm />
+  </main>
+
+  <!-- Pie de página con información de showroom, redes y acceso al panel CMS -->
+  <Footer />
+
+  <!-- Botón flotante de WhatsApp visible en toda la página -->
+  <WhatsAppFloat />
+
+  <!-- Visor modal Lightbox para fotos de proyectos a pantalla completa -->
+  <LightboxModal />
+</Layout>

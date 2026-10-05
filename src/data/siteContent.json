@@ -1,0 +1,281 @@
+{
+  "brand": {
+    "name": "Filippo",
+    "legalName": "Filippo Cocinas & Mobiliario de Autor",
+    "tagline": "Cocinas a medida diseñadas para habitar",
+    "description": "Estudio especializado en el diseño, fabricación e instalación de cocinas residenciales de alta gama. Minimalismo cálido, materiales nobles y herrajes europeos.",
+    "phoneDisplay": "+57 (300) 456-7890",
+    "email": "contacto@filippococinas.com",
+    "address": "Calle 85 # 11-53, Zona Nogal",
+    "city": "Bogotá, Colombia",
+    "schedule": "Lunes a Viernes: 9:00 AM - 6:00 PM | Sábados con cita previa",
+    "social": {
+      "instagram": "https://instagram.com/filippococinas",
+      "pinterest": "https://pinterest.com/filippococinas",
+      "houzz": "https://houzz.com"
+    }
+  },
+  "whatsapp": {
+    "number": "573004567890",
+    "defaultMessages": {
+      "general": "Hola Filippo, me interesa conocer más sobre sus servicios de diseño de cocinas.",
+      "hero": "Hola Filippo, me gustaría agendar una asesoría para diseñar mi nueva cocina.",
+      "projectInquiry": "Hola Filippo, vi el proyecto '{projectName}' en su web y quisiera consultar si podemos hacer algo similar para mi espacio.",
+      "floatingButton": "Hola Filippo, tengo algunas preguntas sobre el diseño de mi cocina y quisiera hablar con un asesor.",
+      "formTemplate": "Hola Filippo, mi nombre es {name}. Mi proyecto es una {projectType} en {city}. Comentarios adicionales: {comments}."
+    }
+  },
+  "hero": {
+    "headline": "Cocinas a medida que transforman la forma de habitar tu hogar",
+    "subheadline": "Unimos arquitectura depurada, materiales nobles y fabricación de precisión para crear cocinas contemporáneas donde la funcionalidad se convierte en arte cotidiano.",
+    "ctaText": "Conversar por WhatsApp",
+    "ctaSecondaryText": "Explorar proyectos",
+    "badgeText": "Fabricación propia con 10 años de garantía estructural",
+    "heroImage": "/images/kitchen-hero.jpg",
+    "heroImageAlt": "Cocina contemporánea Filippo con isla en travertino y carpintería de roble natural",
+    "stats": [
+      { "value": "150+", "label": "Cocinas instaladas" },
+      { "value": "10 años", "label": "Garantía europea" },
+      { "value": "100%", "label": "Diseño a medida" }
+    ]
+  },
+  "services": {
+    "kicker": "LO QUE HACEMOS",
+    "title": "Un enfoque integral desde el boceto inicial hasta el último tirador",
+    "description": "Cada residencia es única. No trabajamos con medidas estándar ni módulos rígidos; concebimos cada cocina como una pieza arquitectónica irrepetible.",
+    "items": [
+      {
+        "id": "diseno-3d",
+        "icon": "cube",
+        "title": "Diseño 3D & Planimetría Arquitectónica",
+        "description": "Desarrollamos planos técnicos detallados, estudio ergonómico, propuesta de iluminación y renders fotorrealistas para que visualices tu cocina antes de fabricar.",
+        "highlights": ["Renders hiperrealistas", "Estudio de ergonomía", "Planos hidrosanitarios y eléctricos"]
+      },
+      {
+        "id": "fabricacion-artesanal",
+        "icon": "wrench",
+        "title": "Fabricación Artesanal & Ebanistería",
+        "description": "Taller propio de alta precisión. Seleccionamos tableros hidrófugos de alta densidad, ensambles milimétricos y herrajes austríacos Blum con cierre silencioso.",
+        "highlights": ["Herrajes Blum con garantía de por vida", "Tableros hidrófugos resistentes a la humedad", "Acabados laqueados y chapillas naturales"]
+      },
+      {
+        "id": "materiales-nobles",
+        "icon": "gem",
+        "title": "Piedras Naturales & Sinterizados",
+        "description": "Asesoramos en la elección de mesones y salpicaderos: cuarzos, granitos exóticos, travertinos y superficies ultracompactas (Dekton, Neolith) resistentes al calor y rayaduras.",
+        "highlights": ["Superficies ultracompactas de alta resistencia", "Tratamiento antimanchas en piedras naturales", "Cortes y biselados a 45 grados sin juntas visibles"]
+      },
+      {
+        "id": "instalacion-llave-en-mano",
+        "icon": "check-circle",
+        "title": "Montaje Impecable Llave en Mano",
+        "description": "Nuestros propios ebanistas e instaladores certificados ejecutan el montaje en tu hogar con rigor milimétrico, máxima limpieza y supervisión del arquitecto titular.",
+        "highlights": ["Instaladores propios en nómina", "Protección de pisos y áreas contiguas", "Puesta a punto de electrodomésticos"]
+      }
+    ]
+  },
+  "gallery": {
+    "kicker": "PORTAFOLIO DE AUTOR",
+    "title": "Proyectos realizados con carácter atemporal",
+    "description": "Explora algunas de las cocinas que hemos diseñado e instalado para clientes que aprecian la sobriedad, la calidez y el detalle.",
+    "categories": [
+      { "id": "all", "label": "Todos los estilos" },
+      { "id": "minimalista", "label": "Minimalismo Cálido" },
+      { "id": "madera-piedra", "label": "Madera & Piedra" },
+      { "id": "isla-central", "label": "Isla Central" },
+      { "id": "abierta", "label": "Abierta al Salón" }
+    ],
+    "projects": [
+      {
+        "id": "casa-aliso",
+        "title": "Residencia Aliso",
+        "category": "minimalista",
+        "categoryLabel": "Minimalismo Cálido",
+        "image": "/images/project-aliso.jpg",
+        "imageAlt": "Cocina minimalista cálida con gabinetes lisos y luz indirecta",
+        "description": "Cocina lineal con isla monolítica en travertino y carpintería sin tiradores en roble europeo blanqueado.",
+        "materials": "Travertino romano, Roble europeo, Herrajes Blum Tip-On",
+        "location": "Rosales, Bogotá"
+      },
+      {
+        "id": "villa-castano",
+        "title": "Villa Castaño",
+        "category": "madera-piedra",
+        "categoryLabel": "Madera & Piedra",
+        "image": "/images/project-castano.jpg",
+        "imageAlt": "Cocina con encimera de cuarzo y muebles en nogal oscuro",
+        "description": "Fusión de texturas ricas: nogal canaletto con mesones en superficie sinterizada efecto calacatta y grifería en latón bruñido.",
+        "materials": "Nogal Canaletto, Dekton Opera, Latón cepillado",
+        "location": "La Calera, Cundinamarca"
+      },
+      {
+        "id": "loft-nogal",
+        "title": "Ático Nogal",
+        "category": "isla-central",
+        "categoryLabel": "Isla Central",
+        "image": "/images/project-nogal.jpg",
+        "imageAlt": "Isla central en granito negro satinado con barra en madera cálida",
+        "description": "Una imponente isla de 3.8 metros como eje social de la vivienda, con placa de inducción empotrada y campana integrada a ras de techo.",
+        "materials": "Granito negro vía láctea satinado, Frentes Fenix NTM mate",
+        "location": "Chicó Reservado, Bogotá"
+      },
+      {
+        "id": "residencia-lino",
+        "title": "Casa Lino",
+        "category": "abierta",
+        "categoryLabel": "Abierta al Salón",
+        "image": "/images/project-lino.jpg",
+        "imageAlt": "Cocina abierta integrada al comedor con detalles en madera clara",
+        "description": "Transición fluida hacia el salón comedor. Columnas de electrodomésticos ocultas tras puertas escamoteables de apertura total.",
+        "materials": "Chapa de roble claro, Cuarzo blanco puro, Puertas pocket door",
+        "location": "Santa Ana Oriental, Bogotá"
+      },
+      {
+        "id": "penthouse-carrara",
+        "title": "Penthouse Carrara",
+        "category": "minimalista",
+        "categoryLabel": "Minimalismo Cálido",
+        "image": "/images/project-carrara.jpg",
+        "imageAlt": "Cocina moderna con frentes lacados blanco hueso y mesón continuo",
+        "description": "Paleta serena y luminosa con acabados lacados ultramate antihuelectas y repisas flotantes con iluminación LED cálida 2700K.",
+        "materials": "Laca poliuretano mate lino, Neolith Calacatta Gold",
+        "location": "El Retiro, Antioquia"
+      },
+      {
+        "id": "finca-olivo",
+        "title": "Finca El Olivo",
+        "category": "madera-piedra",
+        "categoryLabel": "Madera & Piedra",
+        "image": "/images/project-olivo.jpg",
+        "imageAlt": "Cocina de campo moderna con detalles en microcemento y madera rústica cepillada",
+        "description": "Interpretación contemporánea de la cocina campestre: madera maciza tratada al aceite vegetal y mesón de cuarcita rústica.",
+        "materials": "Madera de cedro recuperado, Cuarcita Taj Mahal",
+        "location": "Sopó, Cundinamarca"
+      }
+    ]
+  },
+  "process": {
+    "kicker": "NUESTRO MÉTODO",
+    "title": "De la primera idea a tu cocina instalada, sin sorpresas ni demoras",
+    "description": "Un proceso de 4 pasos claro, estructurado y transparente para que disfrutes tanto el diseño como el resultado final.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Conversación y Briefing",
+        "subtitle": "Por WhatsApp o en Showroom",
+        "description": "Nos cuentas qué necesitas, cómo cocinas y cómo vives tu espacio. Analizamos medidas iniciales, plano de la vivienda o coordinamos una visita técnica a domicilio.",
+        "duration": "1 a 2 días"
+      },
+      {
+        "number": "02",
+        "title": "Diseño 3D y Selección Material",
+        "subtitle": "Renders hiperrealistas",
+        "description": "Te presentamos el proyecto en 3D con distribución ergonómica, muestras reales de maderas, piedras y paleta de colores. Ajustamos cada detalle hasta tu total satisfacción.",
+        "duration": "5 a 7 días"
+      },
+      {
+        "number": "03",
+        "title": "Fabricación de Precisión",
+        "subtitle": "En taller propio",
+        "description": "Construimos tu cocina con maquinaria especializada y ebanistas experimentados. Realizamos pre-armado en taller para asegurar que cada herraje y holgura sea perfecta.",
+        "duration": "3 a 4 semanas"
+      },
+      {
+        "number": "04",
+        "title": "Montaje y Entrega Impecable",
+        "subtitle": "Instalación llave en mano",
+        "description": "Instalamos en la fecha pactada. Cuidamos cada rincón de tu casa, realizamos limpieza profunda y te entregamos la garantía escrita con manual de cuidado de materiales.",
+        "duration": "2 a 3 días en sitio"
+      }
+    ]
+  },
+  "testimonials": {
+    "kicker": "TESTIMONIOS REALES",
+    "title": "Lo que dicen quienes ya habitan nuestras cocinas",
+    "description": "La satisfacción y tranquilidad de nuestros clientes es nuestro principal aval de calidad.",
+    "items": [
+      {
+        "id": "valeria-m",
+        "quote": "Trabajar con Filippo fue una experiencia impecable. Cumplieron exactamente con la fecha prometida y la cocina quedó aún más hermosa que en los renders 3D. El mesón en travertino es el protagonista de mi casa.",
+        "author": "Arq. Valeria Mendoza",
+        "role": "Cliente residencial",
+        "location": "Chicó Reservado, Bogotá",
+        "projectType": "Remodelación completa de cocina",
+        "rating": 5
+      },
+      {
+        "id": "carlos-p",
+        "quote": "Lo que más valoro es la atención al detalle en los herrajes y el aprovechamiento de cada centímetro. Toda la coordinación fue súper ágil por WhatsApp, siempre atentos y resolutivos.",
+        "author": "Carlos & Mariana Pardo",
+        "role": "Obra nueva",
+        "location": "La Calera",
+        "projectType": "Cocina con isla de 3.5m",
+        "rating": 5
+      },
+      {
+        "id": "andrea-r",
+        "quote": "Excelente calidad de carpintería y acabados. Mi cocina tiene 2 años de uso intenso y sigue viéndose idéntica al primer día. Los recomiendo a ojos cerrados.",
+        "author": "Dra. Andrea Restrepo",
+        "role": "Cliente residencial",
+        "location": "Santa Bárbara, Bogotá",
+        "projectType": "Cocina lineal abierta al comedor",
+        "rating": 5
+      }
+    ]
+  },
+  "faq": {
+    "kicker": "DUDAS FRECUENTES",
+    "title": "Preguntas habituales sobre el proceso de diseño y fabricación",
+    "description": "Resolvemos de antemano las inquietudes más comunes. Si tienes otra consulta, escríbenos directamente por WhatsApp.",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "¿Cuánto tiempo toma el proyecto completo desde el diseño hasta la instalación?",
+        "answer": "El proceso completo suele tomar entre 4 y 6 semanas en promedio. La etapa de diseño y definición de materiales toma entre 5 y 10 días; la fabricación en taller entre 3 y 4 semanas; y la instalación final en tu hogar se realiza en 2 a 3 días hábiles."
+      },
+      {
+        "id": "faq-2",
+        "question": "¿Hacen visitas técnicas a domicilio para tomar medidas?",
+        "answer": "Sí, realizamos visitas técnicas en Bogotá y municipios aledaños (La Calera, Chía, Cajicá, Sopó). Para otras ciudades de Colombia, coordinamos con los planos arquitectónicos de tu constructor o arquitecto."
+      },
+      {
+        "id": "faq-3",
+        "question": "¿Qué marcas de herrajes y accesorios utilizan?",
+        "answer": "Utilizamos exclusivamente herrajes europeos de primera línea: Blum (Austria) y Grass (Alemania) para rieles y bisagras con amortiguación suave certificada a más de 200.000 ciclos de apertura. Incluyen garantía de por vida en mecanismos."
+      },
+      {
+        "id": "faq-4",
+        "question": "¿Cómo es el esquema de pagos?",
+        "answer": "Trabajamos con un esquema transparente por fases: 50% de anticipo al aprobar el diseño 3D para ordenar materiales y corte; 40% al verificar la cocina pre-armada en taller antes de despacho; y el 10% final contra entrega e instalación a entera satisfacción."
+      },
+      {
+        "id": "faq-5",
+        "question": "¿Puedo conservar mis electrodomésticos actuales o me ayudan a comprarlos?",
+        "answer": "Ambas opciones son posibles. Si ya tienes tus electrodomésticos, tomamos sus fichas técnicas exactas para diseñar los nichos a la medida. Si vas a comprar nuevos, te asesoramos en dimensiones recomendadas de inducción, campana y hornos."
+      },
+      {
+        "id": "faq-6",
+        "question": "¿Qué garantía tiene la cocina?",
+        "answer": "Ofrecemos 10 años de garantía escrita sobre la estructura del mobiliario y ensamble, garantía de por vida en herrajes Blum, y traspaso de garantías directas de fabricantes de superficies (Dekton, Neolith, Silestone)."
+      }
+    ]
+  },
+  "contact": {
+    "kicker": "COMIENZA HOY",
+    "title": "Hablemos de tu proyecto de cocina",
+    "description": "Completa el formulario o haz clic directamente en WhatsApp para iniciar la conversación con uno de nuestros diseñadores.",
+    "form": {
+      "nameLabel": "Tu nombre completo",
+      "projectTypeLabel": "¿Qué tipo de proyecto es?",
+      "projectTypes": [
+        "Cocina en obra nueva",
+        "Remodelación de cocina existente",
+        "Cocina integrada a sala/comedor",
+        "Asesoría y diseño arquitectónico"
+      ],
+      "cityLabel": "Ciudad o sector (ej. Bogotá - Rosales)",
+      "commentsLabel": "Cuéntanos sobre tu espacio o medidas aproximadas",
+      "submitButtonText": "Enviar solicitud por WhatsApp"
+    }
+  }
+}

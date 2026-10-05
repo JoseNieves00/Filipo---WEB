@@ -1,0 +1,73 @@
+---
+/**
+ * ==============================================================================
+ * FILIPPO COCINAS | SECCIÓN: Process.astro
+ * ------------------------------------------------------------------------------
+ * PROPÓSITO:
+ * Explicar el recorrido del cliente desde la idea hasta la instalación en
+ * 4 pasos simples y transparentes. Reduce la incertidumbre y objeciones de
+ * compra de los prospectos antes de escribir a WhatsApp.
+ *
+ * RELACIÓN:
+ * Consume `src/data/siteContent.json` y se monta en `src/pages/index.astro`.
+ * ==============================================================================
+ */
+
+import siteContent from '../../data/siteContent.json';
+import SectionHeader from '../common/SectionHeader.astro';
+
+const { process } = siteContent;
+---
+
+<section id="proceso" class="py-20 md:py-28 bg-filippo-white border-t border-filippo-stone/40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <SectionHeader
+      kicker={process.kicker}
+      title={process.title}
+      description={process.description}
+      align="center"
+    />
+
+    <!-- Proceso en 4 pasos con diseño lineal arquitectónico -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+      {process.steps.map((step, index) => (
+        <div class="relative bg-filippo-linen/40 rounded-2xl p-8 border border-filippo-stone/60 hover:border-filippo-oak/60 transition-all duration-300 flex flex-col justify-between group">
+          
+          <div>
+            <!-- Número de paso destacado -->
+            <div class="flex items-center justify-between mb-6">
+              <span class="font-serif text-3xl font-bold text-filippo-oak">
+                {step.number}
+              </span>
+              <span class="text-[11px] font-medium tracking-wider uppercase text-filippo-muted/80 bg-filippo-white px-3 py-1 rounded-full border border-filippo-stone/60">
+                {step.duration}
+              </span>
+            </div>
+
+            <!-- Título y subtítulo -->
+            <h3 class="text-xl font-serif font-bold text-filippo-charcoal mb-1 group-hover:text-filippo-oak transition-colors">
+              {step.title}
+            </h3>
+            <p class="text-xs uppercase tracking-wider text-filippo-muted font-medium mb-4">
+              {step.subtitle}
+            </p>
+
+            <!-- Descripción clara del paso -->
+            <p class="text-sm text-filippo-muted leading-relaxed font-light">
+              {step.description}
+            </p>
+          </div>
+
+          <!-- Línea decorativa inferior -->
+          <div class="pt-6 mt-6 border-t border-filippo-stone/40 flex items-center justify-between text-xs text-filippo-charcoal/70">
+            <span>Fase 0{index + 1} de 04</span>
+            <span class="w-2 h-2 rounded-full bg-filippo-oak/40 group-hover:bg-filippo-oak transition-colors"></span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

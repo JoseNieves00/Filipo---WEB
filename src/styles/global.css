@@ -1,0 +1,77 @@
+/**
+ * ==============================================================================
+ * FILIPPO COCINAS | ESTILOS GLOBALES: src/styles/global.css
+ * ------------------------------------------------------------------------------
+ * PROPÓSITO:
+ * Carga de fuentes tipográficas, directivas de Tailwind CSS, configuración de
+ * scroll suave y clases de utilidad para la experiencia minimalista de usuario.
+ *
+ * RELACIÓN:
+ * Importa `src/styles/design-tokens.css` y se inyecta en el layout principal
+ * `src/layouts/Layout.astro`.
+ * ==============================================================================
+ */
+
+@import './design-tokens.css';
+
+/* Importación de fuentes Google Fonts con carga optimizada */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Selección de texto refinada acorde a la paleta */
+  ::selection {
+    background-color: var(--color-accent-wood);
+    color: #FFFFFF;
+  }
+
+  /* Títulos con fuente editorial por defecto */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
+  }
+}
+
+@layer utilities {
+  /* Efecto de desenfoque de fondo para barra de navegación */
+  .glass-header {
+    background: rgba(250, 248, 245, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Animación sutil de respiración para botón de WhatsApp */
+  @keyframes wa-pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 10px 25px -4px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+      transform: scale(1.04);
+      box-shadow: 0 16px 32px -2px rgba(37, 211, 102, 0.6);
+    }
+  }
+
+  .animate-wa-pulse {
+    animation: wa-pulse 3s infinite ease-in-out;
+  }
+}

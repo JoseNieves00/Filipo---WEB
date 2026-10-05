@@ -1,0 +1,100 @@
+---
+/**
+ * ==============================================================================
+ * FILIPPO COCINAS | WIDGET: LightboxModal.astro
+ * ------------------------------------------------------------------------------
+ * PROPÓSITO:
+ * Visor de imágenes a pantalla completa (modal). Permite a los clientes
+ * examinar los detalles de carpintería, veta de madera y texturas de piedras
+ * de cada proyecto con la mayor resolución posible.
+ *
+ * ACCESIBILIDAD:
+ * - Cierre mediante tecla 'Escape'.
+ * - Atributo role="dialog" y aria-modal="true".
+ * ==============================================================================
+ */
+---
+
+<div
+  id="lightbox-modal"
+  class="fixed inset-0 z-50 hidden bg-filippo-dark/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Vista ampliada de fotografía de proyecto"
+>
+  <!-- Botón de cierre superior -->
+  <button
+    id="lightbox-close"
+    type="button"
+    class="absolute top-6 right-6 text-white/80 hover:text-white p-2 focus:outline-none transition-colors"
+    aria-label="Cerrar visor"
+  >
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <!-- Contenedor central -->
+  <div class="relative max-w-5xl max-h-[90vh] flex flex-col items-center justify-center">
+    <img
+      id="lightbox-img"
+      src=""
+      alt=""
+      class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl border border-white/10"
+    />
+    <p id="lightbox-caption" class="text-white text-sm font-serif tracking-wide mt-4 text-center"></p>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('lightbox-modal');
+  const closeBtn = document.getElementById('lightbox-close');
+  const imgElement = document.getElementById('lightbox-img') as HTMLImageElement;
+  const captionElement = document.getElementById('lightbox-caption');
+  const triggers = document.querySelectorAll('.gallery-trigger-zoom');
+
+  function openLightbox(src: string, alt: string, title: string) {
+    if (modal && imgElement && captionElement) {
+      imgElement.src = src;
+      imgElement.alt = alt;
+      captionElement.textContent = title;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeLightbox() {
+    if (modal) {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const src = trigger.getAttribute('data-img') || '';
+      const alt = trigger.getAttribute('data-alt') || '';
+      const title = trigger.getAttribute('data-title') || '';
+      openLightbox(src, alt, title);
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeLightbox);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // Cierre accesible con Escape
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+</script>

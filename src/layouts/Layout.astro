@@ -1,0 +1,92 @@
+---
+/**
+ * ==============================================================================
+ * FILIPPO COCINAS | LAYOUT PRINCIPAL: src/layouts/Layout.astro
+ * ------------------------------------------------------------------------------
+ * PROPÓSITO:
+ * Envoltura estructural HTML para las páginas del sitio público. Gestiona
+ * metadatos SEO, Open Graph, fuentes, microdatos Schema.org y estilos globales.
+ *
+ * RELACIÓN:
+ * Es utilizado por `src/pages/index.astro` y cualquier página interna futura
+ * (ej. `/proyectos/[slug].astro`, `/blog`).
+ *
+ * ACCESIBILIDAD Y SEO:
+ * - Incluye etiquetas semánticas y lang="es".
+ * - Genera marcado estructurado JSON-LD (LocalBusiness / InteriorDesign)
+ *   para mejorar indexación en Google.
+ * ==============================================================================
+ */
+
+import '../styles/global.css';
+import siteContent from '../data/siteContent.json';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = `${siteContent.brand.name} | ${siteContent.brand.tagline}`,
+  description = siteContent.brand.description,
+  ogImage = '/images/kitchen-hero.jpg'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://filippococinas.com');
+
+// Datos estructurados Schema.org para posicionamiento local y arquitectura de cocinas
+const schemaJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": siteContent.brand.legalName,
+  "alternateName": siteContent.brand.name,
+  "description": description,
+  "image": ogImage,
+  "telephone": siteContent.brand.phoneDisplay,
+  "email": siteContent.brand.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": siteContent.brand.address,
+    "addressLocality": siteContent.brand.city.split(',')[0],
+    "addressCountry": "CO"
+  },
+  "priceRange": "$$$$",
+  "openingHours": "Mo-Fr 09:00-18:00, Sa 09:00-13:00"
+};
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Principal -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Redes Sociales (Facebook, WhatsApp preview, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Microdatos JSON-LD Schema.org -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaJsonLd)} />
+  </head>
+  <body class="bg-filippo-linen text-filippo-charcoal antialiased selection:bg-filippo-oak selection:text-white">
+    <slot />
+  </body>
+</html>

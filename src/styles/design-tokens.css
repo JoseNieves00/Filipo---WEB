@@ -1,0 +1,97 @@
+/**
+ * ==============================================================================
+ * FILIPPO COCINAS | TOKENS DE DISEÑO: src/styles/design-tokens.css
+ * ------------------------------------------------------------------------------
+ * PROPÓSITO:
+ * Archivo maestro de variables de diseño. Centraliza colores, tipografías,
+ * sombras, bordes redondeados y espaciados de la identidad de Filippo.
+ *
+ * INSTRUCCIONES PARA EL CLIENTE O DESARROLLADOR:
+ * // EDITAR: Para cambiar la identidad visual (colores de la marca, tipografía o
+ * // espaciados), modifica únicamente los valores en ':root' a continuación.
+ * // Todo el sitio web se actualizará automáticamente de manera armónica.
+ *
+ * PALETA SELECCIONADA:
+ * Minimalismo Cálido (Warm Minimalism): Lino, Roble Natural, Travertino y Carbón.
+ * ==============================================================================
+ */
+
+:root {
+  /* ----------------------------------------------------------------------------
+   * 1. COLORES DE FONDO Y SUPERFICIES
+   * -------------------------------------------------------------------------- */
+  /* // EDITAR: Fondo principal general de la página (Lino cálido / Off-White) */
+  --color-bg-primary: #FAF8F5;
+
+  /* // EDITAR: Superficie de tarjetas, cajas y elementos elevados (Blanco marfil) */
+  --color-bg-surface: #FFFFFF;
+
+  /* // EDITAR: Fondo sutil para alternar secciones (Crema suave piedra) */
+  --color-bg-subtle: #F4EFEB;
+
+  /* // EDITAR: Fondo contrastado y sobrio para el footer o llamadas destacadas */
+  --color-bg-dark: #151514;
+
+
+  /* ----------------------------------------------------------------------------
+   * 2. TIPOGRAFÍA Y CONTRASTE DE TEXTOS
+   * -------------------------------------------------------------------------- */
+  /* // EDITAR: Color de texto primario (Carbón arquitectónico profundo, no negro puro) */
+  --color-text-primary: #1C1B19;
+
+  /* // EDITAR: Color de texto secundario (Gris piedra cálido para subtítulos) */
+  --color-text-muted: #706D67;
+
+  /* // EDITAR: Color de texto sobre fondos oscuros */
+  --color-text-inverse: #FAF8F5;
+
+
+  /* ----------------------------------------------------------------------------
+   * 3. ACENTOS MATERIALES Y MARCA
+   * -------------------------------------------------------------------------- */
+  /* // EDITAR: Acento cálido que evoca maderas nobles (Roble natural tostado) */
+  --color-accent-wood: #B88E65;
+  --color-accent-wood-hover: #9E744D;
+
+  /* // EDITAR: Acento que evoca piedra natural y mármoles (Travertino) */
+  --color-accent-stone: #E8E2D8;
+
+  /* // EDITAR: Color oficial de WhatsApp para máxima familiaridad y tasa de clics */
+  --color-accent-wa: #25D366;
+  --color-accent-wa-hover: #128C7E;
+
+
+  /* ----------------------------------------------------------------------------
+   * 4. FUENTES TIPOGRÁFICAS
+   * -------------------------------------------------------------------------- */
+  /* // EDITAR: Fuente para titulares principales (Elegancia editorial atemporal) */
+  --font-heading: 'Playfair Display', Georgia, serif;
+
+  /* // EDITAR: Fuente para textos corridos, botones y menús (Lectura limpia y moderna) */
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+
+  /* ----------------------------------------------------------------------------
+   * 5. BORDES Y SOMBRAS ARQUITECTÓNICAS
+   * -------------------------------------------------------------------------- */
+  --border-subtle: 1px solid rgba(28, 27, 25, 0.08);
+  --border-focus: 1px solid var(--color-accent-wood);
+
+  /* Radios de curvatura: minimalistas y discretos para mantener aspecto arquitectónico */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Sombras suaves y difusas */
+  --shadow-sm: 0 2px 8px rgba(28, 27, 25, 0.04);
+  --shadow-md: 0 8px 24px rgba(28, 27, 25, 0.06);
+  --shadow-lg: 0 16px 40px rgba(28, 27, 25, 0.09);
+
+  /* ----------------------------------------------------------------------------
+   * 6. TRANSICIONES
+   * -------------------------------------------------------------------------- */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}

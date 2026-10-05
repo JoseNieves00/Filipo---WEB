@@ -1,0 +1,15 @@
+# Dependencias
+node_modules/
+.tools/
+
+# Compilación y caché de Astro
+dist/
+.astro/
+
+# Variables de entorno
+.env
+.env.production
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db

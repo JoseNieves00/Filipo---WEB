@@ -1,0 +1,21 @@
+{
+  "name": "filippo-cocinas",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Landing page minimalista de alta conversión para Filippo Cocinas con panel de administración y conversión a WhatsApp",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev --host",
+    "start": "ASTRO_TELEMETRY_DISABLED=1 astro dev --host",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
+  },
+  "dependencies": {
+    "@astrojs/node": "^9.0.0",
+    "@astrojs/tailwind": "^5.1.4",
+    "astro": "^5.0.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

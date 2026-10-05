@@ -1,0 +1,51 @@
+---
+/**
+ * ==============================================================================
+ * FILIPPO COCINAS | ENCABEZADO DE SECCIÓN: SectionHeader.astro
+ * ------------------------------------------------------------------------------
+ * PROPÓSITO:
+ * Presentar de manera uniforme y elegante el encabezado de cada bloque temático
+ * (Servicios, Galería, Proceso, Preguntas Frecuentes, etc.).
+ *
+ * PROPIEDADES:
+ * - kicker: Etiqueta superior en mayúsculas pequeñas (ej. "LO QUE HACEMOS").
+ * - title: Titular de impacto en tipografía serif editorial.
+ * - description: Párrafo explicativo opcional en tono neutro cálido.
+ * - align: Alineación 'left' o 'center'.
+ * ==============================================================================
+ */
+
+interface Props {
+  kicker?: string;
+  title: string;
+  description?: string;
+  align?: 'left' | 'center';
+  class?: string;
+}
+
+const {
+  kicker,
+  title,
+  description,
+  align = 'center',
+  class: className = ''
+} = Astro.props;
+
+const isCenter = align === 'center';
+---
+
+<div class={`mb-12 md:mb-16 ${isCenter ? 'text-center mx-auto max-w-3xl' : 'max-w-2xl'} ${className}`}>
+  {kicker && (
+    <span class="inline-block text-xs font-semibold uppercase tracking-widest-caps text-filippo-oak mb-3">
+      {kicker}
+    </span>
+  )}
+  <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-filippo-charcoal tracking-tight leading-tight mb-4">
+    {title}
+  </h2>
+  {description && (
+    <p class="text-base md:text-lg text-filippo-muted leading-relaxed font-light">
+      {description}
+    </p>
+  )}
+</div>
