@@ -4,16 +4,12 @@
  * FILIPPO COCINAS | SECCIÓN: Gallery.astro
  * ------------------------------------------------------------------------------
  * PROPÓSITO:
- * Galería visual de cocinas realizadas con enfoque minimalista puro.
- * Muestra el portafolio completo sin filtros por categoría, permitiendo que
- * las fotografías de autor sean las protagonistas absolutas.
+ * Galería visual de proyectos. Un diseño radicalmente limpio y minimalista
+ * tipo "Apple" donde la fotografía ocupa casi todo el espacio.
  *
  * RELACIÓN:
  * Consume `src/data/siteContent.json` y la función `getProjectInquiryUrl` de
  * `src/utils/whatsapp.ts`.
- *
- * // EXTENDER: Si en el futuro se desean reincorporar filtros o etiquetas,
- * // puedes hacerlo agregando botones de filtrado o badges vinculados a cada proyecto.
  * ==============================================================================
  */
 
@@ -34,78 +30,55 @@ const { gallery } = siteContent;
       align="center"
     />
 
-    <!-- Grid de proyectos de cocinas (Diseño limpio sin categorías) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+    <!-- Grid de proyectos inmersivo -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12" id="gallery-grid">
       {gallery.projects.map((project) => {
         const waInquiryUrl = getProjectInquiryUrl(project.title);
         return (
           <article
-            class="gallery-item bg-filippo-white rounded-2xl overflow-hidden border border-filippo-stone/70 shadow-soft hover:shadow-card transition-all duration-500 group flex flex-col justify-between"
+            class="gallery-item group relative overflow-hidden rounded-3xl bg-black cursor-pointer gallery-trigger-zoom"
+            data-img={project.image}
+            data-title={project.title}
+            data-alt={project.imageAlt}
           >
-            <div>
-              <!-- Contenedor de la fotografía con botón de zoom -->
-              <div
-                class="relative aspect-[4/3] overflow-hidden bg-filippo-cream cursor-pointer gallery-trigger-zoom"
-                data-img={project.image}
-                data-title={project.title}
-                data-alt={project.imageAlt}
-              >
-                <img
-                  src={project.image}
-                  alt={project.imageAlt}
-                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                  loading="lazy"
-                />
+            <!-- Contenedor de la fotografía -->
+            <div class="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.imageAlt}
+                class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+            </div>
 
-                <!-- Icono sutil de ampliación al pasar el mouse -->
-                <div class="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-filippo-white/90 backdrop-blur-sm flex items-center justify-center text-filippo-charcoal opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                  </svg>
-                </div>
-              </div>
-
-              <!-- Ficha de detalles del proyecto -->
-              <div class="p-6">
-                <div class="flex items-baseline justify-between mb-2">
-                  <h3 class="text-xl font-serif font-bold text-filippo-charcoal group-hover:text-filippo-oak transition-colors">
+            <!-- Ficha minimalista sobre la imagen -->
+            <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+              <div class="flex items-end justify-between">
+                <div>
+                  <h3 class="text-2xl font-serif text-white mb-1 drop-shadow-md">
                     {project.title}
                   </h3>
-                  <span class="text-xs text-filippo-muted">
+                  <p class="text-sm text-white/80 font-light drop-shadow-sm">
                     {project.location}
-                  </span>
-                </div>
-
-                <p class="text-sm text-filippo-muted font-light leading-relaxed mb-4">
-                  {project.description}
-                </p>
-
-                <div class="pt-3 border-t border-filippo-stone/40">
-                  <p class="text-[11px] uppercase tracking-wider text-filippo-muted/80 font-semibold mb-1">
-                    Materiales clave:
-                  </p>
-                  <p class="text-xs text-filippo-charcoal font-medium">
-                    {project.materials}
                   </p>
                 </div>
+
+                <!-- Botón de consulta específico -->
+                <a
+                  href={waInquiryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="shrink-0 w-12 h-12 flex items-center justify-center bg-filippo-oak hover:bg-filippo-oak-dark text-black rounded-full transition-transform hover:scale-105 shadow-lg"
+                  onclick="event.stopPropagation();"
+                  aria-label={`Consultar por ${project.title}`}
+                >
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                  </svg>
+                </a>
               </div>
             </div>
-
-            <!-- Botón de consulta específico para este proyecto -->
-            <div class="px-6 pb-6 pt-2">
-              <a
-                href={waInquiryUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-full inline-flex items-center justify-center gap-2 bg-neutral-900 hover:bg-filippo-oak hover:text-black text-filippo-charcoal border border-neutral-700 hover:border-filippo-oak text-xs font-semibold py-2.5 px-4 rounded-xl transition-all duration-300"
-              >
-                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
-                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-                </svg>
-                <span>Consultar por este proyecto</span>
-              </a>
-            </div>
-
           </article>
         );
       })}

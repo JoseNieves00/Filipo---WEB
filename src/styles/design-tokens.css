@@ -64,8 +64,8 @@
   /* ----------------------------------------------------------------------------
    * 4. FUENTES TIPOGRÁFICAS
    * -------------------------------------------------------------------------- */
-  /* // EDITAR: Fuente para titulares principales (DM Serif Display) */
-  --font-heading: 'DM Serif Display', Georgia, serif;
+  /* // EDITAR: Fuente para titulares principales (Playfair Display) */
+  --font-heading: 'Playfair Display', Georgia, serif;
 
   /* // EDITAR: Fuente para textos corridos y UI */
   --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;

@@ -5,8 +5,8 @@
  * ------------------------------------------------------------------------------
  * PROPÓSITO:
  * Catálogo principal de líneas de producto en la Home. Muestra cada categoría
- * ofrecida con imagen, descripción corta, botón "Ver más" que dirige a su
- * página individual y botón directo para cotizar por WhatsApp.
+ * con un enfoque altamente visual e inmersivo (estilo Apple), minimizando 
+ * texto y maximizando la presencia de las fotografías.
  *
  * RELACIÓN:
  * Consume `products` de `src/data/siteContent.json`. Cada producto enlaza a
@@ -26,80 +26,57 @@ const products = (siteContent.products || []).filter((p) => p.published);
     
     <SectionHeader
       kicker="NUESTRAS LÍNEAS DE DISEÑO"
-      title="Soluciones de autor para cada espacio"
+      title="Soluciones de autor"
       description="Explora nuestras especialidades arquitectónicas. Cada categoría cuenta con fabricación a medida y acabados de alta gama."
       align="center"
     />
 
-    <!-- Grid de catálogo de productos -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Grid de catálogo inmersivo (Minimalista) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 mt-12">
       {products.map((product) => {
         const productWaUrl = getWhatsAppUrl(
           product.whatsappMessage || `Hola Filippo, me interesa cotizar ${product.title}.`
         );
 
         return (
-          <article class="bg-filippo-linen/40 rounded-2xl overflow-hidden border border-filippo-stone/70 shadow-soft hover:shadow-card transition-all duration-500 group flex flex-col justify-between">
-            <div>
-              <!-- Imagen destacada con enlace a su página dedicada -->
-              <a href={`/${product.slug}`} class="block relative aspect-[4/3] overflow-hidden bg-filippo-cream">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                  loading="lazy"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-filippo-charcoal/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
-              </a>
+          <article class="group relative overflow-hidden rounded-3xl bg-black">
+            <!-- Imagen inmersiva -->
+            <a href={`/${product.slug}`} class="block aspect-[4/5] sm:aspect-square md:aspect-[4/3] lg:aspect-square overflow-hidden">
+              <img
+                src={product.image}
+                alt={product.title}
+                class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100"
+                loading="lazy"
+              />
+              <!-- Gradiente sutil para contraste del texto -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+            </a>
 
-              <!-- Información del producto -->
-              <div class="p-6">
-                <h3 class="text-xl font-serif font-bold text-filippo-charcoal group-hover:text-filippo-oak transition-colors mb-2">
-                  <a href={`/${product.slug}`}>
-                    {product.title}
-                  </a>
-                </h3>
+            <!-- Contenido minimalista sobre la imagen -->
+            <div class="absolute bottom-0 left-0 right-0 p-8 sm:p-10 flex flex-col items-center text-center">
+              <h3 class="text-3xl sm:text-4xl font-serif text-white mb-6">
+                <a href={`/${product.slug}`}>
+                  {product.title}
+                </a>
+              </h3>
 
-                <p class="text-sm text-filippo-muted font-light leading-relaxed mb-6">
-                  {product.shortDescription}
-                </p>
-
-                <!-- Beneficios clave en viñetas compactas -->
-                {product.features && product.features.length > 0 && (
-                  <ul class="space-y-1.5 pt-3 border-t border-filippo-stone/40 mb-2">
-                    {product.features.slice(0, 2).map((feat) => (
-                      <li class="flex items-center gap-2 text-xs text-filippo-charcoal/80 font-medium">
-                        <span class="w-1.5 h-1.5 rounded-full bg-filippo-oak shrink-0"></span>
-                        <span class="line-clamp-1">{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+              <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a
+                  href={`/${product.slug}`}
+                  class="px-8 py-3.5 rounded-full bg-white/10 backdrop-blur-md text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-black transition-colors"
+                >
+                  Explorar
+                </a>
+                <a
+                  href={productWaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-8 py-3.5 rounded-full bg-filippo-oak text-black text-sm font-bold tracking-wide hover:bg-filippo-oak-dark transition-colors"
+                >
+                  Cotizar
+                </a>
               </div>
             </div>
-
-            <!-- Botones de acción dual: Ver Más y Cotizar WhatsApp -->
-            <div class="p-6 pt-0 grid grid-cols-2 gap-3">
-              <a
-                href={`/${product.slug}`}
-                class="inline-flex items-center justify-center text-xs font-semibold uppercase tracking-wider py-2.5 px-3 rounded-xl border border-filippo-charcoal/30 text-filippo-charcoal hover:bg-filippo-charcoal hover:text-white transition-all text-center"
-              >
-                Ver más
-              </a>
-
-              <a
-                href={productWaUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-1.5 text-xs font-bold uppercase tracking-wider py-2.5 px-3 rounded-xl bg-filippo-oak hover:bg-filippo-oak-dark text-black transition-all shadow-sm text-center"
-              >
-                <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
-                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-                </svg>
-                <span>Cotizar</span>
-              </a>
-            </div>
-
           </article>
         );
       })}

@@ -5,15 +5,12 @@
  * ------------------------------------------------------------------------------
  * PROPÓSITO:
  * Portada principal de la landing page. Comunica el posicionamiento de lujo
- * sobrio de Filippo, exhibe la fotografía insignia de cocina y conduce al
- * visitante a la primera llamada a la acción clave en WhatsApp.
+ * sobrio de Filippo con un enfoque "Apple", altamente minimalista y centrado 
+ * en una imagen de gran formato.
  *
  * RELACIÓN:
  * Consume `src/data/siteContent.json` y la utilidad `src/utils/whatsapp.ts`.
  * Se renderiza al inicio del cuerpo de `src/pages/index.astro`.
- *
- * // EXTENDER: Para agregar un selector rápido o video de fondo, puedes
- * // incluirlo dentro del contenedor del hero.
  * ==============================================================================
  */
 
@@ -22,111 +19,57 @@ import { getWhatsAppUrl } from '../../utils/whatsapp';
 import Button from '../common/Button.astro';
 
 const heroWaUrl = getWhatsAppUrl(siteContent.whatsapp.defaultMessages.hero);
-
-// ==============================================================================
-// // EDITAR: Métricas y cifras destacadas de confianza en el Hero.
-// Puedes cambiar directamente aquí los números o etiquetas en código según lo requieras.
-// Por ejemplo: 'Garantía', 'Garantía de por vida', '10 años', etc.
-// ==============================================================================
-const heroStats = siteContent.hero?.stats || [
-  { value: "150+", label: "Cocinas instaladas" },
-  { value: "10 años", label: "Experiencia en diseño" },
-  { value: "100%", label: "Diseño a medida" }
-];
 ---
 
-<section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-filippo-linen">
-  <!-- Fondo con degradado ambiental sutil -->
-  <div class="absolute inset-0 bg-gradient-to-b from-filippo-stone/15 via-transparent to-transparent pointer-events-none" />
+<section class="relative pt-24 pb-0 overflow-hidden bg-filippo-linen flex flex-col items-center">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center mb-12">
+    
+    <!-- Titular principal -->
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-serif text-filippo-charcoal tracking-tight leading-[1.05] mb-6">
+      {siteContent.hero.headline}
+    </h1>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-      
-      <!-- Contenido textual (Columna izquierda) -->
-      <div class="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-left">
-        
-        <!-- Insignia de confianza de autor -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-filippo-white border border-filippo-stone/70 shadow-sm text-xs font-medium text-filippo-charcoal">
-          <span class="w-2 h-2 rounded-full bg-filippo-oak"></span>
-          <span>{siteContent.hero.badgeText}</span>
-        </div>
+    <!-- Subtítulo persuasivo -->
+    <p class="text-lg sm:text-2xl text-filippo-muted leading-relaxed font-light max-w-2xl mx-auto mb-10">
+      {siteContent.hero.subheadline}
+    </p>
 
-        <!-- Titular principal -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-filippo-charcoal tracking-tight leading-[1.12]">
-          {siteContent.hero.headline}
-        </h1>
+    <!-- Botones de llamada a la acción (CTA) -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <Button
+        href={heroWaUrl}
+        variant="wa"
+        size="lg"
+        isExternal={true}
+        className="w-full sm:w-auto shadow-md hover:shadow-floating"
+      >
+        <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+        </svg>
+        <span>{siteContent.hero.ctaText}</span>
+      </Button>
 
-        <!-- Subtítulo persuasivo -->
-        <p class="text-lg sm:text-xl text-filippo-muted leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
-          {siteContent.hero.subheadline}
-        </p>
+      <Button
+        href="#galeria"
+        variant="outline"
+        size="lg"
+        className="w-full sm:w-auto"
+      >
+        <span>{siteContent.hero.ctaSecondaryText}</span>
+      </Button>
+    </div>
+  </div>
 
-        <!-- Botones de llamada a la acción (CTA) -->
-        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-          <!-- CTA Primario: WhatsApp de alta conversión -->
-          <Button
-            href={heroWaUrl}
-            variant="wa"
-            size="lg"
-            isExternal={true}
-            className="w-full sm:w-auto shadow-md hover:shadow-floating"
-          >
-            <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
-              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-            </svg>
-            <span>{siteContent.hero.ctaText}</span>
-          </Button>
-
-          <!-- CTA Secundario: Explorar proyectos con ancla -->
-          <Button
-            href="#galeria"
-            variant="outline"
-            size="lg"
-            className="w-full sm:w-auto"
-          >
-            <span>{siteContent.hero.ctaSecondaryText}</span>
-            <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </Button>
-        </div>
-
-        <!-- Cifras destacadas / Social Proof métrico (EDITAR en heroStats arriba) -->
-        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-filippo-stone/60 max-w-lg mx-auto lg:mx-0">
-          {heroStats.map((stat) => (
-            <div>
-              <p class="font-serif text-2xl sm:text-3xl font-bold text-filippo-charcoal">
-                {stat.value}
-              </p>
-              <p class="text-xs text-filippo-muted tracking-wide uppercase mt-1">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-
-      </div>
-
-      <!-- Imagen destacada editorial (Columna derecha) -->
-      <div class="lg:col-span-5 relative">
-        <div class="relative mx-auto max-w-lg lg:max-w-none">
-          
-          <!-- Marco con sutil borde de diseño -->
-          <div class="relative overflow-hidden rounded-2xl shadow-card aspect-[4/5] sm:aspect-[3/4] bg-filippo-cream">
-            <img
-              src={siteContent.hero.heroImage}
-              alt={siteContent.hero.heroImageAlt}
-              class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 ease-out"
-              loading="eager"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-filippo-charcoal/40 via-transparent to-transparent opacity-60"></div>
-          </div>
-
-          
-
-        </div>
-      </div>
-
+  <!-- Imagen destacada (Estilo Apple - Gran formato y limpia) -->
+  <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="relative overflow-hidden rounded-3xl shadow-2xl aspect-[4/3] sm:aspect-[21/9] bg-filippo-cream">
+      <img
+        src={siteContent.hero.heroImage}
+        alt={siteContent.hero.heroImageAlt}
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-filippo-charcoal/20 via-transparent to-transparent"></div>
     </div>
   </div>
 </section>
