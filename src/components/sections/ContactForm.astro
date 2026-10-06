@@ -39,7 +39,7 @@ const directWaUrl = getWhatsAppUrl(whatsapp.defaultMessages.general);
           Agenda tu asesoría
         </h3>
 
-        <form id="whatsapp-lead-form" class="space-y-8">
+        <form id="whatsapp-lead-form" class="space-y-8" data-phone={whatsapp.number || '573004567890'}>
           
           <!-- Campo 1: Nombre completo -->
           <div>
@@ -175,9 +175,10 @@ const directWaUrl = getWhatsAppUrl(whatsapp.defaultMessages.general);
         (comments.trim() ? `Detalles: "${comments.trim()}"\n` : '') +
         `¿Podemos coordinar una llamada o visita técnica?`;
 
-      // Obtener el número configurado dinámicamente o por defecto
-      const phone = '573004567890';
-      const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      // Obtener el número configurado dinámicamente desde el dataset del formulario
+      const rawPhone = leadForm.getAttribute('data-phone') || '573004567890';
+      const cleanPhone = rawPhone.replace(/\D/g, '');
+      const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
 
       // Abrir WhatsApp en una nueva pestaña
       window.open(waUrl, '_blank');

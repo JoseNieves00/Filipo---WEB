@@ -127,13 +127,9 @@ const relatedProducts = products
           </span>
         </div>
 
-        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif text-filippo-charcoal tracking-tight leading-[1.08] mb-6 sm:mb-8">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif text-filippo-charcoal tracking-tight leading-[1.08] mb-8 sm:mb-10">
           {product.title}
         </h1>
-
-        <p class="text-base sm:text-xl lg:text-2xl text-filippo-muted leading-relaxed font-light max-w-2xl mx-auto mb-10 sm:mb-12">
-          {product.tagline || product.shortDescription}
-        </p>
 
         <!-- Botón de cotizar destacado en Hero -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -366,7 +362,7 @@ const relatedProducts = products
                           {rel.title}
                         </a>
                       </h3>
-                      <p class="text-sm text-gray-300 font-light leading-relaxed mb-6 hidden md:block">
+                      <p class="text-sm text-filippo-muted font-light leading-relaxed mb-6 hidden md:block">
                         {rel.shortDescription}
                       </p>
                       
@@ -400,7 +396,7 @@ const relatedProducts = products
   <!-- 7. BARRA FIJA INFERIOR EN MÓVILES (SIEMPRE DISPONIBLE PARA TRÁFICO DE ANUNCIOS/REELS) -->
   <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-filippo-white/95 backdrop-blur-md border-t border-filippo-stone/80 p-3 px-4 flex items-center justify-between gap-3 shadow-floating">
     <div>
-      <p class="text-[10px] uppercase tracking-wider text-gray-300 font-bold">Atención Inmediata</p>
+      <p class="text-xs uppercase tracking-wider text-filippo-muted font-bold">Atención Inmediata</p>
       <p class="text-xs font-serif font-bold text-filippo-charcoal line-clamp-1">{product.title}</p>
     </div>
     <a
