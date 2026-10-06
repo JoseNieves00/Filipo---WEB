@@ -22,28 +22,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        // EDITAR: Paleta de colores vinculada a variables CSS personalizables
+        // EDITAR: Paleta de colores vinculada a variables CSS personalizables (ahora en tema oscuro)
         filippo: {
-          linen: 'var(--color-bg-primary, #FAF8F5)',         // Fondo principal lino / off-white
-          white: 'var(--color-bg-surface, #FFFFFF)',         // Superficies limpias y tarjetas
-          cream: 'var(--color-bg-subtle, #F4EFEB)',          // Fondos secundarios sutiles
-          charcoal: 'var(--color-text-primary, #1C1B19)',    // Tipografía principal y alto contraste
-          muted: 'var(--color-text-muted, #706D67)',         // Texto secundario y etiquetas
-          stone: 'var(--color-accent-stone, #E8E2D8)',       // Acento piedra travertino / bordes
-          oak: 'var(--color-accent-wood, #B88E65)',          // Acento roble natural / madera cálida
-          'oak-dark': '#9A724E',                             // Roble oscuro para hover
-          dark: '#141413'                                    // Fondo contrastado (ej. pie de página)
+          linen: 'var(--color-bg-primary)',         // Ahora es Fondo Negro
+          white: 'var(--color-bg-surface)',         // Ahora es Gris Oscuro (Superficie)
+          cream: 'var(--color-bg-subtle)',          // Ahora es Gris Medio
+          charcoal: 'var(--color-text-primary)',    // Ahora es Blanco (Texto principal)
+          muted: 'var(--color-text-muted)',         // Ahora es Gris claro (Texto secundario)
+          stone: 'var(--color-accent-stone)',       // Ahora es Gris acento
+          oak: 'var(--color-accent-wood)',          // Ahora es Amarillo/Dorado
+          'oak-dark': 'var(--color-accent-wood-hover)', // Amarillo oscuro hover
+          dark: 'var(--color-bg-dark)'              // Negro absoluto
         },
         // Color oficial de WhatsApp y hover
         whatsapp: {
-          DEFAULT: '#25D366',
-          dark: '#128C7E',
+          DEFAULT: 'var(--color-accent-wa)',
+          dark: 'var(--color-accent-wa-hover)',
           light: '#DCF8C6'
         }
       },
       fontFamily: {
         // EXTENDER: Puedes cambiar las fuentes cambiando las variables en design-tokens.css
-        serif: ['var(--font-heading, "Playfair Display")', 'Georgia', 'serif'],
+        serif: ['var(--font-heading, "DM Serif Display")', 'Georgia', 'serif'],
         sans: ['var(--font-body, "Plus Jakarta Sans")', 'Inter', 'sans-serif']
       },
       boxShadow: {

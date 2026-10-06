@@ -18,45 +18,45 @@
 
 :root {
   /* ----------------------------------------------------------------------------
-   * 1. COLORES DE FONDO Y SUPERFICIES
+   * 1. COLORES DE FONDO Y SUPERFICIES (IDENTIDAD OSCURA / NEGRO Y GRIS)
    * -------------------------------------------------------------------------- */
-  /* // EDITAR: Fondo principal general de la página (Lino cálido / Off-White) */
-  --color-bg-primary: #FAF8F5;
+  /* // EDITAR: Fondo principal general (Negro absoluto para integrar el logo JPG) */
+  --color-bg-primary: #000000;
 
-  /* // EDITAR: Superficie de tarjetas, cajas y elementos elevados (Blanco marfil) */
-  --color-bg-surface: #FFFFFF;
+  /* // EDITAR: Superficie de tarjetas y cajas (Gris muy oscuro para generar profundidad) */
+  --color-bg-surface: #111111;
 
-  /* // EDITAR: Fondo sutil para alternar secciones (Crema suave piedra) */
-  --color-bg-subtle: #F4EFEB;
+  /* // EDITAR: Fondo sutil para alternar secciones (Gris oscuro) */
+  --color-bg-subtle: #1A1A1A;
 
-  /* // EDITAR: Fondo contrastado y sobrio para el footer o llamadas destacadas */
-  --color-bg-dark: #151514;
+  /* // EDITAR: Fondo contrastado y sobrio para el footer */
+  --color-bg-dark: #000000;
 
 
   /* ----------------------------------------------------------------------------
    * 2. TIPOGRAFÍA Y CONTRASTE DE TEXTOS
    * -------------------------------------------------------------------------- */
-  /* // EDITAR: Color de texto primario (Carbón arquitectónico profundo, no negro puro) */
-  --color-text-primary: #1C1B19;
+  /* // EDITAR: Color de texto primario (Blanco suave para no cansar la vista) */
+  --color-text-primary: #FAFAFA;
 
-  /* // EDITAR: Color de texto secundario (Gris piedra cálido para subtítulos) */
-  --color-text-muted: #706D67;
+  /* // EDITAR: Color de texto secundario (Gris claro) */
+  --color-text-muted: #A3A3A3;
 
-  /* // EDITAR: Color de texto sobre fondos oscuros */
-  --color-text-inverse: #FAF8F5;
+  /* // EDITAR: Color de texto inverso (Negro para textos sobre botones amarillos) */
+  --color-text-inverse: #0A0A0A;
 
 
   /* ----------------------------------------------------------------------------
-   * 3. ACENTOS MATERIALES Y MARCA
+   * 3. ACENTOS MATERIALES Y MARCA (AMARILLO MAGENTA / DORADO)
    * -------------------------------------------------------------------------- */
-  /* // EDITAR: Acento cálido que evoca maderas nobles (Roble natural tostado) */
-  --color-accent-wood: #B88E65;
-  --color-accent-wood-hover: #9E744D;
+  /* // EDITAR: Amarillo corporativo oficial del logo (Hex exacto #FCD116) */
+  --color-accent-wood: #FCD116;
+  --color-accent-wood-hover: #E5BC0F;
 
-  /* // EDITAR: Acento que evoca piedra natural y mármoles (Travertino) */
-  --color-accent-stone: #E8E2D8;
+  /* // EDITAR: Gris medio/oscuro para bordes discretos (Neutral-700) */
+  --color-accent-stone: #404040;
 
-  /* // EDITAR: Color oficial de WhatsApp para máxima familiaridad y tasa de clics */
+  /* // EDITAR: Color oficial de WhatsApp */
   --color-accent-wa: #25D366;
   --color-accent-wa-hover: #128C7E;
 
@@ -64,29 +64,29 @@
   /* ----------------------------------------------------------------------------
    * 4. FUENTES TIPOGRÁFICAS
    * -------------------------------------------------------------------------- */
-  /* // EDITAR: Fuente para titulares principales (Elegancia editorial atemporal) */
-  --font-heading: 'Playfair Display', Georgia, serif;
+  /* // EDITAR: Fuente para titulares principales (DM Serif Display) */
+  --font-heading: 'DM Serif Display', Georgia, serif;
 
-  /* // EDITAR: Fuente para textos corridos, botones y menús (Lectura limpia y moderna) */
+  /* // EDITAR: Fuente para textos corridos y UI */
   --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
 
   /* ----------------------------------------------------------------------------
    * 5. BORDES Y SOMBRAS ARQUITECTÓNICAS
    * -------------------------------------------------------------------------- */
-  --border-subtle: 1px solid rgba(28, 27, 25, 0.08);
+  --border-subtle: 1px solid rgba(255, 255, 255, 0.08);
   --border-focus: 1px solid var(--color-accent-wood);
 
-  /* Radios de curvatura: minimalistas y discretos para mantener aspecto arquitectónico */
+  /* Radios de curvatura */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-full: 9999px;
 
-  /* Sombras suaves y difusas */
-  --shadow-sm: 0 2px 8px rgba(28, 27, 25, 0.04);
-  --shadow-md: 0 8px 24px rgba(28, 27, 25, 0.06);
-  --shadow-lg: 0 16px 40px rgba(28, 27, 25, 0.09);
+  /* Sombras sutiles adaptadas a modo oscuro */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.8);
 
   /* ----------------------------------------------------------------------------
    * 6. TRANSICIONES

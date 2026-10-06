@@ -1,8 +1,9 @@
 {
   "brand": {
     "name": "Filippo",
+    "logoUrl": "/images/logo-filippo.jpg",
     "legalName": "Filippo Cocinas & Mobiliario de Autor",
-    "tagline": "Cocinas a medida diseñadas para habitar",
+    "tagline": "Diseño y Arquitectura interior",
     "description": "Estudio especializado en el diseño, fabricación e instalación de cocinas residenciales de alta gama. Minimalismo cálido, materiales nobles y herrajes europeos.",
     "phoneDisplay": "+57 (300) 456-7890",
     "email": "contacto@filippococinas.com",

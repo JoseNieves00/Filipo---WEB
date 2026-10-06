@@ -35,10 +35,14 @@ const navLinks = [
 <header class="sticky top-0 z-40 w-full glass-header border-b border-filippo-charcoal/5 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
     <!-- Logotipo Filippo de autor -->
-    <a href="#" class="flex flex-col items-start group focus:outline-none">
-      <span class="font-serif text-2xl md:text-3xl tracking-widest text-filippo-charcoal uppercase font-bold group-hover:text-filippo-oak transition-colors">
-        {siteContent.brand.name}
-      </span>
+    <a href="#" class="flex items-center group focus:outline-none">
+      {siteContent.brand.logoUrl ? (
+        <img src={siteContent.brand.logoUrl} alt={siteContent.brand.name} class="h-10 md:h-12 w-auto object-contain" />
+      ) : (
+        <span class="font-serif text-2xl md:text-3xl tracking-widest text-filippo-charcoal uppercase font-bold group-hover:text-filippo-oak transition-colors">
+          {siteContent.brand.name}
+        </span>
+      )}
     </a>
 
     <!-- Navegación de escritorio (menú de anclas) -->
@@ -53,13 +57,13 @@ const navLinks = [
       ))}
     </nav>
 
-    <!-- Botón CTA de WhatsApp en el header -->
+    <!-- Botón CTA de Cotizar en el header -->
     <div class="hidden sm:flex items-center space-x-4">
       <a
         href={whatsappNavUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300"
+        class="inline-flex items-center gap-2 bg-filippo-oak hover:bg-filippo-oak-dark text-black text-xs uppercase tracking-wider font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300"
       >
         <!-- Icono minimalista de WhatsApp SVG -->
         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -107,12 +111,12 @@ const navLinks = [
           href={whatsappNavUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center gap-2 w-full bg-whatsapp text-white py-3.5 rounded-full font-semibold shadow-md text-sm"
+          class="flex items-center justify-center gap-2 w-full bg-filippo-oak hover:bg-filippo-oak-dark text-black py-3.5 rounded-full font-semibold shadow-md text-sm transition-all"
         >
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.761.815 2.791.815 3.179 0 5.766-2.587 5.767-5.767.001-3.18-2.585-5.766-5.767-5.766zm3.376 8.21c-.14.394-.71.748-1.025.795-.295.044-.68.064-1.104-.072-.267-.086-.605-.205-1.037-.393-1.834-.799-3.031-2.656-3.123-2.778-.092-.122-.744-.991-.744-1.89 0-.898.471-1.341.639-1.523.167-.183.364-.229.486-.229.121 0 .243.001.35.006.113.005.263-.043.411.313.155.372.529 1.29.575 1.383.046.092.076.2.015.322-.061.122-.092.198-.183.305-.092.107-.193.24-.275.322-.092.091-.188.191-.081.374.107.183.475.784 1.02 1.269.702.625 1.295.818 1.479.91.183.091.29.076.397-.046.107-.122.457-.533.579-.716.122-.183.244-.153.411-.092.168.061 1.066.503 1.249.594.183.091.305.137.35.213.045.076.045.442-.095.836zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.176L2 22l4.981-1.309A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
           </svg>
-          <span>Escribir por WhatsApp</span>
+          <span>Cotizar por WhatsApp</span>
         </a>
       </div>
     </nav>

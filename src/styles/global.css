@@ -15,7 +15,7 @@
 @import './design-tokens.css';
 
 /* Importación de fuentes Google Fonts con carga optimizada */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -40,7 +40,7 @@
   /* Selección de texto refinada acorde a la paleta */
   ::selection {
     background-color: var(--color-accent-wood);
-    color: #FFFFFF;
+    color: var(--color-text-inverse);
   }
 
   /* Títulos con fuente editorial por defecto */
@@ -54,7 +54,7 @@
 @layer utilities {
   /* Efecto de desenfoque de fondo para barra de navegación */
   .glass-header {
-    background: rgba(250, 248, 245, 0.88);
+    background: rgba(10, 10, 10, 0.88);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
