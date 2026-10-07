@@ -28,17 +28,11 @@
   },
   "hero": {
     "headline": "Cocinas a medida que transforman la forma de habitar tu hogar",
-    "subheadline": "Unimos arquitectura depurada, materiales nobles y fabricación de precisión para crear cocinas contemporáneas donde la funcionalidad se convierte en arte cotidiano.",
     "ctaText": "Conversar por WhatsApp",
     "ctaSecondaryText": "Explorar proyectos",
     "badgeText": "Fabricación propia con diseño duradero",
     "heroImage": "/images/kitchen-hero.jpg",
-    "heroImageAlt": "Cocina contemporánea Filippo con isla en travertino y carpintería de roble natural",
-    "stats": [
-      { "value": "150+", "label": "Cocinas instaladas" },
-      { "value": "10 años", "label": "Experiencia en diseño" },
-      { "value": "100%", "label": "Diseño a medida" }
-    ]
+    "heroImageAlt": "Cocina contemporánea Filippo con isla en travertino y carpintería de roble natural"
   },
   "services": {
     "kicker": "LO QUE HACEMOS",
@@ -50,28 +44,44 @@
         "icon": "cube",
         "title": "Diseño 3D & Planimetría Arquitectónica",
         "description": "Desarrollamos planos técnicos detallados, estudio ergonómico, propuesta de iluminación y renders fotorrealistas para que visualices tu cocina antes de fabricar.",
-        "highlights": ["Renders hiperrealistas", "Estudio de ergonomía", "Planos hidrosanitarios y eléctricos"]
+        "highlights": [
+          "Renders hiperrealistas",
+          "Estudio de ergonomía",
+          "Planos hidrosanitarios y eléctricos"
+        ]
       },
       {
         "id": "fabricacion-artesanal",
         "icon": "wrench",
         "title": "Fabricación Artesanal & Ebanistería",
         "description": "Taller propio de alta precisión. Seleccionamos tableros hidrófugos de alta densidad, ensambles milimétricos y herrajes austríacos Blum con cierre silencioso.",
-        "highlights": ["Herrajes Blum con garantía de por vida", "Tableros hidrófugos resistentes a la humedad", "Acabados laqueados y chapillas naturales"]
+        "highlights": [
+          "Herrajes Blum con garantía de por vida",
+          "Tableros hidrófugos resistentes a la humedad",
+          "Acabados laqueados y chapillas naturales"
+        ]
       },
       {
         "id": "materiales-nobles",
         "icon": "gem",
         "title": "Piedras Naturales & Sinterizados",
         "description": "Asesoramos en la elección de mesones y salpicaderos: cuarzos, granitos exóticos, travertinos y superficies ultracompactas (Dekton, Neolith) resistentes al calor y rayaduras.",
-        "highlights": ["Superficies ultracompactas de alta resistencia", "Tratamiento antimanchas en piedras naturales", "Cortes y biselados a 45 grados sin juntas visibles"]
+        "highlights": [
+          "Superficies ultracompactas de alta resistencia",
+          "Tratamiento antimanchas en piedras naturales",
+          "Cortes y biselados a 45 grados sin juntas visibles"
+        ]
       },
       {
         "id": "instalacion-llave-en-mano",
         "icon": "check-circle",
         "title": "Montaje Impecable Llave en Mano",
         "description": "Nuestros propios ebanistas e instaladores certificados ejecutan el montaje en tu hogar con rigor milimétrico, máxima limpieza y supervisión del arquitecto titular.",
-        "highlights": ["Instaladores propios en nómina", "Protección de pisos y áreas contiguas", "Puesta a punto de electrodomésticos"]
+        "highlights": [
+          "Instaladores propios en nómina",
+          "Protección de pisos y áreas contiguas",
+          "Puesta a punto de electrodomésticos"
+        ]
       }
     ]
   },
@@ -133,41 +143,6 @@
         "description": "Interpretación contemporánea de la cocina campestre: madera maciza tratada al aceite vegetal y mesón de cuarcita rústica.",
         "materials": "Madera de cedro recuperado, Cuarcita Taj Mahal",
         "location": "Sopó, Cundinamarca"
-      }
-    ]
-  },
-  "process": {
-    "kicker": "NUESTRO MÉTODO",
-    "title": "De la primera idea a tu cocina instalada, sin sorpresas ni demoras",
-    "description": "Un proceso de 4 pasos claro, estructurado y transparente para que disfrutes tanto el diseño como el resultado final.",
-    "steps": [
-      {
-        "number": "01",
-        "title": "Conversación y Briefing",
-        "subtitle": "Por WhatsApp o en Showroom",
-        "description": "Nos cuentas qué necesitas, cómo cocinas y cómo vives tu espacio. Analizamos medidas iniciales, plano de la vivienda o coordinamos una visita técnica a domicilio.",
-        "duration": "1 a 2 días"
-      },
-      {
-        "number": "02",
-        "title": "Diseño 3D y Selección Material",
-        "subtitle": "Renders hiperrealistas",
-        "description": "Te presentamos el proyecto en 3D con distribución ergonómica, muestras reales de maderas, piedras y paleta de colores. Ajustamos cada detalle hasta tu total satisfacción.",
-        "duration": "5 a 7 días"
-      },
-      {
-        "number": "03",
-        "title": "Fabricación de Precisión",
-        "subtitle": "En taller propio",
-        "description": "Construimos tu cocina con maquinaria especializada y ebanistas experimentados. Realizamos pre-armado en taller para asegurar que cada herraje y holgura sea perfecta.",
-        "duration": "3 a 4 semanas"
-      },
-      {
-        "number": "04",
-        "title": "Montaje y Entrega Impecable",
-        "subtitle": "Instalación llave en mano",
-        "description": "Instalamos en la fecha pactada. Cuidamos cada rincón de tu casa, realizamos limpieza profunda y te entregamos la garantía escrita con manual de cuidado de materiales.",
-        "duration": "2 a 3 días en sitio"
       }
     ]
   },
@@ -294,17 +269,10 @@
       "title": "Cocinas a Medida",
       "shortDescription": "Diseño arquitectónico, materiales nobles y herrajes europeos de cierre silencioso.",
       "badgeText": "diseño exclusivo y a medida",
-      "tagline": "El corazón de tu hogar diseñado para habitar y perdurar",
       "image": "/images/kitchen-hero.jpg",
       "published": true,
       "order": 1,
       "whatsappMessage": "Hola Filippo, me interesa cotizar una cocina a medida. ¿Podemos hablar de mi espacio?",
-      "features": [
-        "Herrajes austríacos Blum con garantía de por vida",
-        "Mesones en mármol travertino, cuarzo y sinterizados",
-        "Diseño 3D fotorrealista antes de fabricar",
-        "Instalación limpia llave en mano con equipo propio"
-      ],
       "gallery": [
         "/images/kitchen-hero.jpg",
         "/images/project-aliso.jpg",
@@ -312,9 +280,18 @@
         "/images/project-carrara.jpg"
       ],
       "options": [
-        { "name": "Minimalismo Cálido", "description": "Frentes lisos en roble, tiradores ocultos y mesón monolítico." },
-        { "name": "Madera & Piedra", "description": "Contrastes de nogal canaletto con superficies ultracompactas." },
-        { "name": "Isla Central Social", "description": "Isla de gran formato como punto de encuentro gastronómico." }
+        {
+          "name": "Minimalismo Cálido",
+          "description": "Frentes lisos en roble, tiradores ocultos y mesón monolítico."
+        },
+        {
+          "name": "Madera & Piedra",
+          "description": "Contrastes de nogal canaletto con superficies ultracompactas."
+        },
+        {
+          "name": "Isla Central Social",
+          "description": "Isla de gran formato como punto de encuentro gastronómico."
+        }
       ],
       "faqs": [
         {
@@ -335,26 +312,28 @@
       "title": "Puertas Blindadas",
       "shortDescription": "Máxima seguridad certificada con diseño arquitectónico y acabados de lujo.",
       "badgeText": "diseño exclusivo y a medida",
-      "tagline": "Protege lo que más valoras sin renunciar a la elegancia arquitectónica",
       "image": "/images/project-aliso.jpg",
       "published": true,
       "order": 2,
       "whatsappMessage": "Hola Filippo, quiero cotizar una puerta blindada de seguridad para mi hogar/oficina.",
-      "features": [
-        "Estructura interna en acero balístico de alta resistencia",
-        "Cerraduras multipunto de seguridad italiana o biométrica",
-        "Enchapes exteriores en maderas nobles, laca o metal",
-        "Aislamiento termoacústico de alto rendimiento"
-      ],
       "gallery": [
         "/images/project-aliso.jpg",
         "/images/project-castano.jpg",
         "/images/project-nogal.jpg"
       ],
       "options": [
-        { "name": "Nivel III Residencial", "description": "Protección ante impacto de armas cortas y forzamiento con palanca." },
-        { "name": "Nivel IV / V Alta Seguridad", "description": "Resistencia a ataques de alto calibre y herramientas mecánicas pesadas." },
-        { "name": "Integración Biométrica", "description": "Apertura mediante huella, reconocimiento facial o clave digital." }
+        {
+          "name": "Nivel III Residencial",
+          "description": "Protección ante impacto de armas cortas y forzamiento con palanca."
+        },
+        {
+          "name": "Nivel IV / V Alta Seguridad",
+          "description": "Resistencia a ataques de alto calibre y herramientas mecánicas pesadas."
+        },
+        {
+          "name": "Integración Biométrica",
+          "description": "Apertura mediante huella, reconocimiento facial o clave digital."
+        }
       ],
       "faqs": [
         {
@@ -375,25 +354,24 @@
       "title": "Remodelación Arquitectónica",
       "shortDescription": "Transformación integral de espacios con dirección técnica de obra y acabados premium.",
       "badgeText": "diseño exclusivo y a medida",
-      "tagline": "Renovación total de ambientes residenciales con control riguroso de tiempos",
       "image": "/images/project-lino.jpg",
       "published": true,
       "order": 3,
       "whatsappMessage": "Hola Filippo, me interesa cotizar la remodelación integral de mi espacio.",
-      "features": [
-        "Dirección arquitectónica y supervisión continua de obra",
-        "Coordinación de demoliciones, redes, pisos e iluminación",
-        "Presupuestos transparentes sin costos ocultos",
-        "Entrega limpia y cumplimiento estricto de cronograma"
-      ],
       "gallery": [
         "/images/project-lino.jpg",
         "/images/project-nogal.jpg",
         "/images/project-olivo.jpg"
       ],
       "options": [
-        { "name": "Remodelación Integral", "description": "Intervención de áreas sociales, cocinas y baños completos." },
-        { "name": "Actualización de Áreas Clave", "description": "Renovación estética focalizada con alto impacto visual." }
+        {
+          "name": "Remodelación Integral",
+          "description": "Intervención de áreas sociales, cocinas y baños completos."
+        },
+        {
+          "name": "Actualización de Áreas Clave",
+          "description": "Renovación estética focalizada con alto impacto visual."
+        }
       ],
       "subcategories": [
         {
@@ -436,26 +414,28 @@
       "title": "Carpintería Arquitectónica",
       "shortDescription": "Puertas de paso, paneles alistonados, vestieres y muebles fijos de autor.",
       "badgeText": "diseño exclusivo y a medida",
-      "tagline": "Detalles en madera que unifican el diseño de toda tu residencia",
       "image": "/images/project-castano.jpg",
       "published": true,
       "order": 4,
       "whatsappMessage": "Hola Filippo, me gustaría cotizar carpintería arquitectónica a medida.",
-      "features": [
-        "Puertas piso-techo con bisagras invisibles",
-        "Panelados alistonados y muros revestidos en madera",
-        "Walk-in closets y vestieres optimizados",
-        "Ensambles precisos con acabado mate al tacto natural"
-      ],
       "gallery": [
         "/images/project-castano.jpg",
         "/images/project-aliso.jpg",
         "/images/project-olivo.jpg"
       ],
       "options": [
-        { "name": "Puertas de Paso de Autor", "description": "Sistemas pivotantes y enrasados a muro." },
-        { "name": "Vestieres & Closets", "description": "Iluminación integrada LED 2700K y herrajes premium." },
-        { "name": "Panelados Acústicos y Decorativos", "description": "Revestimientos cálidos en roble y nogal." }
+        {
+          "name": "Puertas de Paso de Autor",
+          "description": "Sistemas pivotantes y enrasados a muro."
+        },
+        {
+          "name": "Vestieres & Closets",
+          "description": "Iluminación integrada LED 2700K y herrajes premium."
+        },
+        {
+          "name": "Panelados Acústicos y Decorativos",
+          "description": "Revestimientos cálidos en roble y nogal."
+        }
       ],
       "faqs": [
         {
@@ -472,24 +452,23 @@
       "title": "Renders & Modelado 3D",
       "shortDescription": "Visualización fotorrealista para arquitectos, constructoras y clientes residenciales.",
       "badgeText": "diseño exclusivo y a medida",
-      "tagline": "Experimenta y valida tu proyecto antes de colocar el primer ladrillo",
       "image": "/images/project-carrara.jpg",
       "published": true,
       "order": 5,
       "whatsappMessage": "Hola Filippo, quiero consultar el servicio de renders y modelado 3D.",
-      "features": [
-        "Renders fotorrealistas de alta resolución 4K",
-        "Estudios de iluminación natural y artificial precisa",
-        "Muestras de materiales y texturas reales en escena",
-        "Entrega ágil para presentaciones y aprobaciones de diseño"
-      ],
       "gallery": [
         "/images/project-carrara.jpg",
         "/images/project-lino.jpg"
       ],
       "options": [
-        { "name": "Renders de Interiores", "description": "Perspectivas inmersivas de cocinas, salas y alcobas." },
-        { "name": "Renders de Fachadas y Exteriores", "description": "Integración con paisajismo y entorno lumínico." }
+        {
+          "name": "Renders de Interiores",
+          "description": "Perspectivas inmersivas de cocinas, salas y alcobas."
+        },
+        {
+          "name": "Renders de Fachadas y Exteriores",
+          "description": "Integración con paisajismo y entorno lumínico."
+        }
       ],
       "faqs": [
         {
