@@ -2,22 +2,22 @@
   "brand": {
     "name": "Filippo",
     "logoUrl": "/images/logo-filippo.jpg",
-    "legalName": "Filippo Cocinas & Mobiliario de Autor",
+    "legalName": "Filippo Cucine S.A.S",
     "tagline": "Diseño y Arquitectura interior",
-    "description": "Estudio especializado en el diseño, fabricación e instalación de cocinas residenciales de alta gama. Minimalismo cálido, materiales nobles y herrajes europeos.",
-    "phoneDisplay": "+57 (300) 456-7890",
+    "description": "Transformamos tus ideas en espacios modernos y funcionales a través de soluciones integrales en diseño arquitectónico, interiores y construcción.",
+    "phoneDisplay": "+57 (312) 855-5365",
     "email": "contacto@filippococinas.com",
-    "address": "Calle 85 # 11-53, Zona Nogal",
-    "city": "Bogotá, Colombia",
-    "schedule": "Lunes a Viernes: 9:00 AM - 6:00 PM | Sábados con cita previa",
+    "address": "Calle 13C #19e -75 Barrio La Popa",
+    "city": "Valledupar, Cesar",
+    "schedule": "Lunes a Viernes: 9:00 AM - 6:00 PM",
     "social": {
-      "instagram": "https://instagram.com/filippococinas",
-      "facebook": "https://facebook.com/filippococinas",
-      "tiktok": "https://tiktok.com/@filippococinas"
+      "instagram": "https://instagram.com/filippocucine",
+      "facebook": "https://www.facebook.com/share/1AWw91frpB/",
+      "tiktok": "https://www.tiktok.com/@filippo_cucine"
     }
   },
   "whatsapp": {
-    "number": "573004567890",
+    "number": "573128555365",
     "defaultMessages": {
       "general": "Hola Filippo, me interesa conocer más sobre sus servicios de diseño de interiores.",
       "hero": "Hola Filippo, me gustaría agendar una asesoría para diseñar mi nueva proyecto",
