@@ -4,9 +4,8 @@
  * FILIPPO | SECCIÓN: WhyUs.astro
  * ------------------------------------------------------------------------------
  * PROPÓSITO:
- * Sección "Por qué elegirnos / Ventajas clave". Sustituye el antiguo bloque de
- * procesos por una propuesta de valor enfocada en generar confianza y cerrar ventas:
- * fabricación directa sin intermediarios, materiales nobles y garantía real.
+ * Sección "Por qué elegirnos / Ventajas clave". Diseño minimalista y audaz
+ * (estilo Apple) para transmitir confianza a través de tipografía de gran formato.
  *
  * RELACIÓN:
  * Consume `whyUs` de `src/data/siteContent.json`. Se renderiza en `src/pages/index.astro`.
@@ -29,35 +28,19 @@ const { whyUs } = siteContent;
       align="center"
     />
 
-    <!-- Cuadrícula de 4 ventajas competitivas -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Cuadrícula minimalista y audaz -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mt-12">
       {whyUs.items.map((item) => (
-        <div class="bg-filippo-linen/40 rounded-2xl p-8 border border-filippo-stone/60 hover:border-filippo-oak/60 transition-all duration-300 flex flex-col justify-between group hover:shadow-card">
-          
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="font-serif text-3xl font-bold text-filippo-oak">
-                {item.number}
-              </span>
-              <span class="w-2.5 h-2.5 rounded-full bg-filippo-stone/60 group-hover:bg-filippo-oak transition-colors"></span>
-            </div>
-
-            <h3 class="text-xl font-serif font-bold text-filippo-charcoal mb-3 group-hover:text-filippo-oak transition-colors">
-              {item.title}
-            </h3>
-
-            <p class="text-sm text-filippo-muted leading-relaxed font-light">
-              {item.description}
-            </p>
-          </div>
-
-          <div class="pt-6 mt-6 border-t border-filippo-stone/40 flex items-center gap-2 text-xs text-filippo-charcoal/80 font-medium">
-            <svg class="w-4 h-4 text-filippo-oak shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>Compromiso Filippo</span>
-          </div>
-
+        <div class="bg-black rounded-3xl p-8 lg:p-10 flex flex-col group transition-transform duration-500 hover:-translate-y-1">
+          <span class="block font-serif text-5xl lg:text-6xl text-filippo-oak mb-8">
+            {item.number}
+          </span>
+          <h3 class="text-2xl font-serif text-white mb-4">
+            {item.title}
+          </h3>
+          <p class="text-base text-white/70 font-light leading-relaxed">
+            {item.description}
+          </p>
         </div>
       ))}
     </div>
