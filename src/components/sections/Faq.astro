@@ -4,15 +4,11 @@
  * FILIPPO COCINAS | SECCIÓN: Faq.astro
  * ------------------------------------------------------------------------------
  * PROPÓSITO:
- * Acordeón accesible de preguntas frecuentes. Resuelve dudas críticas sobre
- * tiempos, visitas técnicas a domicilio, herrajes europeos, pagos y garantías.
+ * Acordeón accesible de preguntas frecuentes. Diseño minimalista con líneas
+ * simples y gran tipografía.
  *
  * RELACIÓN:
  * Consume `src/data/siteContent.json` y se monta en `src/pages/index.astro`.
- *
- * ACCESIBILIDAD:
- * - Botones con aria-expanded y control de foco.
- * - Paneles con role="region" vinculados por aria-controls.
  * ==============================================================================
  */
 
@@ -34,23 +30,23 @@ const faqWaUrl = getWhatsAppUrl("Hola Filippo, tengo una consulta específica qu
       align="center"
     />
 
-    <!-- Acordeón interactivo -->
-    <div class="space-y-4" id="faq-accordion">
+    <!-- Acordeón interactivo minimalista -->
+    <div class="mt-12" id="faq-accordion">
       {faq.items.map((item, idx) => (
-        <div class="border border-filippo-stone/70 rounded-xl overflow-hidden bg-filippo-linen/30 transition-all duration-200">
+        <div class="border-b border-filippo-stone/60 transition-all duration-200">
           <button
             type="button"
-            class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:bg-filippo-linen/60"
+            class="faq-trigger w-full py-6 text-left flex items-center justify-between gap-4 focus:outline-none group"
             aria-expanded="false"
             aria-controls={`faq-answer-${idx}`}
             id={`faq-btn-${idx}`}
           >
-            <span class="font-serif font-semibold text-base sm:text-lg text-filippo-charcoal">
+            <span class="font-serif text-xl sm:text-2xl text-filippo-charcoal group-hover:text-filippo-oak transition-colors">
               {item.question}
             </span>
-            <span class="faq-icon text-filippo-oak shrink-0 transition-transform duration-300">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            <span class="faq-icon text-filippo-charcoal/50 group-hover:text-filippo-oak shrink-0 transition-transform duration-300">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </span>
           </button>
@@ -59,7 +55,7 @@ const faqWaUrl = getWhatsAppUrl("Hola Filippo, tengo una consulta específica qu
             id={`faq-answer-${idx}`}
             role="region"
             aria-labelledby={`faq-btn-${idx}`}
-            class="faq-content hidden px-6 pb-6 pt-1 text-sm sm:text-base text-filippo-muted leading-relaxed font-light border-t border-filippo-stone/30"
+            class="faq-content hidden pb-8 text-base text-filippo-muted leading-relaxed font-light"
           >
             <p>{item.answer}</p>
           </div>
@@ -67,20 +63,17 @@ const faqWaUrl = getWhatsAppUrl("Hola Filippo, tengo una consulta específica qu
       ))}
     </div>
 
-    <!-- Llamada complementaria a WhatsApp si aún tienen dudas -->
-    <div class="mt-12 text-center bg-filippo-cream/60 p-6 rounded-2xl border border-filippo-stone/60">
-      <p class="text-sm text-filippo-charcoal font-medium mb-3">
-        ¿Tienes una pregunta específica sobre tu espacio o planos?
-      </p>
+    <!-- Llamada complementaria minimalista -->
+    <div class="mt-16 text-center">
       <a
         href={faqWaUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-filippo-oak hover:text-filippo-oak-dark transition-colors"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-filippo-charcoal hover:text-filippo-oak transition-colors border-b border-transparent hover:border-filippo-oak pb-1"
       >
-        <span>Consultar directamente a un arquitecto por WhatsApp</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        <span>¿Tienes otra consulta? Habla con un arquitecto por WhatsApp</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       </a>
     </div>

@@ -4,9 +4,8 @@
  * FILIPPO COCINAS | SECCIÓN: Services.astro
  * ------------------------------------------------------------------------------
  * PROPÓSITO:
- * Presentar los 4 pilares fundamentales de servicio de Filippo Cocinas.
- * Explica por qué el enfoque arquitectónico y la fabricación a medida superan
- * a las opciones comerciales prefabricadas.
+ * Presentar los pilares fundamentales de servicio con un diseño limpio,
+ * minimalista y altamente legible.
  *
  * RELACIÓN:
  * Consume `src/data/siteContent.json` y se monta en `src/pages/index.astro`.
@@ -17,20 +16,6 @@ import siteContent from '../../data/siteContent.json';
 import SectionHeader from '../common/SectionHeader.astro';
 
 const { services } = siteContent;
-
-// Iconografía SVG minimalista y arquitectónica
-const getServiceIcon = (iconName: string) => {
-  switch (iconName) {
-    case 'cube':
-      return `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />`;
-    case 'wrench':
-      return `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />`;
-    case 'gem':
-      return `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />`;
-    default:
-      return `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />`;
-  }
-};
 ---
 
 <section id="servicios" class="py-20 md:py-28 bg-filippo-white border-t border-filippo-stone/40">
@@ -43,41 +28,23 @@ const getServiceIcon = (iconName: string) => {
       align="center"
     />
 
-    <!-- Cuadrícula de 4 servicios con diseño arquitectónico -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <!-- Cuadrícula de servicios minimalista -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-12">
       {services.items.map((item, index) => (
-        <div class="bg-filippo-linen/60 rounded-xl p-8 border border-filippo-stone/60 hover:border-filippo-oak/60 transition-all duration-300 hover:shadow-card flex flex-col justify-between group">
-          
+        <div class="flex flex-col sm:flex-row gap-6 p-8 lg:p-10 bg-filippo-cream rounded-3xl group transition-transform duration-500 hover:-translate-y-1">
+          <div class="shrink-0">
+            <span class="text-4xl lg:text-5xl font-serif text-filippo-oak/50 group-hover:text-filippo-oak transition-colors">
+              0{index + 1}
+            </span>
+          </div>
           <div>
-            <!-- Encabezado de la tarjeta con número e icono -->
-            <div class="flex items-center justify-between mb-6">
-              <span class="text-xs font-serif font-bold text-filippo-muted/60 group-hover:text-filippo-oak transition-colors">
-                0{index + 1}
-              </span>
-              <div class="w-12 h-12 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-filippo-oak group-hover:bg-filippo-oak group-hover:border-filippo-oak group-hover:text-black transition-all duration-300 shadow-sm">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={getServiceIcon(item.icon)} />
-              </div>
-            </div>
-
-            <h3 class="text-xl font-serif font-semibold text-filippo-charcoal mb-3 group-hover:text-filippo-oak transition-colors">
+            <h3 class="text-2xl lg:text-3xl font-serif text-filippo-charcoal mb-4">
               {item.title}
             </h3>
-
-            <p class="text-sm text-filippo-muted leading-relaxed font-light mb-6">
+            <p class="text-base lg:text-lg text-filippo-muted leading-relaxed font-light">
               {item.description}
             </p>
           </div>
-
-          <!-- Puntos destacados de calidad -->
-          <div class="pt-4 border-t border-filippo-stone/50 space-y-2">
-            {item.highlights.map((bullet) => (
-              <div class="flex items-center gap-2 text-xs text-filippo-charcoal/80">
-                <span class="w-1.5 h-1.5 rounded-full bg-filippo-oak shrink-0"></span>
-                <span>{bullet}</span>
-              </div>
-            ))}
-          </div>
-
         </div>
       ))}
     </div>

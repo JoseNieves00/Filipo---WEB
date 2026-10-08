@@ -58,7 +58,7 @@ const navLinks = [
     </nav>
 
     <!-- Botón CTA de Cotizar en el header -->
-    <div class="hidden sm:flex items-center space-x-4">
+    <div class="hidden md:flex items-center space-x-4">
       <a
         href={whatsappNavUrl}
         target="_blank"
@@ -78,7 +78,7 @@ const navLinks = [
       <button
         id="mobile-menu-button"
         type="button"
-        class="text-filippo-charcoal p-2 focus:outline-none"
+        class="text-white p-2 focus:outline-none"
         aria-label="Abrir menú"
         aria-expanded="false"
       >
@@ -95,13 +95,13 @@ const navLinks = [
   <!-- Menú desplegable para móviles -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden bg-filippo-linen border-b border-filippo-stone/60 px-6 pt-4 pb-8 transition-all"
+    class="hidden md:hidden bg-black border-b border-white/10 px-6 pt-4 pb-8 transition-all"
   >
     <nav class="flex flex-col space-y-4">
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="mobile-nav-link text-lg font-serif text-filippo-charcoal hover:text-filippo-oak py-1 border-b border-filippo-stone/30"
+          class="mobile-nav-link text-lg font-serif text-white hover:text-filippo-oak py-1 border-b border-white/10"
         >
           {link.label}
         </a>
