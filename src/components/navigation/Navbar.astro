@@ -37,7 +37,16 @@ const navLinks = [
     <!-- Logotipo Filippo de autor -->
     <a href="#" class="flex items-center group focus:outline-none">
       {siteContent.brand.logoUrl ? (
-        <img src={siteContent.brand.logoUrl} alt={siteContent.brand.name} class="h-10 md:h-12 w-auto object-contain" />
+        <picture>
+          <source srcset="/images/logo-filippo.webp" type="image/webp" />
+          <img
+            src="/images/logo-filippo.png"
+            alt={siteContent.brand.name}
+            class="h-10 md:h-12 w-auto object-contain"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
       ) : (
         <span class="font-serif text-2xl md:text-3xl tracking-widest text-filippo-charcoal uppercase font-bold group-hover:text-filippo-oak transition-colors">
           {siteContent.brand.name}
