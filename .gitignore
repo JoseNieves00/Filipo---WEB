@@ -17,3 +17,6 @@ Thumbs.db
 # Hosting y depliegue
 .htaccess
 deploy.sh
+
+# Carpeta temporal de medios originales
+public/images/contenido-filippo/
