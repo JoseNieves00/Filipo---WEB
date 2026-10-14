@@ -16,3 +16,4 @@ Thumbs.db
 
 # Hosting y depliegue
 .htaccess
+deploy.sh
