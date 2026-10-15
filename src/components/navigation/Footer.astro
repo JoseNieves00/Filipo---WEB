@@ -27,16 +27,7 @@ const currentYear = new Date().getFullYear();
       <!-- Columna 1: Identidad y filosofía de marca -->
       <div class="space-y-4">
         {siteContent.brand.logoUrl ? (
-          <picture>
-            <source srcset="/images/logo-filippo.webp" type="image/webp" />
-            <img
-              src="/images/logo-filippo.png"
-              alt={siteContent.brand.name}
-              class="h-10 w-auto object-contain"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
+          <img src={siteContent.brand.logoUrl} alt={siteContent.brand.name} class="h-16 w-auto object-contain" />
         ) : (
           <span class="font-serif text-3xl tracking-widest text-white uppercase font-bold block">
             {siteContent.brand.name}
