@@ -105,14 +105,15 @@ const relatedProducts = products
 
   <main class="pb-24 md:pb-0">
     <!-- 1. HERO ENFOCADO EN VENTAS (ESTILO APPLE: IMAGEN PRIMERO) -->
-    <section class="relative pt-6 sm:pt-10 pb-16 md:pb-24 overflow-hidden bg-filippo-linen flex flex-col items-center">
+    <section class="relative pt-6 sm:pt-10 pb-16 md:pb-16 overflow-hidden bg-filippo-linen flex flex-col items-center">
       <!-- Imagen Visual de Alto Impacto Primero -->
       <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 md:mb-20">
         <div class="relative overflow-hidden rounded-3xl md:rounded-[2.5rem] shadow-2xl aspect-[4/3] sm:aspect-[16/10] lg:aspect-[21/9] bg-filippo-cream group">
           <img
             src={product.image}
             alt={product.title}
-            class="w-full h-full object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-1000 ease-out"
+            class="w-full h-full object-cover transform group-hover:scale-[1.02] transition-transform duration-1000 ease-out"
+            style={{ objectPosition: product.heroImageFocus ?? 'center' }}
             loading="eager"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
@@ -239,7 +240,7 @@ const relatedProducts = products
 
     <!-- 3.5 RECORRIDO EN VIDEO (EXPERIENCIA APPLE / INMERSIVA) -->
     {product.video && (
-      <section class="py-20 md:py-28 bg-black text-white border-t border-white/10">
+      <section class="py-20 md:py-12 bg-black text-white border-t border-white/10">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="mb-12 md:mb-16 text-center mx-auto max-w-2xl">
             <span class="inline-block text-xs font-semibold uppercase tracking-widest text-filippo-oak mb-4">
@@ -273,7 +274,7 @@ const relatedProducts = products
 
     <!-- 4. ACABADOS / MODELOS VISUALES -->
     {product.options && product.options.length > 0 && (
-      <section class="py-20 md:py-32 bg-black text-white">
+      <section class="py-20 md:py-22 bg-black text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="mb-16 md:mb-20 text-center mx-auto max-w-3xl">
             <span class="inline-block text-xs font-semibold uppercase tracking-widest text-white/50 mb-4">
@@ -312,7 +313,7 @@ const relatedProducts = products
 
     <!-- 5. PREGUNTAS FRECUENTES BREVES -->
     {product.faqs && product.faqs.length > 0 && (
-      <section class="py-20 md:py-32 bg-black">
+      <section class="py-20 md:py-20 bg-black">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="mb-16 md:mb-20 text-center mx-auto max-w-3xl">
             <span class="inline-block text-xs font-semibold uppercase tracking-widest text-white/50 mb-4">
