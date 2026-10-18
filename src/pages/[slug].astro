@@ -112,8 +112,7 @@ const relatedProducts = products
           <img
             src={product.image}
             alt={product.title}
-            class="w-full h-full object-cover transform group-hover:scale-[1.02] transition-transform duration-1000 ease-out"
-            style={{ objectPosition: product.heroImageFocus ?? 'center' }}
+            class="w-full h-full object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-1000 ease-out"
             loading="eager"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
