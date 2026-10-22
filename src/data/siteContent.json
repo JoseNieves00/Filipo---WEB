@@ -4,7 +4,7 @@
     "logoUrl": "/images/logo-filippo.webp",
     "legalName": "Filippo Cucine S.A.S",
     "tagline": "Diseño y Arquitectura interior",
-    "description": "Transformamos tus ideas en espacios modernos y funcionales a través de soluciones integrales en diseño arquitectónico, interiores y construcción.",
+    "description": "Transformamos el corazón de tu hogar con cocinas a medida, creadas para inspirar tu día a día.",
     "phoneDisplay": "+57 (312) 855-5365",
     "email": "contacto@filippococinas.com",
     "address": "Calle 13C #19e -75 Barrio La Popa",
@@ -36,14 +36,14 @@
   },
   "services": {
     "kicker": "LO QUE HACEMOS",
-    "title": "Un enfoque integral desde el boceto inicial hasta el último tirador",
+    "title": "Nuestros Servicios",
     "description": "Cada residencia es única. No trabajamos con medidas estándar ni módulos rígidos; concebimos cada cocina como una pieza arquitectónica irrepetible.",
     "items": [
       {
         "id": "diseno-3d",
         "icon": "cube",
         "title": "Diseño 3D & Planimetría Arquitectónica",
-        "description": "Desarrollamos planos técnicos detallados, estudio ergonómico, propuesta de iluminación y renders fotorrealistas para que visualices tu cocina antes de fabricar.",
+        "description": "Planos técnicos, estudio ergonómico, iluminación y renders fotorrealistas.",
         "highlights": [
           "Renders hiperrealistas",
           "Estudio de ergonomía",
@@ -53,8 +53,8 @@
       {
         "id": "fabricacion-artesanal",
         "icon": "wrench",
-        "title": "Fabricación Artesanal & Ebanistería",
-        "description": "Taller propio de alta precisión. Seleccionamos tableros hidrófugos de alta densidad, ensambles milimétricos y herrajes austríacos Blum con cierre silencioso.",
+        "title": "Fabricación e Interiorismo a Medida",
+        "description": "Cocinas, clósets, baños y mobiliario personalizado con acabados de alta calidad.",
         "highlights": [
           "Herrajes Blum con garantía de por vida",
           "Tableros hidrófugos resistentes a la humedad",
@@ -62,10 +62,10 @@
         ]
       },
       {
-        "id": "materiales-nobles",
+        "id": "remodelacion",
         "icon": "gem",
-        "title": "Piedras Naturales & Sinterizados",
-        "description": "Asesoramos en la elección de mesones y salpicaderos: cuarzos, granitos exóticos, travertinos y superficies ultracompactas (Dekton, Neolith) resistentes al calor y rayaduras.",
+        "title": "Remodelación y Obras Civiles",
+        "description": "Renovaciones, adecuación de espacios, fachadas y puertas blindadas.",
         "highlights": [
           "Superficies ultracompactas de alta resistencia",
           "Tratamiento antimanchas en piedras naturales",
@@ -73,10 +73,10 @@
         ]
       },
       {
-        "id": "instalacion-llave-en-mano",
+        "id": "asesoria-proyectos",
         "icon": "check-circle",
-        "title": "Montaje Impecable Llave en Mano",
-        "description": "Nuestros propios ebanistas e instaladores certificados ejecutan el montaje en tu hogar con rigor milimétrico, máxima limpieza y supervisión del arquitecto titular.",
+        "title": "Asesoría y Coordinación de Proyectos",
+        "description": "Asesoría en materiales y optimización del presupuesto.",
         "highlights": [
           "Instaladores propios en nómina",
           "Protección de pisos y áreas contiguas",
@@ -87,7 +87,7 @@
   },
   "gallery": {
     "kicker": "PORTAFOLIO DE PROYECTOS",
-    "title": "Proyectos realizados con carácter atemporal",
+    "title": "Galería de Proyectos",
     "description": "Explora algunas de las cocinas que hemos diseñado e instalado para clientes que aprecian la sobriedad, la calidez y el detalle.",
     "projects": [
       {
@@ -148,7 +148,7 @@
   },
   "testimonials": {
     "kicker": "TESTIMONIOS REALES",
-    "title": "Lo que dicen quienes ya habitan nuestras cocinas",
+    "title": "Opiniones de Clientes",
     "description": "La satisfacción y tranquilidad de nuestros clientes es nuestro principal aval de calidad.",
     "items": [
       {
@@ -182,44 +182,34 @@
   },
   "faq": {
     "kicker": "DUDAS FRECUENTES",
-    "title": "Preguntas habituales sobre el proceso de diseño y fabricación",
+    "title": "Preguntas Frecuentes",
     "description": "Resolvemos de antemano las inquietudes más comunes. Si tienes otra consulta, escríbenos directamente por WhatsApp.",
     "items": [
       {
         "id": "faq-1",
         "question": "¿Cuánto tiempo toma el proyecto completo desde el diseño hasta la instalación?",
-        "answer": "El proceso completo suele tomar entre 4 y 6 semanas en promedio. La etapa de diseño y definición de materiales toma entre 5 y 10 días; la fabricación en taller entre 3 y 4 semanas; y la instalación final en tu hogar se realiza en 2 a 3 días hábiles."
+        "answer": "La duración total del poryecto depende de la complejidad del mismo"
       },
       {
         "id": "faq-2",
         "question": "¿Hacen visitas técnicas a domicilio para tomar medidas?",
-        "answer": "Sí, realizamos visitas técnicas en Bogotá y municipios aledaños (La Calera, Chía, Cajicá, Sopó). Para otras ciudades de Colombia, coordinamos con los planos arquitectónicos de tu constructor o arquitecto."
+        "answer": "Sí, visitamos tu inmueble para medir y evaluar el espacios cecarnos a Valledupar, cesár. Para otras ciudades, podemos coordinar visitas virtuales por videollamada y fotos de referencia."
       },
       {
         "id": "faq-3",
-        "question": "¿Qué marcas de herrajes y accesorios utilizan?",
-        "answer": "Utilizamos exclusivamente herrajes europeos de primera línea: Blum (Austria) y Grass (Alemania) para rieles y bisagras con amortiguación suave certificada a más de 200.000 ciclos de apertura. Incluyen garantía de por vida en mecanismos."
+        "question": "¿Cómo es el esquema de pagos?",
+        "answer": "Trabajamos con el siguiente esquema de pagos: un anticipo de porcentaje flexible acordado según las necesidades de tu proyecto; abonos parciales programados de acuerdo con el avance de la fabricación e instalación; y la cancelación del saldo restante contra entrega y revisión del proyecto terminado a tu entera satisfacción."
       },
       {
         "id": "faq-4",
-        "question": "¿Cómo es el esquema de pagos?",
-        "answer": "Trabajamos con un esquema transparente por fases: 50% de anticipo al aprobar el diseño 3D para ordenar materiales y corte; 40% al verificar la cocina pre-armada en taller antes de despacho; y el 10% final contra entrega e instalación a entera satisfacción."
-      },
-      {
-        "id": "faq-5",
-        "question": "¿Puedo conservar mis electrodomésticos actuales o me ayudan a comprarlos?",
-        "answer": "Ambas opciones son posibles. Si ya tienes tus electrodomésticos, tomamos sus fichas técnicas exactas para diseñar los nichos a la medida. Si vas a comprar nuevos, te asesoramos en dimensiones recomendadas de inducción, campana y hornos."
-      },
-      {
-        "id": "faq-6",
-        "question": "¿Qué garantía tiene la cocina?",
-        "answer": "Ofrecemos 10 años de garantía escrita sobre la estructura del mobiliario y ensamble, garantía de por vida en herrajes Blum, y traspaso de garantías directas de fabricantes de superficies (Dekton, Neolith, Silestone)."
+        "question": "¿Puedo ver el diseño 3D antes de aprobar la fabricación?",
+        "answer": "Sí, mediante renders 3D y planos técnicos para visualizar el resultado antes de iniciar la fabricación."
       }
     ]
   },
   "contact": {
     "kicker": "COMIENZA HOY",
-    "title": "Hablemos de tu proyecto de cocina",
+    "title": "Hablemos de tu proyecto",
     "description": "Completa el formulario o haz clic directamente en WhatsApp para iniciar la conversación con uno de nuestros diseñadores.",
     "form": {
       "nameLabel": "Tu nombre completo",
@@ -230,35 +220,35 @@
         "Cocina integrada a sala/comedor",
         "Asesoría y diseño arquitectónico"
       ],
-      "cityLabel": "Ciudad o sector (ej. Bogotá - Rosales)",
+      "cityLabel": "Ciudad o Sector (ej. Valledupar - Garupal)",
       "commentsLabel": "Cuéntanos sobre tu espacio o medidas aproximadas",
       "submitButtonText": "Enviar solicitud por WhatsApp"
     }
   },
   "whyUs": {
     "kicker": "¿POR QUÉ ELEGIRNOS?",
-    "title": "Arquitectura, precisión y compromiso en cada entrega",
+    "title": "¿Por qué elegirnos?",
     "description": "Fusionamos diseño contemporáneo con procesos de ingeniería para ofrecer soluciones duraderas sin intermediarios.",
     "items": [
       {
         "number": "01",
-        "title": "Fabricación Propia sin Intermediarios",
-        "description": "Taller y equipo técnico especializado propio. Control total de calidad en cada ensamble, acabado y tiempo de entrega."
+        "title": "15 años de experiencia",
+        "description": "Transformando espacios y hogares."
       },
       {
         "number": "02",
-        "title": "Materiales Nobles y Certificados",
-        "description": "Maderas seleccionadas, herrajes europeos con garantía de por vida, piedras naturales y blindajes con máxima certificación."
+        "title": "Diseño moderno y funcional",
+        "description": "Elegancia y comodidad en cada detalle"
       },
       {
         "number": "03",
-        "title": "Garantía Escrita de hasta 10 Años",
-        "description": "Respaldo real en estructura y acabados. Tu inversión está protegida con servicio postventa y mantenimiento."
+        "title": "Materiales de calidad",
+        "description": "Durabilidad y acabados impecables"
       },
       {
         "number": "04",
-        "title": "Asesoría y Render 3D Previo",
-        "description": "Visualizas el resultado exacto en tu espacio antes de fabricar, evitando errores, sobrecostos o sorpresas."
+        "title": "Compromiso y responsabilidad",
+        "description": "Acompañamiento desde el diseño hasta la instalación final."
       }
     ]
   },

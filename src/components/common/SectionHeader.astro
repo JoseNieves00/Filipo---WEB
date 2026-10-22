@@ -17,7 +17,7 @@
 
 interface Props {
   kicker?: string;
-  title: string;
+  title?: string;
   description?: string;
   align?: 'left' | 'center';
   class?: string;
@@ -34,15 +34,17 @@ const {
 const isCenter = align === 'center';
 ---
 
-<div class={`mb-12 md:mb-16 ${isCenter ? 'text-center mx-auto max-w-3xl' : 'max-w-2xl'} ${className}`}>
+<div class={`mb-10 md:mb-14 ${isCenter ? 'text-center mx-auto max-w-3xl' : 'max-w-2xl'} ${className}`}>
   {kicker && (
     <span class="inline-block text-xs font-semibold uppercase tracking-widest-caps text-filippo-oak mb-3">
       {kicker}
     </span>
   )}
-  <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-filippo-charcoal tracking-tight leading-tight mb-4">
-    {title}
-  </h2>
+  {title && (
+    <h2 class={`text-3xl md:text-4xl lg:text-5xl font-serif text-filippo-charcoal tracking-tight leading-tight ${description ? 'mb-4' : ''}`}>
+      {title}
+    </h2>
+  )}
   {description && (
     <p class="text-base md:text-lg text-filippo-muted leading-relaxed font-light">
       {description}
