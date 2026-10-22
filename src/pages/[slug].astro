@@ -74,7 +74,7 @@ const relatedProducts = products
       <div class="flex flex-col items-center z-0 pointer-events-none">
         <a href="/" class="inline-flex flex-col items-center group focus:outline-none pointer-events-auto" aria-label="Ir al inicio de Filippo">
           {siteContent.brand.logoUrl ? (
-            <img src={siteContent.brand.logoUrl} alt={siteContent.brand.name} class="h-10 w-auto object-contain" />
+            <img src={siteContent.brand.logoUrl} alt={siteContent.brand.name} class="h-8 md:h-10 w-auto object-contain" />
           ) : (
             <div class="flex flex-col items-center leading-none">
               <span class="font-serif text-xl tracking-[0.2em] text-filippo-charcoal uppercase font-bold group-hover:text-filippo-oak transition-colors">
@@ -105,7 +105,7 @@ const relatedProducts = products
 
   <main class="pb-24 md:pb-0">
     <!-- 1. HERO ENFOCADO EN VENTAS (ESTILO APPLE: IMAGEN PRIMERO) -->
-    <section class="relative pt-6 sm:pt-10 pb-16 md:pb-24 overflow-hidden bg-filippo-linen flex flex-col items-center">
+    <section class="relative pt-6 sm:pt-10 pb-16 md:pb-16 overflow-hidden bg-filippo-linen flex flex-col items-center">
       <!-- Imagen Visual de Alto Impacto Primero -->
       <div class="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 md:mb-20">
         <div class="relative overflow-hidden rounded-3xl md:rounded-[2.5rem] shadow-2xl aspect-[4/3] sm:aspect-[16/10] lg:aspect-[21/9] bg-filippo-cream group">
@@ -154,9 +154,7 @@ const relatedProducts = products
       <section class="py-20 md:py-28 bg-filippo-white border-t border-filippo-stone/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            kicker="ÁREAS DE ESPECIALIDAD"
-            title={`¿Qué espacio deseas renovar?`}
-            description="Selecciona el área de tu interés para recibir asesoría enfocada y cotización inmediata."
+            title="¿Qué espacio deseas renovar?"
             align="center"
           />
 
@@ -237,9 +235,43 @@ const relatedProducts = products
       </section>
     )}
 
+    <!-- 3.5 RECORRIDO EN VIDEO (EXPERIENCIA APPLE / INMERSIVA) -->
+    {product.video && (
+      <section class="py-20 md:py-12 bg-black text-white border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mb-12 md:mb-16 text-center mx-auto max-w-2xl">
+            <span class="inline-block text-xs font-semibold uppercase tracking-widest text-filippo-oak mb-4">
+              RECORRIDO EN VIVO
+            </span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight leading-tight mb-4">
+              {product.videoTitle || "Experiencia y acabados en movimiento"}
+            </h2>
+            <p class="text-sm md:text-base text-gray-400 font-light">
+              Aprecia el detalle de iluminación, ensamble y texturas en un recorrido arquitectónico fluido.
+            </p>
+          </div>
+
+          <div class="relative max-w-sm sm:max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border border-white/15 bg-neutral-950">
+            <video
+              src={product.video}
+              controls
+              playsinline
+              loop
+              muted
+              autoplay
+              preload="metadata"
+              class="w-full h-auto aspect-[9/16] object-cover"
+            >
+              Tu navegador no soporta videos HTML5.
+            </video>
+          </div>
+        </div>
+      </section>
+    )}
+
     <!-- 4. ACABADOS / MODELOS VISUALES -->
     {product.options && product.options.length > 0 && (
-      <section class="py-20 md:py-32 bg-black text-white">
+      <section class="py-20 md:py-22 bg-black text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="mb-16 md:mb-20 text-center mx-auto max-w-3xl">
             <span class="inline-block text-xs font-semibold uppercase tracking-widest text-white/50 mb-4">
@@ -278,7 +310,7 @@ const relatedProducts = products
 
     <!-- 5. PREGUNTAS FRECUENTES BREVES -->
     {product.faqs && product.faqs.length > 0 && (
-      <section class="py-20 md:py-32 bg-black">
+      <section class="py-20 md:py-20 bg-black">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="mb-16 md:mb-20 text-center mx-auto max-w-3xl">
             <span class="inline-block text-xs font-semibold uppercase tracking-widest text-white/50 mb-4">

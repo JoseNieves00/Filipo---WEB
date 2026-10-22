@@ -1,10 +1,10 @@
 {
   "brand": {
     "name": "Filippo",
-    "logoUrl": "/images/logo-filippo.jpg",
+    "logoUrl": "/images/logo-filippo.webp",
     "legalName": "Filippo Cucine S.A.S",
     "tagline": "Diseño y Arquitectura interior",
-    "description": "Transformamos tus ideas en espacios modernos y funcionales a través de soluciones integrales en diseño arquitectónico, interiores y construcción.",
+    "description": "Transformamos el corazón de tu hogar con cocinas a medida, creadas para inspirar tu día a día.",
     "phoneDisplay": "+57 (312) 855-5365",
     "email": "contacto@filippococinas.com",
     "address": "Calle 13C #19e -75 Barrio La Popa",
@@ -31,19 +31,19 @@
     "ctaText": "Conversar por WhatsApp",
     "ctaSecondaryText": "Explorar proyectos",
     "badgeText": "Fabricación propia con diseño duradero",
-    "heroImage": "/images/kitchen-hero.jpg",
-    "heroImageAlt": "Cocina contemporánea Filippo con isla en travertino y carpintería de roble natural"
+    "heroImage": "/images/render-cocina-lujo-isla-alistonada-dorado.webp",
+    "heroImageAlt": "Cocina contemporánea de lujo Filippo con isla alistonada y acabados en mármol Calacatta"
   },
   "services": {
     "kicker": "LO QUE HACEMOS",
-    "title": "Un enfoque integral desde el boceto inicial hasta el último tirador",
+    "title": "Nuestros Servicios",
     "description": "Cada residencia es única. No trabajamos con medidas estándar ni módulos rígidos; concebimos cada cocina como una pieza arquitectónica irrepetible.",
     "items": [
       {
         "id": "diseno-3d",
         "icon": "cube",
         "title": "Diseño 3D & Planimetría Arquitectónica",
-        "description": "Desarrollamos planos técnicos detallados, estudio ergonómico, propuesta de iluminación y renders fotorrealistas para que visualices tu cocina antes de fabricar.",
+        "description": "Planos técnicos, estudio ergonómico, iluminación y renders fotorrealistas.",
         "highlights": [
           "Renders hiperrealistas",
           "Estudio de ergonomía",
@@ -53,8 +53,8 @@
       {
         "id": "fabricacion-artesanal",
         "icon": "wrench",
-        "title": "Fabricación Artesanal & Ebanistería",
-        "description": "Taller propio de alta precisión. Seleccionamos tableros hidrófugos de alta densidad, ensambles milimétricos y herrajes austríacos Blum con cierre silencioso.",
+        "title": "Fabricación e Interiorismo a Medida",
+        "description": "Cocinas, clósets, baños y mobiliario personalizado con acabados de alta calidad.",
         "highlights": [
           "Herrajes Blum con garantía de por vida",
           "Tableros hidrófugos resistentes a la humedad",
@@ -62,10 +62,10 @@
         ]
       },
       {
-        "id": "materiales-nobles",
+        "id": "remodelacion",
         "icon": "gem",
-        "title": "Piedras Naturales & Sinterizados",
-        "description": "Asesoramos en la elección de mesones y salpicaderos: cuarzos, granitos exóticos, travertinos y superficies ultracompactas (Dekton, Neolith) resistentes al calor y rayaduras.",
+        "title": "Remodelación y Obras Civiles",
+        "description": "Renovaciones, adecuación de espacios, fachadas y puertas blindadas.",
         "highlights": [
           "Superficies ultracompactas de alta resistencia",
           "Tratamiento antimanchas en piedras naturales",
@@ -73,10 +73,10 @@
         ]
       },
       {
-        "id": "instalacion-llave-en-mano",
+        "id": "asesoria-proyectos",
         "icon": "check-circle",
-        "title": "Montaje Impecable Llave en Mano",
-        "description": "Nuestros propios ebanistas e instaladores certificados ejecutan el montaje en tu hogar con rigor milimétrico, máxima limpieza y supervisión del arquitecto titular.",
+        "title": "Asesoría y Coordinación de Proyectos",
+        "description": "Asesoría en materiales y optimización del presupuesto.",
         "highlights": [
           "Instaladores propios en nómina",
           "Protección de pisos y áreas contiguas",
@@ -87,68 +87,68 @@
   },
   "gallery": {
     "kicker": "PORTAFOLIO DE PROYECTOS",
-    "title": "Proyectos realizados con carácter atemporal",
+    "title": "Galería de Proyectos",
     "description": "Explora algunas de las cocinas que hemos diseñado e instalado para clientes que aprecian la sobriedad, la calidez y el detalle.",
     "projects": [
       {
-        "id": "casa-aliso",
+        "id": "residencia-aliso",
         "title": "Residencia Aliso",
-        "image": "/images/project-aliso.jpg",
-        "imageAlt": "Cocina minimalista cálida con gabinetes lisos y luz indirecta",
-        "description": "Cocina lineal con isla monolítica en travertino y carpintería sin tiradores en roble europeo blanqueado.",
-        "materials": "Travertino romano, Roble europeo, Herrajes Blum Tip-On",
+        "image": "/images/render-cocina-lujo-isla-alistonada-dorado.webp",
+        "imageAlt": "Cocina de lujo con isla alistonada en madera y mármol Calacatta",
+        "description": "Isla central con frente alistonado en madera natural, zócalo iluminado con LED cálido y mesón continuo en mármol Calacatta.",
+        "materials": "Mármol Calacatta, Roble natural alistonado, Cava iluminada",
         "location": "Rosales, Bogotá"
       },
       {
         "id": "villa-castano",
         "title": "Villa Castaño",
-        "image": "/images/project-castano.jpg",
-        "imageAlt": "Cocina con encimera de cuarzo y muebles en nogal oscuro",
-        "description": "Fusión de texturas ricas: nogal canaletto con mesones en superficie sinterizada efecto calacatta y grifería en latón bruñido.",
-        "materials": "Nogal Canaletto, Dekton Opera, Latón cepillado",
+        "image": "/images/puerta-pivotante-fachada-alistonada.webp",
+        "imageAlt": "Puerta principal pivotante monumental integrada en fachada alistonada",
+        "description": "Puerta de seguridad pivotante mimetizada en panelado vertical de madera natural con cerradura biométrica invisible.",
+        "materials": "Madera noble maciza, Acero balístico, Cerradura inteligente",
         "location": "La Calera, Cundinamarca"
       },
       {
-        "id": "loft-nogal",
+        "id": "atico-nogal",
         "title": "Ático Nogal",
-        "image": "/images/project-nogal.jpg",
-        "imageAlt": "Isla central en granito negro satinado con barra en madera cálida",
-        "description": "Una imponente isla de 3.8 metros como eje social de la vivienda, con placa de inducción empotrada y campana integrada a ras de techo.",
-        "materials": "Granito negro vía láctea satinado, Frentes Fenix NTM mate",
+        "image": "/images/render-cocina-gris-topo-vitrina-vidrio-led.webp",
+        "imageAlt": "Cocina contemporánea con gran vitrina de vidrio ahumado iluminada",
+        "description": "Mobiliario en laca mate gris topo con gola oculta, zócalo LED perimetral y vitrina de piso a techo con cristal ahumado.",
+        "materials": "Cristal templado ahumado, Laca ultramate greige, Cuarzo blanco",
         "location": "Chicó Reservado, Bogotá"
       },
       {
-        "id": "residencia-lino",
+        "id": "casa-lino",
         "title": "Casa Lino",
-        "image": "/images/project-lino.jpg",
-        "imageAlt": "Cocina abierta integrada al comedor con detalles en madera clara",
-        "description": "Transición fluida hacia el salón comedor. Columnas de electrodomésticos ocultas tras puertas escamoteables de apertura total.",
-        "materials": "Chapa de roble claro, Cuarzo blanco puro, Puertas pocket door",
+        "image": "/images/vestier-roble-zapatero-iluminado.webp",
+        "imageAlt": "Walk-in closet y vestier en roble europeo con zapatero iluminado",
+        "description": "Vestier abierto de alta gama con zapateros inclinados retroiluminados, gavetas con uñero y repisas suspendidas.",
+        "materials": "Roble europeo natural, Perfilería LED 2700K, Cajones soft-close",
         "location": "Santa Ana Oriental, Bogotá"
       },
       {
         "id": "penthouse-carrara",
         "title": "Penthouse Carrara",
-        "image": "/images/project-carrara.jpg",
-        "imageAlt": "Cocina moderna con frentes lacados blanco hueso y mesón continuo",
-        "description": "Paleta serena y luminosa con acabados lacados ultramate antihuelectas y repisas flotantes con iluminación LED cálida 2700K.",
-        "materials": "Laca poliuretano mate lino, Neolith Calacatta Gold",
+        "image": "/images/render-comedor-cocina-licorera-vidrio.webp",
+        "imageAlt": "Remodelación arquitectónica de concepto abierto con cocina y comedor",
+        "description": "Integración fluida de ambientes residenciales con columna central revestida en madera y licorera iluminada de autor.",
+        "materials": "Madera nogal, Cuarzo Calacatta, Iluminación arquitectónica lineal",
         "location": "El Retiro, Antioquia"
       },
       {
-        "id": "finca-olivo",
-        "title": "Finca El Olivo",
-        "image": "/images/project-olivo.jpg",
-        "imageAlt": "Cocina de campo moderna con detalles en microcemento y madera rústica cepillada",
-        "description": "Interpretación contemporánea de la cocina campestre: madera maciza tratada al aceite vegetal y mesón de cuarcita rústica.",
-        "materials": "Madera de cedro recuperado, Cuarcita Taj Mahal",
+        "id": "residencia-montecarlo",
+        "title": "Residencia Montecarlo",
+        "image": "/images/mueble-tv-panel-marmol-vitrinas-ahumadas.webp",
+        "imageAlt": "Centro de entretenimiento flotante con panel de mármol y vitrinas ahumadas",
+        "description": "Panel central en mármol blanco retroiluminado, madera alistonada y vitrinas verticales laterales con luz cálida interna.",
+        "materials": "Mármol blanco retroiluminado, Madera alistonada, Cristal ahumado",
         "location": "Sopó, Cundinamarca"
       }
     ]
   },
   "testimonials": {
     "kicker": "TESTIMONIOS REALES",
-    "title": "Lo que dicen quienes ya habitan nuestras cocinas",
+    "title": "Opiniones de Clientes",
     "description": "La satisfacción y tranquilidad de nuestros clientes es nuestro principal aval de calidad.",
     "items": [
       {
@@ -182,44 +182,34 @@
   },
   "faq": {
     "kicker": "DUDAS FRECUENTES",
-    "title": "Preguntas habituales sobre el proceso de diseño y fabricación",
+    "title": "Preguntas Frecuentes",
     "description": "Resolvemos de antemano las inquietudes más comunes. Si tienes otra consulta, escríbenos directamente por WhatsApp.",
     "items": [
       {
         "id": "faq-1",
         "question": "¿Cuánto tiempo toma el proyecto completo desde el diseño hasta la instalación?",
-        "answer": "El proceso completo suele tomar entre 4 y 6 semanas en promedio. La etapa de diseño y definición de materiales toma entre 5 y 10 días; la fabricación en taller entre 3 y 4 semanas; y la instalación final en tu hogar se realiza en 2 a 3 días hábiles."
+        "answer": "La duración total del poryecto depende de la complejidad del mismo"
       },
       {
         "id": "faq-2",
         "question": "¿Hacen visitas técnicas a domicilio para tomar medidas?",
-        "answer": "Sí, realizamos visitas técnicas en Bogotá y municipios aledaños (La Calera, Chía, Cajicá, Sopó). Para otras ciudades de Colombia, coordinamos con los planos arquitectónicos de tu constructor o arquitecto."
+        "answer": "Sí, visitamos tu inmueble para medir y evaluar el espacios cecarnos a Valledupar, cesár. Para otras ciudades, podemos coordinar visitas virtuales por videollamada y fotos de referencia."
       },
       {
         "id": "faq-3",
-        "question": "¿Qué marcas de herrajes y accesorios utilizan?",
-        "answer": "Utilizamos exclusivamente herrajes europeos de primera línea: Blum (Austria) y Grass (Alemania) para rieles y bisagras con amortiguación suave certificada a más de 200.000 ciclos de apertura. Incluyen garantía de por vida en mecanismos."
+        "question": "¿Cómo es el esquema de pagos?",
+        "answer": "Trabajamos con el siguiente esquema de pagos: un anticipo de porcentaje flexible acordado según las necesidades de tu proyecto; abonos parciales programados de acuerdo con el avance de la fabricación e instalación; y la cancelación del saldo restante contra entrega y revisión del proyecto terminado a tu entera satisfacción."
       },
       {
         "id": "faq-4",
-        "question": "¿Cómo es el esquema de pagos?",
-        "answer": "Trabajamos con un esquema transparente por fases: 50% de anticipo al aprobar el diseño 3D para ordenar materiales y corte; 40% al verificar la cocina pre-armada en taller antes de despacho; y el 10% final contra entrega e instalación a entera satisfacción."
-      },
-      {
-        "id": "faq-5",
-        "question": "¿Puedo conservar mis electrodomésticos actuales o me ayudan a comprarlos?",
-        "answer": "Ambas opciones son posibles. Si ya tienes tus electrodomésticos, tomamos sus fichas técnicas exactas para diseñar los nichos a la medida. Si vas a comprar nuevos, te asesoramos en dimensiones recomendadas de inducción, campana y hornos."
-      },
-      {
-        "id": "faq-6",
-        "question": "¿Qué garantía tiene la cocina?",
-        "answer": "Ofrecemos 10 años de garantía escrita sobre la estructura del mobiliario y ensamble, garantía de por vida en herrajes Blum, y traspaso de garantías directas de fabricantes de superficies (Dekton, Neolith, Silestone)."
+        "question": "¿Puedo ver el diseño 3D antes de aprobar la fabricación?",
+        "answer": "Sí, mediante renders 3D y planos técnicos para visualizar el resultado antes de iniciar la fabricación."
       }
     ]
   },
   "contact": {
     "kicker": "COMIENZA HOY",
-    "title": "Hablemos de tu proyecto de cocina",
+    "title": "Hablemos de tu proyecto",
     "description": "Completa el formulario o haz clic directamente en WhatsApp para iniciar la conversación con uno de nuestros diseñadores.",
     "form": {
       "nameLabel": "Tu nombre completo",
@@ -230,35 +220,35 @@
         "Cocina integrada a sala/comedor",
         "Asesoría y diseño arquitectónico"
       ],
-      "cityLabel": "Ciudad o sector (ej. Bogotá - Rosales)",
+      "cityLabel": "Ciudad o Sector (ej. Valledupar - Garupal)",
       "commentsLabel": "Cuéntanos sobre tu espacio o medidas aproximadas",
       "submitButtonText": "Enviar solicitud por WhatsApp"
     }
   },
   "whyUs": {
     "kicker": "¿POR QUÉ ELEGIRNOS?",
-    "title": "Arquitectura, precisión y compromiso en cada entrega",
+    "title": "¿Por qué elegirnos?",
     "description": "Fusionamos diseño contemporáneo con procesos de ingeniería para ofrecer soluciones duraderas sin intermediarios.",
     "items": [
       {
         "number": "01",
-        "title": "Fabricación Propia sin Intermediarios",
-        "description": "Taller y equipo técnico especializado propio. Control total de calidad en cada ensamble, acabado y tiempo de entrega."
+        "title": "15 años de experiencia",
+        "description": "Transformando espacios y hogares."
       },
       {
         "number": "02",
-        "title": "Materiales Nobles y Certificados",
-        "description": "Maderas seleccionadas, herrajes europeos con garantía de por vida, piedras naturales y blindajes con máxima certificación."
+        "title": "Diseño moderno y funcional",
+        "description": "Elegancia y comodidad en cada detalle"
       },
       {
         "number": "03",
-        "title": "Garantía Escrita de hasta 10 Años",
-        "description": "Respaldo real en estructura y acabados. Tu inversión está protegida con servicio postventa y mantenimiento."
+        "title": "Materiales de calidad",
+        "description": "Durabilidad y acabados impecables"
       },
       {
         "number": "04",
-        "title": "Asesoría y Render 3D Previo",
-        "description": "Visualizas el resultado exacto en tu espacio antes de fabricar, evitando errores, sobrecostos o sorpresas."
+        "title": "Compromiso y responsabilidad",
+        "description": "Acompañamiento desde el diseño hasta la instalación final."
       }
     ]
   },
@@ -269,15 +259,19 @@
       "title": "Cocinas a Medida",
       "shortDescription": "Diseño arquitectónico, materiales nobles y herrajes europeos de cierre silencioso.",
       "badgeText": "diseño exclusivo y a medida",
-      "image": "/images/kitchen-hero.jpg",
+      "image": "/images/render-cocina-lujo-isla-alistonada-dorado.webp",
       "published": true,
       "order": 1,
       "whatsappMessage": "Hola Filippo, me interesa cotizar una cocina a medida. ¿Podemos hablar de mi espacio?",
       "gallery": [
-        "/images/kitchen-hero.jpg",
-        "/images/project-aliso.jpg",
-        "/images/project-castano.jpg",
-        "/images/project-carrara.jpg"
+        "/images/render-cocina-gris-topo-zocalo-led-teka.webp",
+        "/images/render-cocina-gris-topo-vitrina-vidrio-led.webp",
+        "/images/render-cocina-isla-cascada-madera-crema.webp",
+        "/images/cocina-moderna-en-u-beige-isla.webp",
+        "/images/cocina-isla-cascada-desayunador.webp",
+        "/images/cocina-integral-beige-torre-hornos.webp",
+        "/images/obra-cocina-nogal-isla-vitrina-led.webp",
+        "/images/obra-cocina-detalle-cajon-cubertero.webp"
       ],
       "options": [
         {
@@ -304,7 +298,9 @@
         }
       ],
       "seoTitle": "Cocinas a Medida de Alta Gama",
-      "seoDescription": "Diseño y fabricación de cocinas contemporáneas con materiales nobles y herrajes europeos."
+      "seoDescription": "Diseño y fabricación de cocinas contemporáneas con materiales nobles y herrajes europeos.",
+      "video": "/videos/video-cocina-lujo-cava-vino.mp4",
+      "videoTitle": "Recorrido Virtual: Cocina de Lujo con Isla & Cava"
     },
     {
       "id": "prod-puertas-blindadas",
@@ -312,14 +308,17 @@
       "title": "Puertas Blindadas",
       "shortDescription": "Máxima seguridad certificada con diseño arquitectónico y acabados de lujo.",
       "badgeText": "diseño exclusivo y a medida",
-      "image": "/images/project-aliso.jpg",
+      "image": "/images/puerta-pivotante-fachada-alistonada.webp",
       "published": true,
       "order": 2,
       "whatsappMessage": "Hola Filippo, quiero cotizar una puerta blindada de seguridad para mi hogar/oficina.",
       "gallery": [
-        "/images/project-aliso.jpg",
-        "/images/project-castano.jpg",
-        "/images/project-nogal.jpg"
+        "/images/puerta-principal-madera-manillon-negro.webp",
+        "/images/puerta-principal-madera-palilleria.webp",
+        "/images/puerta-pivotante-exterior-gran-formato.webp",
+        "/images/puerta-pivotante-interior-vestibulo.webp",
+        "/images/puerta-seguridad-madera-cerradura-digital.webp",
+        "/images/puerta-pivotante-nogal-cerradura-biometrica.webp"
       ],
       "options": [
         {
@@ -354,14 +353,17 @@
       "title": "Remodelación Arquitectónica",
       "shortDescription": "Transformación integral de espacios con dirección técnica de obra y acabados premium.",
       "badgeText": "diseño exclusivo y a medida",
-      "image": "/images/project-lino.jpg",
+      "image": "/images/render-comedor-cocina-licorera-vidrio.webp",
       "published": true,
       "order": 3,
       "whatsappMessage": "Hola Filippo, me interesa cotizar la remodelación integral de mi espacio.",
       "gallery": [
-        "/images/project-lino.jpg",
-        "/images/project-nogal.jpg",
-        "/images/project-olivo.jpg"
+        "/images/render-cocina-isla-calacatta-torre-lavado.webp",
+        "/images/render-open-space-sala-comedor-cocina.webp",
+        "/images/mueble-tv-panel-marmol-vitrinas-ahumadas.webp",
+        "/images/mueble-tv-marmol-alistonado-repisas.webp",
+        "/images/comedor-madera-panel-marmol-led.webp",
+        "/images/fachada-residencia-moderna-madera.webp"
       ],
       "options": [
         {
@@ -375,27 +377,27 @@
       ],
       "subcategories": [
         {
-          "title": "Remodelación de Baños",
-          "image": "/images/bathroom-remodel.jpg",
-          "description": "Acabados en piedra natural, nichos iluminados y griferías empotradas.",
-          "whatsappMessage": "Hola Filippo, me interesa cotizar la remodelación de mi baño."
-        },
-        {
           "title": "Remodelación de Cocinas",
-          "image": "/images/kitchen-hero.jpg",
-          "description": "Apertura de muros hacia el área social y muebles a medida.",
+          "image": "/images/render-cocina-isla-cascada-madera-crema.webp",
+          "description": "Apertura de muros hacia el área social, islas monolíticas y muebles a medida.",
           "whatsappMessage": "Hola Filippo, me interesa cotizar la remodelación de mi cocina."
         },
         {
-          "title": "Patios & Terrazas",
-          "image": "/images/patio-terrace.jpg",
-          "description": "Decks en madera noble, pérgolas arquitectónicas y zonas BBQ.",
-          "whatsappMessage": "Hola Filippo, me interesa cotizar la remodelación de mi patio/terraza."
+          "title": "Salas & Centros de TV",
+          "image": "/images/mueble-tv-panel-marmol-vitrinas-ahumadas.webp",
+          "description": "Paneles en mármol retroiluminado, maderas alistonadas y consolas flotantes.",
+          "whatsappMessage": "Hola Filippo, me interesa cotizar un centro de TV y entretenimiento a medida."
+        },
+        {
+          "title": "Vestieres & Closets",
+          "image": "/images/closet-puertas-vidrio-ahumado.webp",
+          "description": "Sistemas modulares con puertas de cristal ahumado, iluminación LED perimetral y zapateros.",
+          "whatsappMessage": "Hola Filippo, me interesa cotizar un vestier / clóset a medida."
         },
         {
           "title": "Remodelación Integral",
-          "image": "/images/project-lino.jpg",
-          "description": "Dirección integral de obra y rediseño espacial completo.",
+          "image": "/images/render-comedor-cocina-licorera-vidrio.webp",
+          "description": "Dirección integral de obra, redes, iluminación y rediseño espacial completo.",
           "whatsappMessage": "Hola Filippo, quiero cotizar la remodelación integral de mi vivienda."
         }
       ],
@@ -406,7 +408,9 @@
         }
       ],
       "seoTitle": "Remodelación Arquitectónica Residencial",
-      "seoDescription": "Remodelaciones integrales de alta gama con dirección técnica y acabados impecables."
+      "seoDescription": "Remodelaciones integrales de alta gama con dirección técnica y acabados impecables.",
+      "video": "/videos/video-remodelacion-casa-completa.mp4",
+      "videoTitle": "Recorrido Arquitectónico Completo: Residencia Moderna"
     },
     {
       "id": "prod-carpinteria",
@@ -414,14 +418,17 @@
       "title": "Carpintería Arquitectónica",
       "shortDescription": "Puertas de paso, paneles alistonados, vestieres y muebles fijos de autor.",
       "badgeText": "diseño exclusivo y a medida",
-      "image": "/images/project-castano.jpg",
+      "image": "/images/vestier-roble-zapatero-iluminado.webp",
       "published": true,
       "order": 4,
       "whatsappMessage": "Hola Filippo, me gustaría cotizar carpintería arquitectónica a medida.",
       "gallery": [
-        "/images/project-castano.jpg",
-        "/images/project-aliso.jpg",
-        "/images/project-olivo.jpg"
+        "/images/closet-puertas-vidrio-ahumado.webp",
+        "/images/closet-empotrado-greige-cajoneras.webp",
+        "/images/closet-abierto-beige-arena-led.webp",
+        "/images/closet-zapatero-extraible-led.webp",
+        "/images/mueble-tv-flotante-panel-marmol-repisas.webp",
+        "/images/obra-mueble-tv-panel-alistonado-led-vertical.webp"
       ],
       "options": [
         {
@@ -452,13 +459,17 @@
       "title": "Renders & Modelado 3D",
       "shortDescription": "Visualización fotorrealista para arquitectos, constructoras y clientes residenciales.",
       "badgeText": "diseño exclusivo y a medida",
-      "image": "/images/project-carrara.jpg",
+      "image": "/images/render-cocina-isla-calacatta-torre-lavado.webp",
       "published": true,
       "order": 5,
       "whatsappMessage": "Hola Filippo, quiero consultar el servicio de renders y modelado 3D.",
       "gallery": [
-        "/images/project-carrara.jpg",
-        "/images/project-lino.jpg"
+        "/images/render-cocina-lujo-isla-alistonada-dorado.webp",
+        "/images/render-cocina-gris-topo-zocalo-led-teka.webp",
+        "/images/render-cocina-gris-topo-vitrina-vidrio-led.webp",
+        "/images/render-comedor-cocina-licorera-vidrio.webp",
+        "/images/render-cocina-isla-cascada-madera-crema.webp",
+        "/images/render-open-space-sala-comedor-cocina.webp"
       ],
       "options": [
         {
@@ -477,7 +488,9 @@
         }
       ],
       "seoTitle": "Renders y Modelado 3D Arquitectónico",
-      "seoDescription": "Servicio de renderizado hiperrealista 3D para proyectos residenciales y comerciales."
+      "seoDescription": "Servicio de renderizado hiperrealista 3D para proyectos residenciales y comerciales.",
+      "video": "/videos/video-cocina-taupe-marmol-tour.mp4",
+      "videoTitle": "Renderización 3D & Animación Arquitectónica 4K"
     }
   ]
 }

@@ -20,14 +20,14 @@ const waFooterUrl = getWhatsAppUrl(siteContent.whatsapp.defaultMessages.general)
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-black text-filippo-charcoal pt-16 pb-12 border-t border-filippo-stone/30">
+<footer class="bg-black text-filippo-charcoal pt-16 pb-16 sm:pb-14 border-t border-filippo-stone/30">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
       
       <!-- Columna 1: Identidad y filosofía de marca -->
       <div class="space-y-4">
         {siteContent.brand.logoUrl ? (
-          <img src={siteContent.brand.logoUrl} alt={siteContent.brand.name} class="h-10 w-auto object-contain" />
+          <img src={siteContent.brand.logoUrl} alt={siteContent.brand.name} class="h-8 w-auto object-contain" />
         ) : (
           <span class="font-serif text-3xl tracking-widest text-white uppercase font-bold block">
             {siteContent.brand.name}
@@ -54,10 +54,10 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      <!-- Columna 3: oficinas & Horarios -->
+      <!-- Columna 3: Oficinas & Horarios -->
       <div>
         <h4 class="text-xs uppercase tracking-widest-caps text-filippo-oak font-semibold mb-5">
-          oficinas & Contacto
+          Oficinas & Contacto
         </h4>
         <ul class="space-y-3 text-sm text-filippo-muted">
           <li class="flex items-start gap-2.5">
@@ -128,14 +128,22 @@ const currentYear = new Date().getFullYear();
 
     </div>
 
-    <!-- Barra inferior: Copyright -->
-    <div class="pt-8 border-t border-filippo-stone/30 flex flex-col sm:flex-row items-center justify-between text-xs text-filippo-muted/80 gap-4">
-      <p>
+    <!-- Barra inferior: Copyright y Créditos -->
+    <div class="pt-8 border-t border-filippo-stone/20 flex flex-col sm:flex-row items-center justify-between text-xs text-filippo-muted gap-4 sm:pr-24">
+      <p class="text-center sm:text-left">
         © {currentYear} {siteContent.brand.legalName}. Todos los derechos reservados.
       </p>
-      <div class="flex items-center gap-6">
-
-      </div>
+      <p class="flex items-center gap-1.5 text-center sm:text-right">
+        <span>Desarrollado por</span>
+        <a
+          href="https://www.synqo.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-medium text-filippo-charcoal hover:text-filippo-oak transition-colors underline-offset-4 hover:underline cursor-pointer"
+        >
+          synqo.dev
+        </a>
+      </p>
     </div>
   </div>
 </footer>
