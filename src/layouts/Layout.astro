@@ -33,7 +33,7 @@ const {
   ogImage = '/images/render-cocina-lujo-isla-alistonada-dorado.webp'
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://filippococinas.com');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://xn--filippodiseoyarquitectura-joc.com');
 
 // Datos estructurados Schema.org para posicionamiento local y arquitectura de cocinas
 const schemaJsonLd = {
@@ -59,6 +59,16 @@ const schemaJsonLd = {
 <!doctype html>
 <html lang="es" class="scroll-smooth">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-D8C7CEVJDT"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-D8C7CEVJDT');
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -90,6 +100,7 @@ const schemaJsonLd = {
 
     <!-- Microdatos JSON-LD Schema.org -->
     <script type="application/ld+json" set:html={JSON.stringify(schemaJsonLd)} />
+
   </head>
   <body class="bg-filippo-linen text-filippo-charcoal antialiased selection:bg-filippo-oak selection:text-white">
     <slot />
